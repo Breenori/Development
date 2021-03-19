@@ -29,3 +29,7 @@ x64
 Release
 CCC
 Unity
+PDB
+*.pdb
+*.cif
+venv
