@@ -1,6 +1,6 @@
 package swp4.basics.test;
 
-import swp4.basics.collections.Heap;
+import swp4.basics.collections.impl.Heap;
 
 public class HeapTest {
 
