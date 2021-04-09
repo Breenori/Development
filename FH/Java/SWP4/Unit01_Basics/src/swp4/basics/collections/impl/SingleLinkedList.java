@@ -1,12 +1,16 @@
 package swp4.basics.collections.impl;
 
-public class List {
+import java.util.Iterator;
+
+public class List implements Iterable {
 
     private Node head;
     private Node tail;
     private int size;
+    private int callsToPrepend = 0;
 
     public void prepend( Object o ) {
+        callsToPrepend++;
         head = new Node( o, head );
         if( tail == null ) {
             tail = head;
@@ -93,6 +97,11 @@ public class List {
         return head != null ? head.val : null;
     }
 
+    @Override
+    public Iterator iterator() { // factory method
+        return new ListIterator();
+    }
+
 
     // inner class
     private class Node {
@@ -102,6 +111,27 @@ public class List {
         public Node(Object val, Node next) {
             this.val = val;
             this.next = next;
+        }
+    }
+
+    private class ListIterator implements Iterator<Object> {
+
+        private Node currentNode;
+
+        public ListIterator() {
+            currentNode = head;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currentNode != null;
+        }
+
+        @Override
+        public Object next() {
+            Node tmp = currentNode;
+            currentNode = currentNode.next;
+            return tmp.val;
         }
     }
 
