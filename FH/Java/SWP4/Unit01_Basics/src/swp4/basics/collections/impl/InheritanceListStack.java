@@ -2,7 +2,7 @@ package swp4.basics.collections.impl;
 
 import swp4.basics.collections.Stack;
 
-public class InheritanceListStack extends List implements Stack {
+public class InheritanceListStack extends SingleLinkedList implements Stack {
     @Override
     public void push(Object value) {
         this.prepend(value);

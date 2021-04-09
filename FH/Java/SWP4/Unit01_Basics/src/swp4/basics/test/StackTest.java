@@ -5,6 +5,9 @@ import swp4.basics.collections.impl.CapacityStack;
 import swp4.basics.collections.impl.ArrayStack;
 import swp4.basics.collections.impl.CompositeListStack;
 import swp4.basics.collections.impl.InheritanceListStack;
+import swp4.basics.patterns.factory.StackFactory;
+import swp4.basics.patterns.factory.StackType;
+import swp4.basics.patterns.factory.impl.StackFactoryImpl;
 
 public class StackTest {
     static int stack[] = new int[10];
@@ -25,6 +28,22 @@ public class StackTest {
     }
 
     public static void main(String[] args) {
+
+        StackFactory factory = new StackFactoryImpl();
+        Stack inheritanceStack = factory.createStack(StackType.INHERITANCE_STACK);
+        Stack compositeStack = factory.createStack(StackType.COMPOSITE_STACK);
+
+        inheritanceStack.push("A");
+        inheritanceStack.push("B");
+        Object a = inheritanceStack.pop();
+        Object b = compositeStack.pop();
+
+        System.out.println("Popped from inheritanceStack: "+a);
+        System.out.println("Popped from compositeStack: "+b);
+        System.out.println("Type of inheritanceStack: "+inheritanceStack);
+        System.out.println("Type of compositeStack: "+compositeStack);
+
+        /* //old
         Stack s1 = new ArrayStack();
         s1.push("Andreas");
         s1.push("Michael");
@@ -52,6 +71,7 @@ public class StackTest {
         cls.push("Jochen");
         a = (String) cls.pop();
         System.out.println(a);
+        */
     }
 
 }

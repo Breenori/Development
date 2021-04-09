@@ -4,7 +4,7 @@ import swp4.basics.collections.Stack;
 
 public class CompositeListStack implements Stack {
 
-    private List stackElementList = new List();
+    private SingleLinkedList stackElementList = new SingleLinkedList();
 
     @Override
     public void push(Object value) {

@@ -1,13 +1,13 @@
 package swp4.basics.collections.graph;
 
-import swp4.basics.collections.impl.List;
+import swp4.basics.collections.impl.SingleLinkedList;
 
 public class AdjacencyListGraph implements Graph {
 
-    private List[] adjacencyList;
+    private SingleLinkedList[] adjacencyList;
 
     public AdjacencyListGraph( int noOfVertices ) {
-        this.adjacencyList = new List[ noOfVertices ];
+        this.adjacencyList = new SingleLinkedList[ noOfVertices ];
     }
 
 
@@ -17,7 +17,7 @@ public class AdjacencyListGraph implements Graph {
             return false;
         }
         if( this.adjacencyList[src] == null ) {
-            this.adjacencyList[src] = new List();
+            this.adjacencyList[src] = new SingleLinkedList();
         }
         this.adjacencyList[src].append( dest );
         return this.adjacencyList[src].getLastElement().equals( dest );

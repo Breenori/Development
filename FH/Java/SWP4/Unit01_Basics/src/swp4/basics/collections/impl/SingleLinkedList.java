@@ -2,14 +2,15 @@ package swp4.basics.collections.impl;
 
 import java.util.Iterator;
 
-public class List implements Iterable {
+public class SingleLinkedList implements swp4.basics.collections.List {
 
     private Node head;
     private Node tail;
     private int size;
     private int callsToPrepend = 0;
 
-    public void prepend( Object o ) {
+    @Override
+    public void prepend(Object o) {
         callsToPrepend++;
         head = new Node( o, head );
         if( tail == null ) {
@@ -18,7 +19,8 @@ public class List implements Iterable {
         size++;
     }
 
-    public void append( Object o ) {
+    @Override
+    public void append(Object o) {
         Node n = new Node( o, null );
         if( head == null ) {  // list is empty
             head = tail = n;
@@ -29,15 +31,18 @@ public class List implements Iterable {
         size++;
     }
 
+    @Override
     public Object first() {
         return head != null ? head.val : null;
     }
 
+    @Override
     public Object last() {
         return tail != null ? tail.val : null;
     }
 
-    public boolean remove( Object o ) {
+    @Override
+    public boolean remove(Object o) {
         Node n = head;
         Node pred = null;
         if (n != null && n.val.equals( o )) {
@@ -61,7 +66,8 @@ public class List implements Iterable {
         return true;
     }
 
-    public boolean contains( Object o ) {
+    @Override
+    public boolean contains(Object o) {
         Node n = head;
         while( n != null ) {
             if( n.val.equals( o ) ) {
@@ -72,7 +78,8 @@ public class List implements Iterable {
         return false;
     }
 
-    public Object getElementAt( int pos ) {
+    @Override
+    public Object getElementAt(int pos) {
         int i = 0;
         Node n = head;
         while( n != null ) {
@@ -85,16 +92,27 @@ public class List implements Iterable {
         return null;
     }
 
+    @Override
     public int getSize() {
         return size;
     }
 
+    @Override
     public Object getLastElement() {
         return tail != null ? tail.val : null;
     }
 
+    @Override
     public Object getFirstElement() {
         return head != null ? head.val : null;
+    }
+
+    @Override
+    public void print() {
+        for(Object o : this) {
+            System.out.print(o+" ");
+        }
+        System.out.print("\n");
     }
 
     @Override
