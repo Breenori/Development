@@ -7,7 +7,7 @@ import ij.process.ImageProcessor;
 /**
  * Applies a sobel edge detection (high-pass filter) onto a given image. (Lab 6)
  */
-public class SobelTemplate_ implements PlugInFilter {
+public class SobelFilter_ implements PlugInFilter {
 
    public int setup(String arg, ImagePlus imp) {
 		if (arg.equals("about"))
@@ -36,6 +36,7 @@ public class SobelTemplate_ implements PlugInFilter {
 		boolean dia1Cb = false;
 		boolean dia2Cb = false;
 
+		// let the user select which sobel filter to execute
 		gd.showDialog();
 		if(!gd.wasCanceled()) {
 			horCb = gd.getNextBoolean();
@@ -48,6 +49,7 @@ public class SobelTemplate_ implements PlugInFilter {
 
         double maxmag = 0;
         double minmag = Double.MAX_VALUE;
+        // define sobel-masks
         int[][] sobelKernelX = {{1,0,-1},
 								{2,0,-2},
 								{1,0,-1}};
@@ -70,12 +72,16 @@ public class SobelTemplate_ implements PlugInFilter {
 				double sd1=0;
 				double sd2=0;
 
+				// depending on the user input, calculate the sobel-values
 				if(horCb) { sx = applyMaskToPixel(inDataArrDbl, sobelKernelX, x, y); }
 				if(verCb) { sy = applyMaskToPixel(inDataArrDbl, sobelKernelY, x, y); }
 				if(dia1Cb) { sd1 = applyMaskToPixel(inDataArrDbl, sobelKernelD1, x, y); }
 				if(dia2Cb) { sd2=applyMaskToPixel(inDataArrDbl, sobelKernelD2, x, y); }
+				// then, using the sobel values, calculate the magnitude
 				double mag = Math.sqrt(sx * sx + sy * sy + sd1 * sd1 + sd2 * sd2);
 				resultImg[x][y] = mag;
+
+				// determine maximum and minimum magnitude for normalizing
 				if(mag > maxmag) {
 					maxmag = mag;
 				}
@@ -86,7 +92,7 @@ public class SobelTemplate_ implements PlugInFilter {
 		}
 		maxmag -= minmag;
 		double scale = maxmag/255;
-
+		// normalize the image for valid constraints
 		for(int x=0; x < width; x++) {
 			for(int y=0; y < height; y++) {
 				resultImg[x][y] = (resultImg[x][y]-minmag)/scale;
@@ -101,6 +107,7 @@ public class SobelTemplate_ implements PlugInFilter {
 		for(int xoff=0; xoff < mask.length; xoff++) {
 			for(int yoff=0; yoff < mask[0].length; yoff++) {
 				try {
+					// for each pixel, multiply its value with the corresponding mask value and sum it up
 					sum += inImg[x + xoff - 1][y + yoff - 1] * mask[xoff][yoff];
 				} catch(Exception e) {
 
@@ -111,8 +118,8 @@ public class SobelTemplate_ implements PlugInFilter {
 	}
 
 	void showAbout() {
-		IJ.showMessage("About Template_...",
-			"this is a PluginFilter template\n");
+		IJ.showMessage("About Sobel_...",
+			"this is an edge detection algorithm using sobel filters.\n");
 	} //showAbout
 
 } //class Mean_
