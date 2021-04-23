@@ -36,8 +36,22 @@ public class ChangeManager {
 
     private class ChangeCollector implements Observer {
 
-        public void toggle() {
 
+        public class Message {
+            private Subject subject;
+            private Object argument;
+
+            public Message(Subject subject, Object argument) {
+                this.subject = subject;
+                this.argument = argument;
+            }
+
+            public Subject getSubject() {
+                return subject;
+            }
+            public Object getArgument() {
+                return argument;
+            }
         }
 
         @Override
