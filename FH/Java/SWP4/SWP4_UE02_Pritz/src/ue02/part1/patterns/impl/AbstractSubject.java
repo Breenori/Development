@@ -9,7 +9,8 @@ import java.util.Set;
 
 public abstract class AbstractSubject implements Subject {
 
-    private Set<Observer> registeredObservers = new HashSet<>();
+    protected Set<Observer> registeredObservers = new HashSet<>();
+    private int currentId = 0;
 
     @Override
     public void attach(Observer observer) {
@@ -25,12 +26,18 @@ public abstract class AbstractSubject implements Subject {
         }
     }
 
-    @Override
-    public void notifyObserver() {
+    public void notifyObserver(long noteId, String aspect) {
         for(Observer observer : registeredObservers) {
-            observer.update(this, getState());
+            observer.update(this, getState(), noteId, aspect);
         }
+        currentId++;
     }
+
+    @Override
+    public void notifyObserver(long noteId) {
+        notifyObserver(noteId, "default");
+    }
+
 
     public abstract Object getState();
 }
