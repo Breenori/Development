@@ -57,7 +57,7 @@ public class RegionGrowing_ implements PlugInFilter {
 
 
         String type = "";
-        GenericDialog initialgd = new GenericDialog("binary interval thresh");
+        GenericDialog initialgd = new GenericDialog("region growing");
         String[] items = {"Scalar based","Confidence based"};
         initialgd.addChoice("Neighbors",items,"N8");
         initialgd.showDialog();
@@ -72,29 +72,36 @@ public class RegionGrowing_ implements PlugInFilter {
         int upperThresh = 200;
         String choice ="N8";
         double confidence = 0.1;
+        boolean recursive = false;
 
-        GenericDialog gd = new GenericDialog("binary interval thresh");
+        GenericDialog gd = new GenericDialog("region growing");
         int[][] segmentedImage;
         if(type=="Scalar based") {
             gd.addSlider("Tlow=", 0, 255, lowerThresh);
             gd.addSlider("Tup=", 0, 255, upperThresh);
             String[] methods = {"N4", "N8"};
 
-            gd.addChoice("Neighbors", methods, "N8");
+            gd.addChoice("Adjacency", methods, "N8");
+            gd.addCheckbox("Recursive", false);
             gd.showDialog();
 
             if (!gd.wasCanceled()) {
                 lowerThresh = (int) gd.getNextNumber();
                 upperThresh = (int) gd.getNextNumber();
                 choice = gd.getNextChoice();
+                recursive = gd.getNextBoolean();
             }
 
-            segmentedImage = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh, choice, getSeedPoints());
+            if(recursive) {
+                segmentedImage = performRecursiveRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh, choice, getSeedPoints());
+            } else {
+                segmentedImage = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh, choice, getSeedPoints());
+            }
             ImageJUtility.showNewImage(segmentedImage,width,height,"RG, lowerT="+lowerThresh+", upperT="+upperThresh+", neighbors="+choice);
         } else {
             gd.addNumericField("Confidence=",0);
             String[] methods = {"N4", "N8"};
-            gd.addChoice("Neighbors", methods, "N8");
+            gd.addChoice("Adjacency", methods, "N8");
 
             gd.showDialog();
             if (!gd.wasCanceled()) {
@@ -171,6 +178,48 @@ public class RegionGrowing_ implements PlugInFilter {
         }
 
         return returnImg;
+    }
+    public static int[][] performRecursiveRegionGrowing(int[][] inImg, int width, int height, int lowerThresh, int upperThresh, String method, List<Point> seeds) {
+        int[][] returnImg = new int[width][height];
+        // init with -1
+        for(int x=0; x < width; x++) {
+            for(int y=0; y < height; y++) {
+                returnImg[x][y] = UNPROCESSED_VAL;
+            }
+        }
+
+        for(Point p : seeds) {
+            returnImg = performRecursiveRegionGrowingWorker(inImg, returnImg, width, height, p.x, p.y, lowerThresh, upperThresh, method);
+        }
+
+        return returnImg;
+    }
+    public static int[][] performRecursiveRegionGrowingWorker(int[][] inImg, int[][] returnImg, int width, int height, int x, int y, int lowerThresh, int upperThresh, String method) {
+        if(x < 0 || x > width || y < 0 || y > height || returnImg[x][y]!=UNPROCESSED_VAL) {
+            return returnImg;
+        } else {
+            if(inImg[x][y] > lowerThresh && inImg[x][y] < upperThresh) {
+                returnImg[x][y] = FG_VAL;
+            } else {
+                returnImg[x][y] = BG_VAL;
+            }
+
+            for(int xOffset=-1; xOffset <= 1; xOffset++) {
+                for(int yOffset=-1; yOffset <= 1; yOffset++) {
+                    if(!(xOffset == 0 && yOffset == 0)) {
+                        if (method.equals("N8") || xOffset == 0 || yOffset == 0) {
+                            int nbX = x + xOffset;
+                            int nbY = y + yOffset;
+
+
+                            returnImg = performRecursiveRegionGrowingWorker(inImg, returnImg, width, height, nbX, nbY, lowerThresh, upperThresh, method);
+                        }
+                    }
+                }
+            }
+
+            return returnImg;
+        }
     }
 
     public static int[][] performConfidenceRegionGrowing(int[][] inImg, int width, int height, double confidence, String method, List<Point> seeds) {
