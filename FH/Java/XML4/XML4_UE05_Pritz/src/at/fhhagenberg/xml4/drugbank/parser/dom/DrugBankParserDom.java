@@ -61,6 +61,7 @@ public class DrugBankParserDom implements DrugBankParser {
 		Drug drug = new Drug();
 		addDrugAccessions(drugNode, drug);
 		addDrugProducts(drugNode, drug);
+		addDrugATCs(drugNode, drug);
 		//TODO remaining properties
 		return drug;
 	}
@@ -72,6 +73,16 @@ public class DrugBankParserDom implements DrugBankParser {
 
 	private void addDrugAccession(Node drugNode, Drug drug) throws XPathExpressionException {
 		drug.setAccession(extractString(drugNode, C.DRUG.PRIMARY_ACCESSION, xPath));
+	}
+
+	private void addDrugName(Node drugNode, Drug drug) throws XPathExpressionException {
+		drug.setName(extractString(drugNode, C.DRUG.NAME, xPath));
+	}
+
+	private void addDrugATCs(Node drugNode, Drug drug) throws XPathExpressionException {
+		processNodeList(drugNode, C.DRUG.ATC_CODES, n -> {
+			drug.addAtcCode(n.getNodeValue());
+		}, xPath);
 	}
 
 	private void addDrugProducts(Node drugNode, Drug drug) throws XPathExpressionException {
@@ -113,11 +124,23 @@ public class DrugBankParserDom implements DrugBankParser {
 		public interface DRUG {
 			public static final String PRIMARY_ACCESSION = "drugbank-id[@primary = \"true\"]/text()";
 			public static final String PRODUCTS = "products/product";
+			public static final String NAME = "name/text()";
+			public static final String ATC_CODES = "atc-codes/atc-code/@code";
+			public static final String GROUPS = "groups/group";
+			public static final String TYPE = "@type";
+			public static final String DESCRIPTION = "description";
+			public static final String INDICATION = "indication";
+			public static final String SYNONYMS = "synonyms/Synonym";
 		}
 
 		public interface PRODUCT {
 			public static final String NAME = "name";
 			public static final String OVER_THE_COUNTER = "over-the-counter";
+		}
+
+		public interface DRUGTARGET {
+			public static final String EFFECTS = "actions/action";
+			public static final String KNOWN_ACTION = "known-action";
 		}
 	}
 }

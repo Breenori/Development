@@ -1,16 +1,16 @@
 package at.fhhagenberg.xml4.drugbank.parser.sax;
 
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.Consumer;
 
+import at.fhhagenberg.xml4.drugbank.domain.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import at.fhhagenberg.xml4.drugbank.domain.Drug;
-import at.fhhagenberg.xml4.drugbank.domain.Product;
-import at.fhhagenberg.xml4.drugbank.domain.Type;
 import at.fhhagenberg.xml4.drugbank.parser.ParserException;
 
 public class DrugBankContentHandler extends DefaultHandler {
@@ -26,6 +26,9 @@ public class DrugBankContentHandler extends DefaultHandler {
 
 	private Product currentProduct = null;
 	private Boolean currentProductOverTheCounter = null;
+
+	private DrugTarget currentDrugTarget = null;
+	private TargetEntity currentTargetEntity = null;
 
 	public DrugBankContentHandler(Consumer<Drug> drugConsumer) {
 		this.drugConsumer = drugConsumer;
@@ -65,15 +68,15 @@ public class DrugBankContentHandler extends DefaultHandler {
 			handleDrugAccession(attributes, start);
 		} else if (checkPath("drugbank", "drug", "name")) {
 			handleDrugName(attributes, start);
-		} else if (checkPath("drugbank", "drug", "atc-code")) {
+		} else if (checkPath("drugbank", "drug", "atc-codes", "atc-code")) {
 			handleDrugATC(attributes, start);
-		} else if (checkPath("drugbank", "drug", "group")) {
+		} else if (checkPath("drugbank", "drug", "groups", "group")) {
 			handleDrugGroup(attributes, start);
 		} else if (checkPath("drugbank", "drug", "description")) {
 			handleDrugDesc(attributes, start);
 		} else if (checkPath("drugbank", "drug", "indication")) {
 			handleDrugIndication(attributes, start);
-		} else if (checkPath("drugbank", "drug", "synonym")) {
+		} else if (checkPath("drugbank", "drug", "synonyms", "synonym")) {
 			handleDrugSynonym(attributes, start);
 		} else if (checkPath(new String[] { "drugbank", "drug", "products", "product" })) {
 			handleProduct(attributes, start);
@@ -83,15 +86,20 @@ public class DrugBankContentHandler extends DefaultHandler {
 			handleProductDosageForm(attributes, start);
 		} else if (checkPath(new String[] { "drugbank", "drug", "products", "product", "over-the-counter" })) {
 			handleProductOverTheCounter(attributes, start);
-		} else if (checkPath(new String[] { "drugbank", "drug", "products", "target" })) {
-			handleProductOverTheCounter(attributes, start);
-		} else if (checkPath(new String[] { "drugbank", "drug", "products", "target", "id" })) {
-			handleProductOverTheCounter(attributes, start);
-		} else if (checkPath(new String[] { "drugbank", "drug", "products", "target", "id" })) {
-			handleProductOverTheCounter(attributes, start);
+		} else if (checkPath(new String[] { "drugbank", "drug", "targets", "target" })) {
+			handleTarget(attributes, start);
+		} else if (checkPath(new String[] { "drugbank", "drug", "targets", "target", "id" })) {
+			handleTargetId(attributes, start);
+		} else if (checkPath(new String[] { "drugbank", "drug", "targets", "target", "name" })) {
+			handleTargetName(attributes, start);
+		} else if (checkPath(new String[] { "drugbank", "drug", "targets", "target", "organism" })) {
+			handleTargetOrganism(attributes, start);
+		} else if (checkPath(new String[] { "drugbank", "drug", "targets", "target", "actions", "action" })) {
+			handleTargetAction(attributes, start);
+		} else if (checkPath(new String[] { "drugbank", "drug", "targets", "target", "known-action" })) {
+			handleTargetKnownAction(attributes, start);
 		}
 
-		// TODO remaining properties
 	}
 
 	private void handleDrug(Attributes attributes, boolean start) throws ParserException {
@@ -154,6 +162,108 @@ public class DrugBankContentHandler extends DefaultHandler {
 		}
 	}
 
+	private void handleDrugName(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String name = getCharacters();
+			setCaptureCharacters(false);
+			if (currentDrug != null && currentDrug.getName() == null) {
+				currentDrug.setName(name);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleDrugATC(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			String atc = attributes.getValue("code");
+			if (currentDrug != null) {
+				currentDrug.addAtcCode(atc);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+
+	}
+
+	private Group handleDrugGroupConversion(String group) throws ParserException {
+		switch (group.toLowerCase()) {
+			case "approved":
+				return Group.APPROVED;
+			case "experimental":
+				return Group.EXPERIMENTAL;
+			case "illicit":
+				return Group.ILLICIT;
+			case "withdrawn":
+				return Group.WITHDRAWN;
+			case "nutraceutical":
+				return Group.NUTRACEUTICAL;
+			case "investigational":
+				return Group.INVESTIGATIONAL;
+			default:
+				throw new ParserException(String.format("drug type value %s not known", group));
+		}
+	}
+
+	private void handleDrugGroup(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String groupString = getCharacters();
+			setCaptureCharacters(false);
+
+			if (currentDrug != null) {
+				currentDrug.addGroup(handleDrugGroupConversion(groupString));
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleDrugDesc(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String desc = getCharacters();
+			setCaptureCharacters(false);
+			if (currentDrug != null && currentDrug.getDescription() == null) {
+				currentDrug.setDescription(desc);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleDrugIndication(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String indication = getCharacters();
+			setCaptureCharacters(false);
+			if (currentDrug != null && currentDrug.getIndication() == null) {
+				currentDrug.setIndication(indication);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleDrugSynonym(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String synonym = getCharacters();
+			setCaptureCharacters(false);
+			if (currentDrug != null) {
+				currentDrug.addSynonym(synonym);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
 	private void handleProduct(Attributes attributes, boolean start) throws InvalidStateException {
 		if (start) {
 			if (currentProduct == null) {
@@ -187,6 +297,20 @@ public class DrugBankContentHandler extends DefaultHandler {
 		}
 	}
 
+	private void handleProductDosageForm(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String dosageForm = getCharacters();
+			setCaptureCharacters(false);
+			if (currentProduct != null && currentProduct.getDosageForm() == null) {
+				currentProduct.setDosageForm(dosageForm);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
 	private void handleProductOverTheCounter(Attributes attributes, boolean start) throws ParserException {
 		if (start) {
 			setCaptureCharacters(true);
@@ -200,6 +324,94 @@ public class DrugBankContentHandler extends DefaultHandler {
 			}
 		}
 	}
+
+	private void handleTarget(Attributes attributes, boolean start) throws InvalidStateException {
+		if (start) {
+			if (currentDrugTarget == null) {
+				currentDrugTarget = new DrugTarget();
+				currentTargetEntity = new TargetEntity();
+			} else {
+				throw new InvalidStateException();
+			}
+		} else {
+			currentDrugTarget.setTargetEntity(currentTargetEntity);
+			currentDrugTarget.setDrug(currentDrug);
+			currentDrug.addDrugTarget(currentDrugTarget);
+
+			currentDrugTarget = null;
+		}
+	}
+
+	private void handleTargetId(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String id = getCharacters();
+			setCaptureCharacters(false);
+			if (currentTargetEntity != null && currentTargetEntity.getAccession()==null) {
+				currentTargetEntity.setAccession(id);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleTargetName(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String name = getCharacters();
+			setCaptureCharacters(false);
+			if (currentTargetEntity != null && currentTargetEntity.getName()==null) {
+				currentTargetEntity.setName(name);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleTargetOrganism(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String organism = getCharacters();
+			setCaptureCharacters(false);
+			if (currentTargetEntity != null && currentTargetEntity.getOrganism()==null) {
+				currentTargetEntity.setOrganism(organism);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleTargetAction(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			String action = getCharacters();
+			setCaptureCharacters(false);
+			if (currentDrugTarget != null) {
+				currentDrugTarget.addAction(action);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
+	private void handleTargetKnownAction(Attributes attributes, boolean start) throws ParserException {
+		if (start) {
+			setCaptureCharacters(true);
+		} else {
+			boolean known_action = getCharacters() == "y" ? true : false;
+			setCaptureCharacters(false);
+			if (currentDrugTarget != null) {
+				currentDrugTarget.setTargetWithKnownAction(known_action);
+			} else {
+				throw new InvalidStateException();
+			}
+		}
+	}
+
 
 	private String getCharacters() {
 		return characterBuffer.toString().trim();
