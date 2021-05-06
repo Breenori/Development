@@ -4,6 +4,7 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 
+import at.fhhagenberg.xml4.drugbank.parser.ParserException;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -15,13 +16,13 @@ public class XPathUtil {
 	}
 
 	public static void processNodeList(Node node, String xPathExpression, NodeConsumer consumer,
-			XPath xPath) throws XPathExpressionException {
+			XPath xPath) throws XPathExpressionException, ParserException {
 		processNodeList((NodeList) xPath.evaluate(xPathExpression, node, XPathConstants.NODESET),
 				consumer);
 	}
 
 	private static void processNodeList(NodeList nl, NodeConsumer consumer)
-			throws XPathExpressionException {
+			throws XPathExpressionException, ParserException {
 		for (int i = 0; i < nl.getLength(); ++i) {
 			consumer.accept(nl.item(i));
 		}
@@ -29,6 +30,6 @@ public class XPathUtil {
 
 	@FunctionalInterface
 	public static interface NodeConsumer {
-		public void accept(Node node) throws XPathExpressionException;
+		public void accept(Node node) throws XPathExpressionException, ParserException;
 	}
 }
