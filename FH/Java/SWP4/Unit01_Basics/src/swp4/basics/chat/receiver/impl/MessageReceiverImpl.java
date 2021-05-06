@@ -19,10 +19,12 @@ public class MessageReceiverImpl implements MessageReceiver {
 
     @Override
     public void run() {
-        byte[] buffer = new byte[2048];
-        DatagramPacket pkt = new DatagramPacket(buffer, buffer.length);
+
+        DatagramPacket pkt;
         while(!stopRequest.get()) {
             try {
+                byte[] buffer = new byte[2048];
+                pkt = new DatagramPacket(buffer, buffer.length);
                 sharedServerState.getServerSocket().receive(pkt);
                 String message = new String(buffer, 0 , buffer.length);
                 if(message.length()>0) {

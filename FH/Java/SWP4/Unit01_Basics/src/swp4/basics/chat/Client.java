@@ -3,13 +3,39 @@ package swp4.basics.chat;
 public class Client {
     private String host;
     private int port;
-    private int wantedPort;
+    private int receivingPort;
     private String group;
 
-    public Client(String host, int port, int wantedPort, String group) {
+    public Client(String host, int port, int receivingPort, String group) {
         this.host = host;
         this.port = port;
-        this.wantedPort = wantedPort;
+        this.receivingPort = receivingPort;
         this.group = group;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public int getReceivingPort() {
+        return receivingPort;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "host='" + host + '\'' +
+                ", port=" + port +
+                ", receivingPort=" + receivingPort +
+                ", group='" + group + '\'' +
+                '}';
     }
 }

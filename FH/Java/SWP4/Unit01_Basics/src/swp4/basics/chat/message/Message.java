@@ -32,7 +32,7 @@ public class Message {
                 "host='" + host + '\'' +
                 ", port=" + port +
                 ", command=" + command +
-                ", data='" + data + '\'' +
+                ", data='" + (data != null ? data.trim() : "<NO DATA>") + '\'' +
                 '}';
     }
 }
