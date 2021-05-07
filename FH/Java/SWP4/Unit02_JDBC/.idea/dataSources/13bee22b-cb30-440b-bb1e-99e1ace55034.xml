@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Apache Derby (Remote)">
+  <database-model serializer="dbm" dbms="DERBY" family-id="DERBY" format-version="4.21">
+    <root id="1">
+      <ServerVersion>10.15.2.0</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="NULLID"/>
+    <schema id="3" parent="1" name="SQLJ"/>
+    <schema id="4" parent="1" name="SYS"/>
+    <schema id="5" parent="1" name="SYSCAT"/>
+    <schema id="6" parent="1" name="SYSCS_DIAG"/>
+    <schema id="7" parent="1" name="SYSCS_UTIL"/>
+    <schema id="8" parent="1" name="SYSFUN"/>
+    <schema id="9" parent="1" name="SYSIBM"/>
+    <schema id="10" parent="1" name="SYSPROC"/>
+    <schema id="11" parent="1" name="SYSSTAT"/>
+    <schema id="12" parent="1" name="USER">
+      <Current>1</Current>
+    </schema>
+    <table id="13" parent="12" name="EMPLOYEE"/>
+    <table id="14" parent="12" name="LOGBOOKENTRY"/>
+    <column id="15" parent="13" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+      <DefaultExpression>AUTOINCREMENT: start 1 increment 1</DefaultExpression>
+    </column>
+    <column id="16" parent="13" name="FIRSTNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="17" parent="13" name="LASTNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="18" parent="13" name="DATEOFBIRTH">
+      <Position>4</Position>
+      <DataType>TIMESTAMP|93s</DataType>
+    </column>
+    <index id="19" parent="13" name="SQL0000000081-d1d381f4-0179-412b-033e-ffff903d46e9">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="13" name="PRIMARY_KEY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="21" parent="14" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+      <DefaultExpression>AUTOINCREMENT: start 1 increment 1</DefaultExpression>
+    </column>
+    <column id="22" parent="14" name="ACTIVITY">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12s</DataType>
+    </column>
+    <column id="23" parent="14" name="STARTTIME">
+      <Position>3</Position>
+      <DataType>TIMESTAMP|93s</DataType>
+    </column>
+    <column id="24" parent="14" name="ENDTIME">
+      <Position>4</Position>
+      <DataType>TIMESTAMP|93s</DataType>
+    </column>
+    <column id="25" parent="14" name="EMPLOYEE_FK">
+      <Position>5</Position>
+      <DataType>INTEGER|4s</DataType>
+    </column>
+    <index id="26" parent="14" name="SQL0000000082-a1f24232-0179-412b-033e-ffff903d46e9">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EMPLOYEE_FK</ColNames>
+    </index>
+    <foreign-key id="27" parent="14" name="EMPLOYEE_ID_FK">
+      <ColNames>EMPLOYEE_FK</ColNames>
+      <RefTableName>EMPLOYEE</RefTableName>
+      <RefKeyName>PRIMARY_KEY</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
