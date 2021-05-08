@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06ba2287-8d20-4a5b-93f6-8da829e71b01" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Unit02_JDBC.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../Python/GeneScraper/.idea/pythonProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/log/log1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c10.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c10.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c101.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c111.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c121.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c121.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c130.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c130.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c141.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c141.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c150.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c150.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c161.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c161.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c171.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c171.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c180.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c180.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c1a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c1a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c1b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c1b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c20.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c20.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c200.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c200.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c211.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c211.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c221.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c221.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c230.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c230.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c241.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c241.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c31.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c31.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c380.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c380.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c391.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c391.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c3a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c3a1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c3b1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c3b1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c400.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c400.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c41.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c411.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c421.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c51.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c60.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c71.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c81.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c90.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/ca1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/cb1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/cc0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/cc0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/cd1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/cd1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/ce1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/ce1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/cf0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/service.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../XML4/XML4_UE05_Pritz/drugbank.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +32,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Unit01_Basics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SWP4_UE02_Pritz" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -135,6 +85,7 @@
       <updated>1620295910695</updated>
       <workItem from="1620295913001" duration="3762000" />
       <workItem from="1620308562218" duration="6000" />
+      <workItem from="1620401144921" duration="587000" />
     </task>
     <servers />
   </component>
