@@ -1,0 +1,11 @@
+ProcessorComponent1;cpu-processes;FileZilla,ProcessorComponent1;cpu-processes;OpenSSH,ProcessorComponent1;cpu-processes;TensorFlow,ProcessorComponent1;cpu-processes;apache2,ProcessorComponent1;cpu-processes;suspiciousCryptoMiner.exe.gz,ProcessorComponent1;cpu-utilization,StorageComponent1;storage-access,StorageComponent1;storage-processes;FileZilla;read,StorageComponent1;storage-processes;FileZilla;write,StorageComponent1;storage-processes;OpenSSH;read,StorageComponent1;storage-processes;OpenSSH;write,StorageComponent1;storage-processes;TensorFlow;read,StorageComponent1;storage-processes;TensorFlow;write,StorageComponent1;storage-processes;apache2;read,StorageComponent1;storage-processes;apache2;write,StorageComponent1;storage-processes;suspiciousCryptoMiner.exe.gz;read,StorageComponent1;storage-processes;suspiciousCryptoMiner.exe.gz;write
+13,12,4,2,49,83,770,35006,24087,220,11685,36151,37747,15185,25944,27437,32186
+2,6,14,6,22,53,4335,37038,31049,12388,28913,33064,25375,35305,38186,19246,31100
+4,21,11,17,42,99,1543,31154,1076,26778,32281,12997,19822,9018,4881,10348,8725
+15,8,11,12,22,75,1059,35214,19795,29539,12545,16529,38923,35540,38951,18852,33088
+1,8,28,4,9,87,2268,25326,12297,4115,20272,38437,39993,25068,29091,17115,6475
+2,13,17,2,14,60,2030,26445,16927,21369,23090,8220,16244,32865,18125,23424,35733
+10,4,23,5,27,73,3034,18975,1195,6065,760,12503,12617,22673,20687,7195,8987
+4,10,19,17,2,82,3013,28296,26066,16816,2018,3560,9688,23501,24009,29767,33799
+11,11,8,21,17,88,3623,27741,35251,31505,22883,22943,29949,27352,24483,18811,2061
+13,8,5,4,23,84,2293,4348,2292,27559,1744,28027,38323,18514,31075,7143,2022
