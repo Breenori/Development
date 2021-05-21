@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class Employee {
-    private long id;
+    private Long id;
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
@@ -16,7 +16,7 @@ public class Employee {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
