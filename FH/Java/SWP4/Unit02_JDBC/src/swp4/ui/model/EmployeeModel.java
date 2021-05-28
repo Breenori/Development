@@ -2,6 +2,7 @@ package swp4.ui.model;
 
 import swp4.jdbc.domain.Employee;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeModel {
@@ -11,6 +12,11 @@ public class EmployeeModel {
     public EmployeeModel(Employee currentEmployee, List<Employee> employees) {
         this.currentEmployee = currentEmployee;
         this.employees = employees;
+    }
+
+    public EmployeeModel() {
+        currentEmployee = null;
+        employees = new ArrayList<>();
     }
 
     public Employee getCurrentEmployee() {

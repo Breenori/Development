@@ -1,5 +1,6 @@
 package swp4.ui;
 
+import swp4.ui.controller.EmployeeController;
 import swp4.ui.view.impl.EmployeeOverViewFrame;
 
 import javax.swing.*;
@@ -10,8 +11,10 @@ public class EmployeeApplication {
 
             @Override
             public void run() {
-                EmployeeOverViewFrame frame = new EmployeeOverViewFrame();
-                frame.setVisible(true);
+                //EmployeeOverViewFrame frame = new EmployeeOverViewFrame();
+                //frame.setVisible(true);
+                EmployeeController controller = new EmployeeController();
+                controller.show();
             }
         });
     }

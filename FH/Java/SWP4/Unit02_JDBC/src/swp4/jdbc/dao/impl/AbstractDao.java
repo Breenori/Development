@@ -25,9 +25,7 @@ public abstract class AbstractDao<T> implements Dao<T> {
     }
 
     protected Connection createConnection() throws SQLException {
-        if(connection == null) {
-            connection = DriverManager.getConnection(DATABASE_URL);
-        }
+        connection = DriverManager.getConnection(DATABASE_URL);
         return connection;
     }
 

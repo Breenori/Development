@@ -3,14 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="06ba2287-8d20-4a5b-93f6-8da829e71b01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Unit02_JDBC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Unit02_JDBC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swp4/jdbc/dao/impl/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/jdbc/dao/EmployeeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swp4/jdbc/dao/impl/EmployeeDaoJdbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/jdbc/dao/impl/EmployeeDaoJdbc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swp4/jdbc/domain/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/jdbc/domain/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swp4/test/DaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/swp4/test/DaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swp4/jdbc/dao/impl/AbstractDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/jdbc/dao/impl/AbstractDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swp4/ui/EmployeeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/ui/EmployeeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swp4/ui/model/EmployeeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/ui/model/EmployeeModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swp4/ui/view/BindableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/ui/view/BindableView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swp4/ui/view/impl/EmployeeOverViewFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swp4/ui/view/impl/EmployeeOverViewFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/log/log1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/log/logmirror.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c101.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c101.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c111.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c111.dat" afterDir="false" />
@@ -29,18 +28,58 @@
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c41.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c41.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c411.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c411.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c421.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c421.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c490.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c4a1.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c4b0.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/swp4/seg0/c4c1.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c51.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c51.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c60.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c60.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c71.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c71.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/c750.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/c761.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/c770.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/c781.dat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c81.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c81.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/c90.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/c90.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/ca1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/ca1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/cb1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/cb1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swp4/seg0/cf0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/swp4/seg0/cf0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d4d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d4e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d4f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d501.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d510.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d521.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d530.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d541.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d550.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d561.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d570.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d581.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d590.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d5a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d5b0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d5c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d5d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d5e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d5f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d601.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d610.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d621.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d630.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d641.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d650.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d661.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d670.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d681.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d690.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d6a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d6b0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d6c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d6d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d6e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d6f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d701.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d710.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d721.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d730.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swp4/seg0/d741.dat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +189,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DaoTest.testCreate" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Unit02_JDBC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swp4.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="swp4.test" />
+      <option name="MAIN_CLASS_NAME" value="swp4.test.DaoTest" />
+      <option name="METHOD_NAME" value="testCreate" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DaoTest.testDelete" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Unit02_JDBC" />
       <extension name="coverage">
@@ -161,24 +218,6 @@
       <option name="PACKAGE_NAME" value="swp4.test" />
       <option name="MAIN_CLASS_NAME" value="swp4.test.DaoTest" />
       <option name="METHOD_NAME" value="testDelete" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DaoTest.testReadAll" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Unit02_JDBC" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swp4.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="swp4.test" />
-      <option name="MAIN_CLASS_NAME" value="swp4.test.DaoTest" />
-      <option name="METHOD_NAME" value="testReadAll" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -206,19 +245,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.DerbyServerStart" />
-      <item itemvalue="TestNG.DaoTest.testReadAll" />
+      <item itemvalue="Application.EmployeeApplication" />
       <item itemvalue="TestNG.DaoTest" />
       <item itemvalue="TestNG.DaoTest.testUpdate" />
       <item itemvalue="TestNG.DaoTest.testDelete" />
-      <item itemvalue="Application.EmployeeApplication" />
+      <item itemvalue="TestNG.DaoTest.testCreate" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.EmployeeApplication" />
+        <item itemvalue="TestNG.DaoTest.testCreate" />
         <item itemvalue="TestNG.DaoTest" />
         <item itemvalue="TestNG.DaoTest.testDelete" />
         <item itemvalue="TestNG.DaoTest.testUpdate" />
-        <item itemvalue="TestNG.DaoTest.testReadAll" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +272,10 @@
       <workItem from="1620295913001" duration="3762000" />
       <workItem from="1620308562218" duration="6000" />
       <workItem from="1620401144921" duration="587000" />
-      <workItem from="1621579953962" duration="9953000" />
+      <workItem from="1621579953962" duration="10553000" />
+      <workItem from="1621943611737" duration="1368000" />
+      <workItem from="1622154214321" duration="5000" />
+      <workItem from="1622189070275" duration="6679000" />
     </task>
     <servers />
   </component>

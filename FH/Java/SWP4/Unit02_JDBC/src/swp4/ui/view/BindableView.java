@@ -5,7 +5,7 @@ import swp4.ui.model.EmployeeModel;
 
 public interface BindableView {
 
-    void bindModel(Employee model);
+    void bindModel(EmployeeModel model);
 
     EmployeeModel fillModel(EmployeeModel model);
 }
