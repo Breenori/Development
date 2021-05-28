@@ -6,6 +6,13 @@ import swp4.ue03.protocol.impl.*;
 
 public class DashboardTest {
 
+    private static void test_example() {
+        // Create all the components with customizable
+        MemoryComponent ramComp = new MemoryComponent(32);
+        NetworkComponent netComp = new NetworkComponent(150,40);
+        ProcessorComponent cpuComp = new ProcessorComponent();
+        PowerComponent psuComp = new PowerComponent(750);
+        StorageComponent storeComp = new StorageComponent(250, 80);
 
     public static void main(String[] args) {
         // Create all the components with customizable
@@ -65,5 +72,40 @@ public class DashboardTest {
         psuComp.turnOff();
         cpuComp.turnOff();
         storeComp.turnOff();
+    }
+    private static void test_unstarted() {
+        ProcessorComponent cpuComp = new ProcessorComponent();
+        Profiler p = new Profiler();
+        cpuComp.attach(p);
+
+        ProtocolPrinter pp = new ProtocolPrinter();
+        pp.addProtocol(ProcessorProtocol.getInstance());
+
+        pp.print(ProtocolPrinter.protocolType.NUMBER, p.getData(), 10);
+    }
+    private static void test_no_subprotocols() {
+        ProcessorComponent cpuComp = new ProcessorComponent();
+        Profiler p = new Profiler();
+        cpuComp.attach(p);
+        Thread cpuT = new Thread(cpuComp);
+        cpuT.start();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // protocolprinter without specified protocols
+        ProtocolPrinter pp = new ProtocolPrinter();
+
+        pp.print(ProtocolPrinter.protocolType.NUMBER, p.getData(), 10);
+        cpuComp.turnOff();
+    }
+
+    public static void main(String[] args) {
+        test_example();
+        //test_unstarted();
+        //test_no_subprotocols();
     }
 }

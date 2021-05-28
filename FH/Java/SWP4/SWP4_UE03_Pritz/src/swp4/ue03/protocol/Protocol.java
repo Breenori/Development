@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface Protocol {
 
-
+    // every protocol needs to know how to evaluate data
     Map<String, List<Integer>> evaluateData(Map<Subject, Map<String, List<Integer>>> storedData, int seconds);
     Map<String, List<Integer>> evaluateData(Map<Subject, Map<String, List<Integer>>> storedData);
 

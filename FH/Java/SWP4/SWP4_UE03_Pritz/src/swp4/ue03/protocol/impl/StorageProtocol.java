@@ -30,6 +30,7 @@ public class StorageProtocol implements Protocol {
 
         // Search for the right components
         for(Subject subject : storedData.keySet()) {
+            // check if the component is storageCOmponent
             if (subject instanceof StorageComponent) {
                 // iterate through all the metrics for the right component and filter for time
                 for (String metric : storedData.get(subject).keySet()) {

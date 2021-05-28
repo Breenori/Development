@@ -1,11 +1,8 @@
 package swp4.ue03.components.impl;
 
-import swp4.ue03.components.Component;
 import swp4.ue03.components.ConcreteComponent;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Set;
+
 
 public class MemoryComponent extends ConcreteComponent {
 
