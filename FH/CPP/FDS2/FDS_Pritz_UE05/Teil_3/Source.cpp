@@ -3,8 +3,9 @@
 void main()
 {
 	//maze_t m("input/maze-1.txt");
-	//maze_t m("input/maze-2.txt");
-	maze_t m("input/maze-3.txt");
+	maze_t m("input/maze-2.txt");
+	m.enable_animation(true);
+	//maze_t m("input/maze-3.txt");
 	//maze_t m("input/invalid.txt");
 	//maze_t m("nonexisting");
 

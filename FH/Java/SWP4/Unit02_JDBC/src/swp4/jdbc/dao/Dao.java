@@ -1,7 +1,5 @@
 package swp4.jdbc.dao;
 
-
-import java.sql.SQLOutput;
 import java.util.List;
 
 

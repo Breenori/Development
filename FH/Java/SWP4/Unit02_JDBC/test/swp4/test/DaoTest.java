@@ -1,16 +1,15 @@
 package swp4.test;
 
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 import swp4.jdbc.dao.Dao;
 import swp4.jdbc.dao.impl.EmployeeDaoJdbc;
 import swp4.jdbc.domain.Employee;
+import swp4.jdbc.util.ScriptRunner;
 
 import java.time.LocalDate;
 import java.util.List;
-
-import org.testng.Assert;
-import swp4.jdbc.util.ScriptRunner;
 
 @Test
 public class DaoTest {
