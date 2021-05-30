@@ -13,10 +13,12 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
     public Person readForIdentity(Long identity) {
         String selectSql = "SELECT * FROM "+TABLE_NAME+" WHERE id = ?";
         try(Connection connection = createConnection();
+            // create statement, add parameter and execute it
             PreparedStatement statement = connection.prepareStatement(selectSql)) {
             statement.setLong(1, identity);
             ResultSet resultSet = statement.executeQuery();
             if(resultSet.next()) {
+                // if the resultset is filled, fetch all columns...
                 long id = resultSet.getLong(1);
                 String firstName = resultSet.getString(2);
                 String lastName = resultSet.getString(3);
@@ -25,6 +27,7 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
                 String address = resultSet.getString(6);
                 String tel = resultSet.getString(7);
 
+                // and create a person
                 Person person = new Person(firstName, lastName, city, zip, address, tel);
                 person.setId(id);
                 return person;
@@ -39,6 +42,7 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
 
     @Override
     public List<Person> readAll() {
+        // Similar to read by identity, but with multiple Persons
         String selectSql = "SELECT * FROM "+TABLE_NAME;
         try(Connection connection = createConnection();
             Statement statement = connection.createStatement();
@@ -54,6 +58,7 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
                 String address = resultSet.getString(6);
                 String tel = resultSet.getString(7);
 
+                // instead of returning the person, create new persons and add them to the list
                 Person person = new Person(firstName, lastName, city, zip, address, tel);
                 person.setId(id);
                 personList.add(person);
@@ -69,11 +74,15 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
 
     @Override
     public boolean create(Person entity) {
+        // Create sql with parameters for user creation
         String createSql = "INSERT INTO "+TABLE_NAME+"(firstname, lastname, city, zip, address, tel) VALUES(?, ?, ?, ?, ?, ?)";
         PreparedStatement ps = null;
         try {
             Connection connection = createConnection();
+            // prepare a statement and tell the database to return the generated keys
             ps = connection.prepareStatement(createSql, Statement.RETURN_GENERATED_KEYS);
+
+            // fill parameters
             ps.setString(1, entity.getFirstName());
             ps.setString(2, entity.getLastName());
             ps.setString(3, entity.getCity());
@@ -81,8 +90,10 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
             ps.setString(5, entity.getAddress());
             ps.setString(6, entity.getTel());
 
+            // execute the update
             int result = ps.executeUpdate();
 
+            // check if keys have been generated (successful creation)
             try(ResultSet generatedKeys = ps.getGeneratedKeys()) {
                 if(generatedKeys.next()) {
                     entity.setId(generatedKeys.getLong(1));
@@ -108,6 +119,7 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
 
             int result = preparedStatement.executeUpdate();
 
+            // check if something has been deleted
             return result > 0;
         } catch (SQLException throwables) {
             System.err.println("Failed to remove person with id = "+identity);
@@ -118,9 +130,11 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
 
     @Override
     public boolean update(Person entity) {
+        // similar to create
         String updateSql = "UPDATE "+TABLE_NAME+" SET FIRSTNAME=?, LASTNAME=?, CITY=?, ZIP=?, ADDRESS=?, TEL=? WHERE ID=?";
         try(Connection connection = createConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(updateSql)) {
+            // again, set all the parameters
             preparedStatement.setString(1, entity.getFirstName());
             preparedStatement.setString(2, entity.getLastName());
             preparedStatement.setString(3, entity.getCity());
@@ -129,6 +143,7 @@ public class PersonDaoJdbc extends AbstractDao<Person> implements PersonDao {
             preparedStatement.setString(6, entity.getTel());
             preparedStatement.setLong(7, entity.getId());
 
+            // but this time execute an update and check how many rows have been altered
             int result = preparedStatement.executeUpdate();
             return result > 0;
         } catch (SQLException throwables) {

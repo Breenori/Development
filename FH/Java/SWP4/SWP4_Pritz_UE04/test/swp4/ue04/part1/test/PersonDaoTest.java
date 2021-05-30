@@ -7,7 +7,6 @@ import swp4.ue04.part1.dao.impl.PersonDaoJdbc;
 import swp4.ue04.part1.domain.Person;
 import swp4.ue04.part1.util.ScriptRunner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Test
@@ -15,6 +14,7 @@ public class PersonDaoTest {
 
     private static final String CONNECTION_STR = "jdbc:derby://localhost:1527/swp4;user=user;password=user";
 
+    // Before every testing situation, reset the database
      @BeforeClass
      public void setup() {
          System.out.println("-------- Resetting database ---------");
@@ -50,10 +50,10 @@ public class PersonDaoTest {
          Dao<Person> personDao = new PersonDaoJdbc();
          System.out.println("----------- testReadAll ------------");
 
-         // THEN
+         // WHEN
          List<Person> personList = personDao.readAll();
 
-         // WHEN
+         // THEN
          Assert.assertNotNull(personList);
          Assert.assertEquals(personList.size(), 1);
 

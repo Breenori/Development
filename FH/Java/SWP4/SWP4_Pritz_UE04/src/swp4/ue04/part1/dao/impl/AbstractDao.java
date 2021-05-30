@@ -8,9 +8,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class AbstractDao<T> implements Dao<T> {
+    // set database connection string
     protected final String DATABASE_URL = "jdbc:derby://localhost:1527/swp4;user=user;password=user";
     private Connection connection;
 
+    // Check if driver is installed
     static {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver").getConstructor(new Class[]{}).newInstance();
@@ -23,6 +25,7 @@ public abstract class AbstractDao<T> implements Dao<T> {
         }
     }
 
+    // returns a new connection using the drivermanager
     protected Connection createConnection() throws SQLException {
         connection = DriverManager.getConnection(DATABASE_URL);
         return connection;

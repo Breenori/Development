@@ -22,17 +22,20 @@ public class MessageReceiverImpl implements MessageReceiver {
     public void run() {
 
         DatagramPacket pkt;
+        // while there has not been a stopRequest, wait for messages from clients
         while(!stopRequest.get()) {
             try {
                 byte[] buffer = new byte[2048];
                 pkt = new DatagramPacket(buffer, buffer.length);
                 sharedServerState.getServerSocket().receive(pkt);
                 String message = new String(buffer, 0 , buffer.length);
+
+                // if as message has been received, check if a command is present and add it to the buffer
                 if(message.length()>0) {
                     char command = message.charAt(0);
                     if(message.length() > 1) {
                         sharedServerState.getReceiverMessageBuffer().add(
-                                new Message(pkt.getAddress().getHostName(), pkt.getPort(), command, message.substring(1))
+                                new Message(pkt.getAddress().getHostName(), pkt.getPort(), command, message.substring(1).trim())
                         );
                     }
                 }

@@ -29,15 +29,16 @@ public class MessageProcessorImpl implements MessageProcessor {
         handlerList.remove(handler);
     }
 
-    // Periodisch nachschauen ob es neue nachrichten gibt, und je alle messagehandlers durchprobieren ob wer auswerten kann
     @Override
     public void run() {
         Message message;
+        // check periodically if there are new messages
         while((message = sharedServerState.getReceiverMessageBuffer().get()) != null) {
             try {
                 sharedServerState.getReceiverMessageBuffer().delete(message);
                 System.out.println("MessageProcessor received message: "+message);
 
+                // try to process it with every messageHandler until the right one has been found
                 for(MessageHandler handler : handlerList) {
                     if(handler.handle(message)) {
                         System.out.println("Handler "+handler+" handled message: "+message);
