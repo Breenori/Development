@@ -1,6 +1,5 @@
 package swp4.ui.controller;
 
-import swp4.jdbc.domain.Employee;
 import swp4.logic.EmployeeLogic;
 import swp4.logic.impl.EmployeeLogicImpl;
 import swp4.ui.model.EmployeeModel;
@@ -9,7 +8,6 @@ import swp4.ui.view.impl.EmployeeOverViewFrame;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class EmployeeController {
     private EmployeeOverViewFrame view;
