@@ -60,5 +60,28 @@ public class ImageTransformationFilter {
         return transferFunction;
     }
 
+    public static int[] getQuantization(int scalarRange, int maxVal) {
+        int factor = maxVal / scalarRange;
+        int[] quantizedValues = new int[maxVal];
 
+        for(int i=0; i < maxVal; i++) {
+            quantizedValues[i] = i / factor;
+        }
+
+        return quantizedValues;
+    }
+
+
+    public static int[][] transformImage(int[][] inDataArrInt, int[] quantizationTF, int width, int height) {
+        int[][] resImg = new int[width][height];
+
+        for(int x=0; x < width; x++) {
+            for(int y = 0; y < height; y++) {
+                int actVal = inDataArrInt[x][y];
+                resImg[x][y] = quantizationTF[actVal];
+            }
+        }
+
+        return resImg;
+    }
 }
