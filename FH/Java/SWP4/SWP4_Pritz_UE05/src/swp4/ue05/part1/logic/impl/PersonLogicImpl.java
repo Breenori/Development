@@ -2,6 +2,7 @@ package swp4.ue05.part1.logic.impl;
 
 import swp4.ue05.part1.jdbc.dao.DaoFactory;
 import swp4.ue05.part1.jdbc.dao.PersonDao;
+import swp4.ue05.part1.jdbc.dao.impl.PersonDaoJdbc;
 import swp4.ue05.part1.logic.PersonLogic;
 import swp4.ue05.part1.ui.model.PersonModel;
 
@@ -11,6 +12,7 @@ public class PersonLogicImpl implements PersonLogic {
 
     @Override
     public boolean savePerson(PersonModel model) {
+        // insert only if model and currentPerson aren't NULL
         return model != null && model.getCurrentPerson() != null && personDao.create(model.getCurrentPerson());
     }
 

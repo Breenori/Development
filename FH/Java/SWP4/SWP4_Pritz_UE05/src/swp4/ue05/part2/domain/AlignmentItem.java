@@ -1,13 +1,11 @@
 package swp4.ue05.part2.domain;
 
-import neobio.alignment.PairwiseAlignment;
-
 import java.util.Objects;
 
-public class AlignmentResult {
+public class AlignmentItem {
 
+    // an alignmentItem contains all inserted values and a unique id
     private long id;
-    private PairwiseAlignment pairwiseAlignment;
     private String sequence1;
     private String sequence2;
     private int match;
@@ -16,9 +14,8 @@ public class AlignmentResult {
     private int  algorithm;
     private static long currentid = 0;
 
-    public AlignmentResult(PairwiseAlignment pairwiseAlignment, String sequence1, String sequence2, int match, int mismatch, int gap, int algorithm) {
+    public AlignmentItem(String sequence1, String sequence2, int match, int mismatch, int gap, int algorithm) {
         id = ++currentid;
-        this.pairwiseAlignment = pairwiseAlignment;
         this.sequence1 = sequence1;
         this.sequence2 = sequence2;
         this.match = match;
@@ -34,14 +31,6 @@ public class AlignmentResult {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public PairwiseAlignment getPairwiseAlignment() {
-        return pairwiseAlignment;
-    }
-
-    public void setPairwiseAlignment(PairwiseAlignment pairwiseAlignment) {
-        this.pairwiseAlignment = pairwiseAlignment;
     }
 
     public String getSequence1() {
@@ -94,14 +83,15 @@ public class AlignmentResult {
 
     @Override
     public String toString() {
-        return pairwiseAlignment.toString();
+        // show the alignments id, the first 10 characters of each sequence as well as the scoring
+        return "Alignment "+id+": "+(sequence1.length() <= 10 ? sequence1 : sequence1.substring(0,10))  + "::" + (sequence2.length() <= 10 ? sequence2 : sequence2.substring(0,10)) + " " + match + "/"+mismatch+"/"+gap;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AlignmentResult that = (AlignmentResult) o;
+        AlignmentItem that = (AlignmentItem) o;
         return id == that.id;
     }
 

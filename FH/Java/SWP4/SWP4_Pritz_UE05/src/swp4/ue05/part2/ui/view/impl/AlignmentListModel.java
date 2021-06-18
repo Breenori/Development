@@ -1,15 +1,15 @@
 package swp4.ue05.part2.ui.view.impl;
 
-import swp4.ue05.part2.domain.AlignmentResult;
+import swp4.ue05.part2.domain.AlignmentItem;
 
 import javax.swing.*;
 import java.util.List;
 
-public class AlignmentListModel extends AbstractListModel<AlignmentResult> {
+public class AlignmentListModel extends AbstractListModel<AlignmentItem> {
 
-    private List<AlignmentResult> alignments;
+    private List<AlignmentItem> alignments;
 
-    public AlignmentListModel(List<AlignmentResult> alignments) {
+    public AlignmentListModel(List<AlignmentItem> alignments) {
         this.alignments = alignments;
     }
 
@@ -19,7 +19,7 @@ public class AlignmentListModel extends AbstractListModel<AlignmentResult> {
     }
 
     @Override
-    public AlignmentResult getElementAt(int index) {
+    public AlignmentItem getElementAt(int index) {
         if(index < getSize()) {
             return alignments.get(index);
         }

@@ -17,7 +17,10 @@ public class PersonController {
     public PersonController() {
         this.view = new PersonOverViewFrame();
         this.model = personLogic.readAllPersons(new PersonModel());
+        // add all button action listeners
         this.view.setPersonAddListener(new PersonAddListener());
+        this.view.setPersonUpdateListener(new PersonUpdateListener());
+        this.view.setPersonRemoveListener(new PersonRemoveListener());
         this.view.bindModel(this.model);
     }
 
@@ -29,17 +32,59 @@ public class PersonController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            // get infos from view
             model = view.fillModel(model);
             new Thread(this::addPerson).start();
-            view.closeEmployeeAddDialog();
+            view.closeAddPersonDialog();
         }
 
         private void addPerson() {
+            // save the person in the db, if successful read all persons and return them
             if(personLogic.savePerson(model)) {
                 model = personLogic.readAllPersons(model);
                 SwingUtilities.invokeLater(() -> view.bindModel(model));
             } else {
-                SwingUtilities.invokeLater(() -> view.showError("Could not save person."));
+                SwingUtilities.invokeLater(() -> view.showError("Could not save person to database."));
+            }
+        }
+    }
+
+    public class PersonUpdateListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            model = view.fillModel(model);
+            new Thread(this::updatePerson).start();
+            view.closeUpdatePersonDialog();
+        }
+
+        private void updatePerson() {
+            // if updating the person was successful, update the view
+            if(personLogic.updatePerson(model) != null) {
+                model = personLogic.readAllPersons(model);
+                SwingUtilities.invokeLater(() -> view.bindModel(model));
+            } else {
+                SwingUtilities.invokeLater(() -> view.showError("Could not update person in database."));
+            }
+        }
+    }
+
+    public class PersonRemoveListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            model = view.fillModel(model);
+            new Thread(this::removePerson).start();
+            view.closeRemovePersonDialog();
+        }
+
+        private void removePerson() {
+            // if removing the person was successful, update the view
+            if(personLogic.deletePerson(model)) {
+                model = personLogic.readAllPersons(model);
+                SwingUtilities.invokeLater(() -> view.bindModel(model));
+            } else {
+                SwingUtilities.invokeLater(() -> view.showError("Could not remove person from database."));
             }
         }
     }

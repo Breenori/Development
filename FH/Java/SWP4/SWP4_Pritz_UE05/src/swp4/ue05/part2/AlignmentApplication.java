@@ -1,6 +1,5 @@
 package swp4.ue05.part2;
 
-import swp4.ue05.part1.ui.controller.PersonController;
 import swp4.ue05.part2.ui.controller.AlignmentController;
 
 import javax.swing.*;

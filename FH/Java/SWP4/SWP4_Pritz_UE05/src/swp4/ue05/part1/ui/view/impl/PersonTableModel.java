@@ -8,6 +8,7 @@ import java.util.List;
 public class PersonTableModel extends AbstractTableModel {
 
     private List<Person> persons;
+    // define table headers
     private static final String[] COLUMN_NAMES = {"#","First Name","Last Name","City","ZIP","Address","Telephone"};
 
     public PersonTableModel(List<Person> persons) {
@@ -29,6 +30,7 @@ public class PersonTableModel extends AbstractTableModel {
         return COLUMN_NAMES.length;
     }
 
+    // make sure the tableModel returns the right values
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         if(persons != null) {

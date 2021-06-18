@@ -1,17 +1,16 @@
 package swp4.ue05.part2.ui.model;
 
-import neobio.alignment.PairwiseAlignment;
-import swp4.ue05.part2.domain.AlignmentResult;
+import swp4.ue05.part2.domain.AlignmentItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AlignmentModel {
 
-    private AlignmentResult currentAlignment;
-    private List<AlignmentResult> alignments;
+    private AlignmentItem currentAlignment;
+    private List<AlignmentItem> alignments;
 
-    public AlignmentModel(AlignmentResult currentAlignment, List<AlignmentResult> alignments) {
+    public AlignmentModel(AlignmentItem currentAlignment, List<AlignmentItem> alignments) {
         this.currentAlignment = currentAlignment;
         this.alignments = alignments;
     }
@@ -21,27 +20,27 @@ public class AlignmentModel {
         this.alignments = new ArrayList<>();
     }
 
-    public AlignmentResult getCurrentAlignment() {
+    public AlignmentItem getCurrentAlignment() {
         return currentAlignment;
     }
 
-    public void setCurrentAlignment(AlignmentResult currentAlignment) {
+    public void setCurrentAlignment(AlignmentItem currentAlignment) {
         this.currentAlignment = currentAlignment;
     }
 
-    public List<AlignmentResult> getAlignments() {
+    public List<AlignmentItem> getAlignments() {
         return alignments;
     }
 
-    public void setAlignments(List<AlignmentResult> alignments) {
+    public void setAlignments(List<AlignmentItem> alignments) {
         this.alignments = alignments;
     }
 
-    public boolean addAlignment(AlignmentResult pairwiseAlignment) {
+    public boolean addAlignment(AlignmentItem pairwiseAlignment) {
         return alignments.add(pairwiseAlignment);
     }
 
-    public boolean removeAlignment(AlignmentResult pairwiseAlignment) {
+    public boolean removeAlignment(AlignmentItem pairwiseAlignment) {
         return alignments.remove(pairwiseAlignment);
     }
 }

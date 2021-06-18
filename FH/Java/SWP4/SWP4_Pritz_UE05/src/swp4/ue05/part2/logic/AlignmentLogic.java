@@ -6,5 +6,4 @@ public interface AlignmentLogic {
     boolean addAlignment(AlignmentModel model);
     AlignmentModel getAlignments(AlignmentModel model);
     boolean removeAlignment(AlignmentModel model);
-    AlignmentModel updateAlignment(AlignmentModel model);
 }

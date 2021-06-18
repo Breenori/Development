@@ -1,29 +1,34 @@
 package swp4.ue05.part2.ui.view.impl;
 
+import chrriis.dj.nativeswing.swtimpl.NativeInterface;
+import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 import neobio.alignment.*;
-import swp4.ue05.part2.domain.AlignmentResult;
+import swp4.ue05.part2.domain.AlignmentItem;
 import swp4.ue05.part2.ui.controller.AlignmentController;
 import swp4.ue05.part2.ui.view.BindableView;
 import swp4.ue05.part2.ui.model.AlignmentModel;
+
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
-import java.io.IOException;
-import java.io.StringReader;
+import java.io.*;
 import java.text.ParseException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class AlignmentOverViewFrame extends JFrame implements BindableView {
 
     //region UI-Elements
-    JDialog dlgAbout;
+    JDialog dlgUserguide;
 
     JMenuBar menuBar;
     JMenu menuHelp;
     JMenuItem menuHelpAbout;
+    JMenuItem menuHelpUserguide;
 
-    JList<AlignmentResult> listAlignments;
+    JList<AlignmentItem> listAlignments;
     JTextArea txaResult;
     JTextArea txaSeq1;
     JTextArea txaSeq2;
@@ -47,8 +52,8 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         initLayout();
     }
 
-    public void setAlignmentComputeListener(AlignmentController.AlignmentComputeListener alignmentComputeListener) {
-        this.btnCompute.addActionListener(alignmentComputeListener);
+    public void setAlignmentAddListener(AlignmentController.AlignmentAddListener alignmentAddListener) {
+        this.btnNew.addActionListener(alignmentAddListener);
     }
 
     public void setAlignmentRemoveListener(AlignmentController.AlignmentRemoveListener alignmentRemoveListener) {
@@ -73,6 +78,9 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         menuHelpAbout = new JMenuItem("About");
         menuHelpAbout.addActionListener(e -> showAbout());
         menuHelp.add(menuHelpAbout);
+        menuHelpUserguide = new JMenuItem("User-Guide");
+        menuHelpUserguide.addActionListener(e -> showUserGuide());
+        menuHelp.add(menuHelpUserguide);
         this.setJMenuBar(menuBar);
         //endregion
 
@@ -91,17 +99,17 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         pnlTableButtons.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
         btnNew = new JButton("New");
-        btnNew.addActionListener(e -> newAlignment());
         pnlTableButtons.add(btnNew);
 
         btnRemove = new JButton("Remove");
         pnlTableButtons.add(btnRemove);
 
         btnCompute = new JButton("Compute");
+        btnCompute.addActionListener(e -> computeResult());
         pnlTableButtons.add(btnCompute);
 
         btnSave = new JButton("Save result...");
-        btnSave.addActionListener(e -> saveAlignment());
+        btnSave.addActionListener(e -> showSaveDialog());
         pnlTableButtons.add(btnSave);
 
         pnlTable.add(pnlTableButtons, BorderLayout.SOUTH);
@@ -123,6 +131,7 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.anchor = GridBagConstraints.WEST;
 
+        // used GridBagLayout --> specify grid coordinates, weight (for scaling) and other settings for each element
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.weightx = 0;
@@ -142,6 +151,7 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         gbc.weightx = 0;
         btnLoad1 = new JButton("Load...");
         btnLoad1.setPreferredSize(new Dimension(100,100));
+        btnLoad1.addActionListener(e -> showFileDialog(1));
         pnlInput.add(btnLoad1,gbc);
         //endregion
         //region Line 2 - Sequence 2
@@ -162,6 +172,7 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         gbc.weightx = 0;
         btnLoad2 = new JButton("Load...");
         btnLoad2.setPreferredSize(new Dimension(100,100));
+        btnLoad2.addActionListener(e -> showFileDialog(2));
         pnlInput.add(btnLoad2,gbc);
         gbc.weighty = 0;
         //endregion
@@ -229,6 +240,7 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         pnlResult.setBorder(tbResult);
 
         txaResult = new JTextArea();
+        // set monospaced font to allow proper display for alignments
         txaResult.setFont(new Font("monospaced", Font.PLAIN, 12));
         txaResult.setEditable(false);
         txaResult.setLineWrap(true);
@@ -239,89 +251,181 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         //endregion
     }
 
-    public void changeSelection(AlignmentResult alignmentResult) {
-        if(alignmentResult != null) {
-            txaSeq1.setText(alignmentResult.getSequence1());
-            txaSeq2.setText(alignmentResult.getSequence2());
-            spnMatch.setValue(alignmentResult.getMatch());
-            spnMisMatch.setValue(alignmentResult.getMismatch());
-            spnGap.setValue(alignmentResult.getGap());
-            cobAlgorithm.setSelectedIndex(alignmentResult.getAlgorithm());
-
-            txaResult.setText(alignmentResult.getPairwiseAlignment().toString());
+    public void changeSelection(AlignmentItem alignmentItem) {
+        // when the selection changes, fill in all the fields to the items settings
+        if(alignmentItem != null) {
+            txaSeq1.setText(alignmentItem.getSequence1());
+            txaSeq2.setText(alignmentItem.getSequence2());
+            spnMatch.setValue(alignmentItem.getMatch());
+            spnMisMatch.setValue(alignmentItem.getMismatch());
+            spnGap.setValue(alignmentItem.getGap());
+            cobAlgorithm.setSelectedIndex(alignmentItem.getAlgorithm());
+            computeResult();
         }
     }
 
-    public void showAbout() {
-        dlgAbout = new JDialog(this, "About", true);
-        dlgAbout.setSize(new Dimension(400,150));
-        dlgAbout.setLocationRelativeTo(menuHelpAbout);
-        dlgAbout.setResizable(false);
+    private void showAbout() {
+        JOptionPane.showMessageDialog(this, "This program allows the computation of alignments using a graphical interface.", "About", JOptionPane.INFORMATION_MESSAGE);
+    }
 
-        JPanel pnlAbout = new JPanel();
-        TitledBorder tb = new TitledBorder("What is this program?");
-        pnlAbout.setBorder(tb);
-        pnlAbout.setLayout(new BorderLayout(6,6));
+    private void showUserGuide() {
+        //region userGuide
+        NativeInterface.open();
+        dlgUserguide = new JDialog(this, "User Guide", true);
+        dlgUserguide.setSize(new Dimension(720,480));
+        dlgUserguide.setLocationRelativeTo(menuHelpUserguide);
+        dlgUserguide.setResizable(false);
 
-        JTextArea lblInfo = new JTextArea("This program offers a visual interface for computing biological alignments. It was done as a part of the 5th homework in the SWP4 course.");
-        lblInfo.setEditable(false);
-        lblInfo.setWrapStyleWord(true);
-        lblInfo.setLineWrap(true);
-        pnlAbout.add(lblInfo);
+        JPanel pnlGuide = new JPanel();
+        TitledBorder tb = new TitledBorder("User guide");
+        pnlGuide.setBorder(tb);
+        pnlGuide.setLayout(new BorderLayout(6,6));
 
-        dlgAbout.getContentPane().add(pnlAbout, BorderLayout.CENTER);
+        JWebBrowser wb = new JWebBrowser();
+        pnlGuide.add(wb, BorderLayout.CENTER);
+        wb.setBarsVisible(false);
+        wb.navigate("https://www.youtube.com/watch?v=dQw4w9WgXcQ,");
 
-        dlgAbout.setVisible(true);
-        dlgAbout.pack();
+        dlgUserguide.getContentPane().add(pnlGuide);
+        dlgUserguide.setVisible(true);
+        NativeInterface.close();
+        //endregion
     }
 
     public void showError(String message) {
         JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    private void newAlignment() {
-        txaSeq1.setText("");
-        txaSeq2.setText("");
-        spnMatch.setValue(1);
-        spnMisMatch.setValue(-1);
-        spnGap.setValue(-1);
-        txaResult.setText("");
-        txaSeq1.requestFocus();
+    private void showFileDialog(int fieldNum) {
+        JFileChooser jfc = new JFileChooser();
+        if(jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            // if the filechoosers action was approved, get the filepath
+            String filePath = jfc.getSelectedFile().toPath().toString();
+
+            try(BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+                String line;
+                StringBuilder sb = new StringBuilder();
+                // use the filepath and get file content
+                while((line = reader.readLine()) != null) {
+                    sb.append(line);
+                }
+
+                // finally, set the file content as text of the sequences
+                if(fieldNum == 1) {
+                    txaSeq1.setText(sb.toString());
+                } else {
+                    txaSeq2.setText(sb.toString());
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public AlignmentModel fillModelToDelete(AlignmentModel model) {
-        model.setCurrentAlignment(listAlignments.getSelectedValue());
-        txaResult.setText("");
+    private void showSaveDialog() {
+        JFileChooser jfc = new JFileChooser();
+        if(jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+            // if a location and name have been picked, get the path.
+            String filePath = jfc.getSelectedFile().toPath().toString();
 
+            // and write the result into the file
+            try(FileWriter writer = new FileWriter(filePath)) {
+                writer.write(txaResult.getText());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void computeResult() {
+        // fetch all necessary values
+        String seq1 = txaSeq1.getText();
+        String seq2 = txaSeq2.getText();
+        Pattern pattern = Pattern.compile("[^a-zA-Z]");
+        Matcher matcherSeq1 = pattern.matcher(seq1);
+        Matcher matcherSeq2 = pattern.matcher(seq2);
+
+        // if sequences are malformed throw an error and stop
+        if(matcherSeq1.find()) {
+            showError("Sequence 1 contains invalid characters.");
+        } else if (seq1.isEmpty()) {
+            showError("Sequence 1 is empty.");
+        } else if (matcherSeq2.find()) {
+            showError("Sequence 2 contains invalid characters.");
+        } else if (seq2.isEmpty()) {
+            showError("Sequence 2 is empty.");
+        } else {
+            // if sequences are okay, get the scoring scheme
+            try {
+                spnMatch.commitEdit();
+                spnMisMatch.commitEdit();
+                spnGap.commitEdit();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            BasicScoringScheme scoringScheme = new BasicScoringScheme((int)spnMatch.getValue(), (int)spnMisMatch.getValue(), (int)spnGap.getValue());
+            PairwiseAlignment pairwiseAlignment = null;
+
+            btnCompute.setEnabled(false);
+            // finally, start the desired algorithm based on the combobox selection
+            try {
+                switch (cobAlgorithm.getSelectedIndex()) {
+                    case 0:
+                        needlemanWunsch.setScoringScheme(scoringScheme);
+                        needlemanWunsch.loadSequences(new StringReader(seq1), new StringReader(seq2));
+                        pairwiseAlignment = needlemanWunsch.getPairwiseAlignment();
+                        break;
+                    case 1:
+                        smithWaterman.setScoringScheme(scoringScheme);
+                        smithWaterman.loadSequences(new StringReader(txaSeq1.getText()), new StringReader(txaSeq2.getText()));
+                        pairwiseAlignment = needlemanWunsch.getPairwiseAlignment();
+                        break;
+                }
+
+            } catch (IOException | InvalidSequenceException e) {
+                e.printStackTrace();
+            } catch (IncompatibleScoringSchemeException e) {
+                e.printStackTrace();
+            }
+
+            // if the algorithm finished successfully, fill in the result
+            if (pairwiseAlignment != null) {
+                txaResult.setText(new StringBuilder()
+                        .append("##############################\n")
+                        .append("Algorithm: " + (cobAlgorithm.getSelectedIndex() == 0 ? "NeedlemanWunsch" : "SmithWaterman") + "\n")
+                        .append("Score: " + pairwiseAlignment.getScore() + "\n")
+                        .append("##############################\n")
+                        .append("\n")
+                        .append(pairwiseAlignment)
+                        .toString()
+                );
+            } else {
+                txaResult.setText("PairwiseAlignment couldn't be computed.");
+            }
+            btnCompute.setEnabled(true);
+        }
+    }
+
+    public AlignmentModel fillModelFromSelection(AlignmentModel model) {
+        // get the selected alignmentItem from the List
+        model.setCurrentAlignment(listAlignments.getSelectedValue());
         return model;
     }
 
-    private void saveAlignment() {
-
-    }
 
     @Override
     public void bindModel(AlignmentModel model) {
         listAlignments.setModel(new AlignmentListModel(model.getAlignments()));
-        AlignmentResult result = model.getCurrentAlignment();
-        if(result != null) {
-            txaResult.setText(new StringBuilder()
-                    .append("##############################\n")
-                    .append("Algorithm: "+(result.getAlgorithm() == 0 ? "NeedlemanWunsch" : "SmithWaterman")+"\n")
-                    .append("Score: "+result.getPairwiseAlignment().getScore()+"\n")
-                    .append("##############################\n")
-                    .append("\n")
-                    .append(result.getPairwiseAlignment())
-                    .toString()
-            );
-        } else {
-            txaResult.setText("");
-        }
-        btnCompute.setEnabled(true);
     }
 
     @Override
     public AlignmentModel fillModel(AlignmentModel model) {
+        // fetch all values
         String seq1 = txaSeq1.getText();
         String seq2 = txaSeq2.getText();
         // commit changes for manually entered values
@@ -337,26 +441,22 @@ public class AlignmentOverViewFrame extends JFrame implements BindableView {
         int gap = (int)spnGap.getValue();
         int algorithm = cobAlgorithm.getSelectedIndex();
 
-        BasicScoringScheme scoringScheme = new BasicScoringScheme(match, mismatch, gap);
-        try {
-            switch(algorithm) {
-                case 0:
-                    needlemanWunsch.setScoringScheme(scoringScheme);
-                    needlemanWunsch.loadSequences(new StringReader(seq1),new StringReader(seq2));
-                    model.setCurrentAlignment(new AlignmentResult(needlemanWunsch.getPairwiseAlignment(), seq1, seq2, match, mismatch, gap, algorithm));
-                    break;
-                case 1:
-                    smithWaterman.setScoringScheme(scoringScheme);
-                    smithWaterman.loadSequences(new StringReader(seq1),new StringReader(seq2));
-                    model.setCurrentAlignment(new AlignmentResult(smithWaterman.getPairwiseAlignment(), seq1, seq2, match, mismatch, gap, algorithm));
-                    break;
-            }
+        Pattern pattern = Pattern.compile("[^a-zA-Z]");
+        Matcher matcherSeq1 = pattern.matcher(seq1);
+        Matcher matcherSeq2 = pattern.matcher(seq2);
 
-            btnCompute.setEnabled(false);
-        } catch (IOException | InvalidSequenceException e) {
-            e.printStackTrace();
-        } catch (IncompatibleScoringSchemeException e) {
-            e.printStackTrace();
+        // check if sequences contain letters only and arent empty
+        if(matcherSeq1.find()) {
+            showError("Sequence 1 contains invalid characters.");
+        } else if (seq1.isEmpty()) {
+            showError("Sequence 1 is empty.");
+        } else if (matcherSeq2.find()) {
+            showError("Sequence 2 contains invalid characters.");
+        } else if (seq2.isEmpty()) {
+            showError("Sequence 2 is empty.");
+        } else {
+            // if requirements are met, set the data
+            model.setCurrentAlignment(new AlignmentItem(seq1, seq2, match, mismatch, gap, algorithm));
         }
 
         return model;
