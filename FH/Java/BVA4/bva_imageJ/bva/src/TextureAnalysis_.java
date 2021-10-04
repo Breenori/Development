@@ -36,6 +36,8 @@ public class TextureAnalysis_ implements PlugInFilter {
         // calc co-occurrence-matrix as p_i,j
         double[][] cMatrix = calcCooccurrenceMatrix(quantizisedImg, width, height, translationElements, scalarRange);
 
+        System.out.println("hi");
+
         double[][] scaledCMatrix = getScaledImage(cMatrix,scalarRange,scalarRange,scalarRange);
         ImageJUtility.showNewImage(scaledCMatrix, scalarRange, scalarRange, "scaled Co-oc Matrix");
 
