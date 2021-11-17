@@ -5,4 +5,19 @@
     <RootNamespace>SWO5.Currency.Logic</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CurrencyConverterDALSQLe\CurrencyConverterDALSQLe.csproj" />
+    <ProjectReference Include="..\CurrencyConverterDAL\CurrencyConverterDAL.csproj" />
+    <ProjectReference Include="..\CurrencyConverterDomain\CurrencyConverterDomain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="countries.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="eurofxref-hist-90d.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

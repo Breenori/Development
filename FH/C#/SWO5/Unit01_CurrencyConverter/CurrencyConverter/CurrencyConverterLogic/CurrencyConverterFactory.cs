@@ -10,7 +10,12 @@ namespace SWO5.Currency.Logic
     {
         public static ICurrencyConverter CreateCurrencyConverter()
         {
-            return new SimpleCurrencyConverter();
+            // V1: By hand
+            //return new SimpleCurrencyConverter();
+            // V2: XMLBased
+            //return new XmlBasedCurrencyConverter();
+            // V3: ADO.NET
+            return new SQLeBasedCurrencyConverter();
         }
     }
 }

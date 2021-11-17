@@ -503,21 +503,6 @@
           "bin/placeholder/CurrencyConverterDAL.dll": {}
         }
       },
-      "CurrencyConverterDALSQLe/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "CurrencyConverterDAL": "1.0.0",
-          "CurrencyConverterDomain": "1.0.0",
-          "Microsoft.Data.SqlClient": "3.0.1"
-        },
-        "compile": {
-          "bin/placeholder/CurrencyConverterDALSQLe.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CurrencyConverterDALSQLe.dll": {}
-        }
-      },
       "CurrencyConverterDomain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -526,21 +511,6 @@
         },
         "runtime": {
           "bin/placeholder/CurrencyConverterDomain.dll": {}
-        }
-      },
-      "CurrencyConverterLogic/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "CurrencyConverterDAL": "1.0.0",
-          "CurrencyConverterDALSQLe": "1.0.0",
-          "CurrencyConverterDomain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CurrencyConverterLogic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CurrencyConverterLogic.dll": {}
         }
       }
     }
@@ -1620,25 +1590,17 @@
       "path": "../CurrencyConverterDAL/CurrencyConverterDAL.csproj",
       "msbuildProject": "../CurrencyConverterDAL/CurrencyConverterDAL.csproj"
     },
-    "CurrencyConverterDALSQLe/1.0.0": {
-      "type": "project",
-      "path": "../CurrencyConverterDALSQLe/CurrencyConverterDALSQLe.csproj",
-      "msbuildProject": "../CurrencyConverterDALSQLe/CurrencyConverterDALSQLe.csproj"
-    },
     "CurrencyConverterDomain/1.0.0": {
       "type": "project",
       "path": "../CurrencyConverterDomain/CurrencyConverterDomain.csproj",
       "msbuildProject": "../CurrencyConverterDomain/CurrencyConverterDomain.csproj"
-    },
-    "CurrencyConverterLogic/1.0.0": {
-      "type": "project",
-      "path": "../CurrencyConverterLogic/CurrencyConverterLogic.csproj",
-      "msbuildProject": "../CurrencyConverterLogic/CurrencyConverterLogic.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "CurrencyConverterLogic >= 1.0.0"
+      "CurrencyConverterDAL >= 1.0.0",
+      "CurrencyConverterDomain >= 1.0.0",
+      "Microsoft.Data.SqlClient >= 3.0.1"
     ]
   },
   "packageFolders": {
@@ -1647,11 +1609,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterConsole\\CurrencyConverterConsole.csproj",
-      "projectName": "CurrencyConverterConsole",
-      "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterConsole\\CurrencyConverterConsole.csproj",
+      "projectUniqueName": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj",
+      "projectName": "CurrencyConverterDALSQLe",
+      "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj",
       "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterConsole\\obj\\",
+      "outputPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1668,8 +1630,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj": {
-              "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj"
+            "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj": {
+              "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj"
+            },
+            "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
+              "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj"
             }
           }
         }
@@ -1683,6 +1648,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "Microsoft.Data.SqlClient": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

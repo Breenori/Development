@@ -10,7 +10,7 @@ vector<char> TEXT;
 vector<int> WORD;
 int TEXTLENGTH(0);
 int WORDCOUNT(0);
-int ORDER(3);
+int ORDER(2);
 
 void read_file(string const& name);
 void read_text(vector<string> const& filenames);
@@ -36,12 +36,12 @@ void print_summary();
 void main()
 {
 	srand((int)time(0));
-	vector<string> filenames = { "hp_short.txt"};
+	vector<string> filenames = { "hp.txt", "6andthecity.txt"};
 	read_text(filenames);
 	split_text_in_words();
 	quicksort(0, WORDCOUNT-1);
 
-	print_summary();
+	//print_summary();
 	
 	print_nonsense();
 }
