@@ -39,7 +39,7 @@ namespace SWO5.Currency.Logic
 
         public bool IsKnownCurrency(string currency)
         {
-            throw new NotImplementedException();
+            return currencyTypeDao.ReadAll().Select(e => e.Code).Contains(currency);
         }
     }
 }

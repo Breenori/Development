@@ -13,7 +13,14 @@ namespace SWO5.Currency.DAL.SQLe
     {
         protected override CurrencyType FromDataRecord(IDataRecord record)
         {
-            return new CurrencyType { Id = record.GetInt64(0), Code = record.GetString(1), Name = record.GetString(2) };
+            // Version 1:
+            /*return new CurrencyType { 
+                Id = (long)record["id"], 
+                Code = (string)record["code"], 
+                Name = (string)record["name"] 
+            };*/
+            // Version 2: Extension Method
+            return record.ToCurrencyType();
         }
 
         protected override IDbCommand ToInsertCommand(CurrencyType entity, SqlConnection conn)

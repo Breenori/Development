@@ -1,4 +1,5 @@
-﻿using SWO5.Currency.Domain;
+﻿using Microsoft.Data.SqlClient;
+using SWO5.Currency.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +17,16 @@ namespace SWO5.Currency.DAL.SQLe
         }
 
         protected override Instant FromDataRecord(IDataRecord record)
+        {
+            return record.ToInstant();
+        }
+
+        protected override IDbCommand ToInsertCommand(Instant entity, SqlConnection conn)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override IDbCommand ToUpdateCommand(Instant entity, SqlConnection conn)
         {
             throw new NotImplementedException();
         }
