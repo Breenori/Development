@@ -1,1 +1,0 @@
-dry,medium,humid,dry,dry
