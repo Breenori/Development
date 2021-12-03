@@ -35,3 +35,7 @@ CREATE TABLE report (
 	CONSTRAINT FK_ReportDistrict FOREIGN KEY (district_id) REFERENCES district(id),
 	CONSTRAINT FK_ReportUser FOREIGN KEY ([user_id]) REFERENCES [user](id)
 );
+
+SET IDENTITY_INSERT [user] ON
+INSERT INTO [user](id, [name], [password]) VALUES(0, 'admin', HASHBYTES('SHA2_256', 'geheim'));
+SET IDENTITY_INSERT [user] OFF
