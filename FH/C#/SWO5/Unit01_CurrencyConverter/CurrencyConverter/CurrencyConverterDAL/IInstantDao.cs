@@ -9,6 +9,8 @@ namespace SWO5.Currency.DAL
 {
     public interface IInstantDao : IDao<Instant>
     {
+
         Instant FindCurrentInstant();
+
     }
 }

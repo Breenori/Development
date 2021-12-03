@@ -16,7 +16,7 @@ namespace SWO5.Currency.App
 
         static void Main(string[] args)
         {
-            new CurrencyConverterConsole().RunConverter();
+            new CurrencyConverterConsole().RunConverter( );
         }
 
         void RunConverter()

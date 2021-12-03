@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SWO5.Currency.DAL
 {
-    [AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class)] 
     public class DaoFactoryCandidate : Attribute
     {
         public string ProviderName { get; set; }

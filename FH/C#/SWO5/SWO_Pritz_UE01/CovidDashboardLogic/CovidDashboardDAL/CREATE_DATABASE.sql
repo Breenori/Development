@@ -1,0 +1,41 @@
+﻿CREATE DATABASE Covid;
+
+DROP TABLE state;
+DROP TABLE district;
+DROP TABLE [user];
+DROP TABLE report;
+
+CREATE TABLE state (
+	id BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[name] NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE district (
+	id BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[name] NVARCHAR(50) NOT NULL,
+	[population] BIGINT NOT NULL,
+	state_id BIGINT NOT NULL,
+	CONSTRAINT FK_DistrictState FOREIGN KEY (state_id) REFERENCES state(id)
+);
+
+CREATE TABLE [user] (
+	id BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[name] NVARCHAR(50) NOT NULL,
+	[password] NVARCHAR(64) NOT NULL
+);
+
+CREATE TABLE report (
+	id BIGINT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	report_date DATETIME NOT NULL,
+	num_infected BIGINT NOT NULL,
+	num_recovered BIGINT NOT NULL,
+	num_deceased BIGINT NOT NULL,
+	district_id BIGINT NOT NULL,
+	[user_id] BIGINT NOT NULL,
+	CONSTRAINT FK_ReportDistrict FOREIGN KEY (district_id) REFERENCES district(id),
+	CONSTRAINT FK_ReportUser FOREIGN KEY ([user_id]) REFERENCES [user](id)
+);
+
+SET IDENTITY_INSERT [user] ON
+INSERT INTO [user](id, [name], [password]) VALUES(0, 'admin', HASHBYTES('SHA2_256', 'geheim'));
+SET IDENTITY_INSERT [user] OFF

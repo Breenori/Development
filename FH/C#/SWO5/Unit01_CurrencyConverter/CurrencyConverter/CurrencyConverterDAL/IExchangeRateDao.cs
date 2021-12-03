@@ -9,6 +9,10 @@ namespace SWO5.Currency.DAL
 {
     public interface IExchangeRateDao : IDao<ExchangeRate>
     {
-        IList<ExchangeRate> FindExchangeRatesFor(Instant instant, string currencyCode);
+
+        IList<ExchangeRate> FindExchangeRatesFor( Instant instant, string currencyCode );
+
+        IList<Tuple<DateTime, ExchangeRate>> FindExchangeRatesFor(string currencyCode);
+
     }
 }

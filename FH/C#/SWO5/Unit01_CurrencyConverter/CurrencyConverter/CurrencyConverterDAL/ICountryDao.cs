@@ -9,6 +9,6 @@ namespace SWO5.Currency.DAL
 {
     public interface ICountryDao : IDao<Country>
     {
-
+        IList<Country> ReadForCurrencyType(CurrencyType currencyType); 
     }
 }

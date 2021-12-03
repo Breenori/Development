@@ -1,0 +1,51 @@
+﻿<Window x:Class="SWO5.Currency.WPF2.CurrencyConverterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SWO5.Currency.WPF2"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.wpf"
+        mc:Ignorable="d"
+        Title="Currency Converter" Height="450" Width="800">
+    <Grid Margin="6,6,6,6" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" MinHeight="100" MaxHeight="100" />
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Conversion" Grid.Row="0" >
+            <StackPanel Margin="10,10,10,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Grid.Column="0" Name="txtValue" Width="Auto" TextAlignment="Right"/>
+                    <Label Grid.Column="2" Width="Auto" HorizontalAlignment="Center" FontWeight="Bold">→</Label>
+                    <ComboBox Grid.Column="4" Width="Auto" Name="cmbCurrency">
+
+                    </ComboBox>
+                </Grid>
+                <Grid Margin="0,10,0,0" Background="Aquamarine" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="9*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Right" FontWeight="Bold"></TextBlock>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Countries using Currency" Grid.Row="1">
+            <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <lvc:GeoMap></lvc:GeoMap>
+            </DockPanel>
+        </GroupBox>
+        <GroupBox Header="Exchange Rate Evolution" Grid.Row="2">
+
+        </GroupBox>
+    </Grid>
+</Window>
