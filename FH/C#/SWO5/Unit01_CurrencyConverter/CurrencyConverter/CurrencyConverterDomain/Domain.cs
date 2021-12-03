@@ -25,6 +25,7 @@ namespace SWO5.Currency.Domain
     public class ExchangeRate
     {
         public long Id { get; set; }
+
         public CurrencyType CurrencyType { get; set; }
         public double Rate { get; set; }
 
@@ -46,6 +47,8 @@ namespace SWO5.Currency.Domain
     {
         public long Id { get; set; }
         public string Name { get; set; }
+        public string Code { get; set; }
         public CurrencyType CurrencyType { get; set; }
     }
+
 }

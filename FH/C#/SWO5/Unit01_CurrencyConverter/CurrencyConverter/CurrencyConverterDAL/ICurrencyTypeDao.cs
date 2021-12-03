@@ -9,6 +9,5 @@ namespace SWO5.Currency.DAL
 {
     public interface ICurrencyTypeDao : IDao<CurrencyType>
     {
-
     }
 }

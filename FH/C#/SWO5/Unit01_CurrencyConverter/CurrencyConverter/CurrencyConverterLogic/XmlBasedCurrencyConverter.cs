@@ -1,4 +1,5 @@
-﻿using SWO5.Currency.Domain;
+﻿using SWO5.Currency.DAL;
+using SWO5.Currency.Domain;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -14,10 +15,13 @@ namespace SWO5.Currency.Logic
     {
         private IList<Instant> instants;
         private IList<Country> countries;
-
         const string EURO_CODE = "EUR";
         const string EURO_RATES = "eurofxref-hist-90d.xml";
         const string COUNTRIES = "countries.xml";
+
+        public string[] Currencies => throw new NotImplementedException();
+
+        public IList<CurrencyType> CurrencyTypes => throw new NotImplementedException();
 
         public XmlBasedCurrencyConverter()
         {
@@ -42,7 +46,7 @@ namespace SWO5.Currency.Logic
                                                          Rate = Double.Parse(ex.Attribute("rate").Value, CultureInfo.InvariantCulture)
                                                      }).ToList()
                                 };
-            if(!instantResult.Any())
+            if( !instantResult.Any())
             {
                 throw new ArgumentException("Could not load XML exchange rates");
             }
@@ -61,37 +65,37 @@ namespace SWO5.Currency.Logic
                 throw new ArgumentException("Could not load XML countries");
             }
             countries = countryResult.ToList();
-
         }
 
         public double ConvertFromTo(string from, string to, double value)
         {
             if (from == null || to == null)
-                throw new ArgumentOutOfRangeException($"The supplied currency code {value} is not supported.");
+                throw new ArgumentOutOfRangeException(
+                   $"The supplied currency code {value} is not supported.");
 
             if (!IsKnownCurrency(from)
                                 || !IsKnownCurrency(to))
-                throw new ArgumentOutOfRangeException("The supplied currency codes are not supported.");
+                throw new ArgumentOutOfRangeException(
+                    "The supplied currency codes are not supported.");
 
-            double fromRate = ConvertToEuro(from, 1.0);
-            double toRate = ConvertToEuro(to, 1.0);
-            return (value * fromRate) / toRate;
+            double toRate = ConvertToEuro(from, 1.0);
+            double fromRate = ConvertToEuro(to, 1.0);
+            return (value * toRate) / fromRate;
         }
 
         public double ConvertToEuro(string currency, double value)
         {
-
-            if (IsKnownCurrency(currency))
+            if( IsKnownCurrency(currency) )
             {
-                if(currency == EURO_CODE)
+                if (currency == EURO_CODE)
                     return value;
 
                 var rate = from i in instants[0].ExchangeRates
                            where i.CurrencyType.Code == currency
                            select i.Rate;
                 return value / rate.First();
-                
-            } else
+
+            }else
             {
                 throw new ArgumentOutOfRangeException($"The supplied currency code {currency} is not supported!");
             }
@@ -99,7 +103,18 @@ namespace SWO5.Currency.Logic
 
         public bool IsKnownCurrency(string currency)
         {
-            return currency == EURO_CODE || instants[0].ExchangeRates.Where(e => e.CurrencyType.Code == currency).Any();
+            return currency == EURO_CODE 
+                || instants[0].ExchangeRates.Where(e => e.CurrencyType.Code == currency).Any();
+        }
+
+        public IList<Country> FindCountriesFor(CurrencyType currencyType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Tuple<DateTime, ExchangeRate>> FindExchangeRatesFor(string currencyCode)
+        {
+            throw new NotImplementedException();
         }
     }
 }

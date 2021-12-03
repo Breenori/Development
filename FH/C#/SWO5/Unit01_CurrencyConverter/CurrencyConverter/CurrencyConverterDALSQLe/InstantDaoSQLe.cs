@@ -13,7 +13,24 @@ namespace SWO5.Currency.DAL.SQLe
     {
         public Instant FindCurrentInstant()
         {
-            throw new NotImplementedException();
+            string tableName = TypeInfo.Name;
+            string selectCommand = $"SELECT TOP 1 id, time FROM {tableName} ORDER BY time DESC";
+            using (SqlConnection connection = new SqlConnection( CONNECTION_STRING ) )
+            {
+                connection.Open();
+                using ( IDbCommand command = new SqlCommand( selectCommand, connection ))
+                {
+                    IDataReader reader = command.ExecuteReader();
+                    if( reader.Read() )
+                    {
+                        IDataRecord record = reader;
+                        return record.ToInstant();
+                    } else
+                    {
+                        return null;
+                    }
+                }
+            }
         }
 
         protected override Instant FromDataRecord(IDataRecord record)
@@ -21,14 +38,27 @@ namespace SWO5.Currency.DAL.SQLe
             return record.ToInstant();
         }
 
-        protected override IDbCommand ToInsertCommand(Instant entity, SqlConnection conn)
+        protected override IDbCommand ToInsertCommand(Instant element, SqlConnection connection)
         {
-            throw new NotImplementedException();
+            string query = $"INSERT INTO {TypeInfo.Name} (time) VALUES( @time ); SELECT SCOPE_IDENTITY()";
+            SqlCommand command = new SqlCommand(query, connection);
+            IDbDataParameter parameter = new SqlParameter("@time", SqlDbType.DateTime);
+            parameter.Value = element.Time;
+            command.Parameters.Add(parameter);
+            return command;
         }
 
-        protected override IDbCommand ToUpdateCommand(Instant entity, SqlConnection conn)
+        protected override IDbCommand ToUpdateCommand(Instant element, SqlConnection connection)
         {
-            throw new NotImplementedException();
+            string query = $"UPDATE {TypeInfo.Name} SET time = @time WHERE id = @id; SELECT SCOPE_IDENTITY()";
+            SqlCommand command = new SqlCommand(query, connection);
+            IDbDataParameter parameter = new SqlParameter("@time", SqlDbType.DateTime);
+            parameter.Value = element.Time;
+            command.Parameters.Add(parameter);
+            parameter = new SqlParameter("@id", SqlDbType.BigInt);
+            parameter.Value = element.Id;
+            command.Parameters.Add(parameter);
+            return command;
         }
     }
 }

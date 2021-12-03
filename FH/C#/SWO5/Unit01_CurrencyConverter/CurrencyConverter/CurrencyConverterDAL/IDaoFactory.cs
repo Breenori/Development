@@ -9,8 +9,12 @@ namespace SWO5.Currency.DAL
     public interface IDaoFactory
     {
         public ICurrencyTypeDao CurrencyTypeDao { get; }
-        public ICountryDao CountryDao { get; }
-        public IExchangeRateDao ExchangeRateDao {get;}
-        public IInstantDao InstantDao { get; }
+
+        public ICountryDao CountryDao { get;  }
+
+        public IExchangeRateDao ExchangeRateDao { get; }
+
+        public IInstantDao InstantDao { get;  }
+
     }
 }
