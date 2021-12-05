@@ -16,7 +16,8 @@ namespace SWO5.Dashboard.DAL.SQLe
             return record.ToDistrict();
         }
 
-        public override District ReadForIdentity(District entity)
+        // OVERRIDE readForIdentity, because we have to rename the attributes and also use JOINS
+        public override District ReadForIdentity(long id)
         {
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
             {
@@ -30,7 +31,7 @@ namespace SWO5.Dashboard.DAL.SQLe
                 using (IDbCommand command = new SqlCommand(sqlCommand, connection))
                 {
                     IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
-                    paramId.Value = entity.Id;
+                    paramId.Value = id;
                     command.Parameters.Add(paramId);
 
                     IDataReader reader = command.ExecuteReader();
@@ -45,6 +46,57 @@ namespace SWO5.Dashboard.DAL.SQLe
                     }
                 }
             }
+        }
+        // Reads all districts for a given state
+        public IList<District> ReadForState(String state)
+        {
+            string tableName = TypeInfo.Name;
+            IList<District> result = new List<District>();
+            string selectCommand = $"SELECT d.id district_id, d.name district_name, d.population district_population, s.id state_id, s.name state_name" +
+                                    $" FROM {tableName} d" +
+                                    $" JOIN state s ON s.id=d.state_id" +
+                                    $" WHERE s.name=@state_name";
+            using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
+            {
+                connection.Open();
+                using (IDbCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    IDbDataParameter paramStateName = new SqlParameter("@state_name", SqlDbType.NVarChar);
+                    paramStateName.Value = state;
+                    command.Parameters.Add(paramStateName);
+
+                    IDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        IDataRecord record = reader;
+                        result.Add(FromDataRecord(record));
+                    }
+                }
+            }
+            return result;
+        }
+
+        //Readall also has to be overrided because of the joins
+        public override IList<District> ReadAll()
+        {
+            IList<District> result = new List<District>();
+            using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
+            {
+                connection.Open();
+                string sqlCommand = $"SELECT d.id district_id, d.name district_name, d.population district_population, s.id state_id, s.name state_name" +
+                                    $" FROM district d" +
+                                    $" JOIN state s ON s.id=d.state_id";
+                using (IDbCommand command = new SqlCommand(sqlCommand, connection))
+                {
+                    IDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        IDataRecord record = reader;
+                        result.Add(FromDataRecord(record));
+                    }
+                }
+            }
+            return result;
         }
 
         protected override IDbCommand ToInsertCommand(District entity, SqlConnection conn)
@@ -112,53 +164,6 @@ namespace SWO5.Dashboard.DAL.SQLe
             return command;
         }
 
-        public IList<District> ReadForState(State state)
-        {
-            string tableName = TypeInfo.Name;
-            IList<District> result = new List<District>();
-            string selectCommand =  $"SELECT d.id district_id, d.name district_name, d.population district_population, s.id state_id, s.name state_name" +
-                                    $" FROM {tableName} d" +
-                                    $" JOIN state s ON s.id=d.state_id WHERE d.state_id=@state_id";
-            using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
-            {
-                connection.Open();
-                using (IDbCommand command = new SqlCommand(selectCommand, connection))
-                {
-                    IDbDataParameter paramStateId = new SqlParameter("@state_id", SqlDbType.BigInt);
-                    paramStateId.Value = state.Id;
-                    command.Parameters.Add(paramStateId);
 
-                    IDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        IDataRecord record = reader;
-                        result.Add(FromDataRecord(record));
-                    }
-                }
-            }
-            return result;
-        }
-
-        public override IList<District> ReadAll()
-        {
-            IList<District> result = new List<District>();
-            using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
-            {
-                connection.Open();
-                string sqlCommand = $"SELECT d.id district_id, d.name district_name, d.population district_population, s.id state_id, s.name state_name" +
-                                    $" FROM district d" +
-                                    $" JOIN state s ON s.id=d.state_id";
-                using (IDbCommand command = new SqlCommand(sqlCommand, connection))
-                {
-                    IDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        IDataRecord record = reader;
-                        result.Add(FromDataRecord(record));
-                    }
-                }
-            }
-            return result;
-        }
     }
 }

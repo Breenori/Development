@@ -14,18 +14,11 @@ namespace SWO5.Dashboard.Logic
         public bool RemoveUser(string username, string password);
         public bool UpdateUser(User updatedUser, string username, string password);
 
-        public User LoggedInUser { get; set; }
-        public State SelectedState {get;set;}
-        public District SelectedDistrict { get; set; }
-        public Report SelectedReport { get; set; }
-
-
         public IList<State> States { get; }
-        public IList<District> Districts { get; }
-
-        public IList<District> FindDistrictsFor(State state);
+        public IList<District> FindDistrictsFor(string state);
 
         public IList<Report> GetAllReports();
+        public IList<Report> GetAllReports(DateTime from, DateTime to);
         public IList<Report> GetReportsForDistrict(string district);
         public IList<Report> GetReportsForDistrict(string district, DateTime from, DateTime to);
         public IList<Report> GetReportsForState(string state);

@@ -90,5 +90,11 @@ namespace SWO5.Dashboard.Domain
                     $"Deceased: {Deceased},\n" +
                     $"Incidence: {Incidence}";
         }
+
+        public override bool Equals(object obj)
+        {
+            Report report = obj as Report;
+            return report != null && (report.Id.Equals(this.Id));
+        }
     }
 }

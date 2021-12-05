@@ -12,6 +12,7 @@ namespace SWO5.Dashboard.DAL
         long Create(T entity);
         long Update(T entity);
         bool Delete(T entity);
+        // I also decided to include DROP to make it easier to re-load the data from a CSV
         void Drop();
     }
 }

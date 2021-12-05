@@ -16,7 +16,7 @@ namespace SWO5.Dashboard.DAL.SQLe
             return record.ToUser();
         }
 
-        public override User ReadForIdentity(User entity)
+        public override User ReadForIdentity(long id)
         {
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
             {
@@ -27,7 +27,7 @@ namespace SWO5.Dashboard.DAL.SQLe
                 using (IDbCommand command = new SqlCommand(sqlCommand, connection))
                 {
                     IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
-                    paramId.Value = entity.Id;
+                    paramId.Value = id;
                     command.Parameters.Add(paramId);
 
                     IDataReader reader = command.ExecuteReader();

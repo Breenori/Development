@@ -27,17 +27,7 @@ namespace SWO5.Dashboard.Logic
             reportDao = factory.ReportDao;
         }
 
-        public User LoggedInUser { get; set; }
-
-        public State SelectedState { get; set; } = null;
-
-        public District SelectedDistrict { get; set; } = null;
-
-        public Report SelectedReport { get; set; }
-
         public IList<State> States => stateDao.ReadAll().ToList();
-
-        public IList<District> Districts => SelectedState != null ? FindDistrictsFor(SelectedState) : districtDao.ReadAll().ToList();
 
         public void FillFromCSV(string filename)
         {
@@ -111,9 +101,9 @@ namespace SWO5.Dashboard.Logic
             
         }
 
-        public IList<District> FindDistrictsFor(State state)
+        public IList<District> FindDistrictsFor(string state)
         {
-            return districtDao.ReadForState(state);
+            return state != null ? districtDao.ReadForState(state) : districtDao.ReadAll().ToList();
         }
 
         public IList<Report> GetAllReports()
@@ -121,24 +111,29 @@ namespace SWO5.Dashboard.Logic
             return reportDao.ReadAll().ToList();
         }
 
+        public IList<Report> GetAllReports(DateTime from, DateTime to)
+        {
+            return reportDao.ReadAll().Where(r => r.Date >= from && r.Date <= to).ToList();
+        }
+
         public IList<Report> GetReportsForDistrict(string district)
         {
-            return reportDao.ReadAll().Where(r => r.ResponsibleDistrict.Name.Equals(district)).ToList();
+            return reportDao.FindReportsForDistrict(district);
         }
 
         public IList<Report> GetReportsForDistrict(string district, DateTime from, DateTime to)
         {
-            return reportDao.ReadAll().Where(r => r.ResponsibleDistrict.Name.Equals(district) && r.Date >= from && r.Date <= to).ToList();
+            return reportDao.FindReportsForDistrict(district).Where(r => r.Date >= from && r.Date <= to).ToList();
         }
 
         public IList<Report> GetReportsForState(string state)
         {
-            return reportDao.ReadAll().Where(r => r.ResponsibleDistrict.ResponsibleState.Name.Equals(state)).ToList();
+            return reportDao.FindReportsForState(state);
         }
 
         public IList<Report> GetReportsForState(string state, DateTime from, DateTime to)
         {
-            return reportDao.ReadAll().Where(r => r.ResponsibleDistrict.ResponsibleState.Name.Equals(state) && r.Date >= from && r.Date <= to).ToList();
+            return reportDao.FindReportsForState(state).Where(r => r.Date >= from && r.Date <= to).ToList();
         }
 
         public bool IsKnownDistrict(string district)
@@ -148,17 +143,18 @@ namespace SWO5.Dashboard.Logic
 
         public bool IsKnownState(string state)
         {
-            return reportDao.ReadAll().Any(r => r.ResponsibleDistrict.ResponsibleState.Name == state);
+            return reportDao.ReadAll().Any(r => r.ResponsibleDistrict.ResponsibleState.Name.Equals(state));
         }
 
         public bool Login(string username, string password)
         {
+            // Can only log in if the user exists
             if (UserExists(username))
             { 
                 string hashed = HashPassword(password);
                 User foundUser = userDao.ReadAll().Where(u => u.Name.Equals(username)).Single();
+                // the password needs to match if hashed
                 if (foundUser.Password.Equals(HashPassword(password))) {
-                    LoggedInUser = foundUser;
                     return true;
                 }
             }
@@ -173,6 +169,7 @@ namespace SWO5.Dashboard.Logic
 
         public bool AddUser(string username, string password)
         {
+            // To add a user, the name must be free
             if(!UserExists(username))
             {
                 User newUser = new User { Name = username, Password = HashPassword(password) };
@@ -189,12 +186,15 @@ namespace SWO5.Dashboard.Logic
 
         public bool UpdateUser(User updatedUser, string username, string password)
         {
+            // can only update a user that exists
             if (UserExists(username))
             {
                 User curUser = userDao.ReadAll().Where(u => u.Name.Equals(username)).Single();
 
+                // the password needs to match, to update the user
                 if (curUser.Password.Equals(HashPassword(password)))
                 {
+                    // also, the username needs to be free or the same
                     if (!UserExists(updatedUser.Name) || updatedUser.Name.Equals(username))
                     {
                         curUser.Name = updatedUser.Name;
@@ -218,14 +218,11 @@ namespace SWO5.Dashboard.Logic
 
         public bool RemoveUser(string username, string password)
         {
+            // can only remove existing users
             if (UserExists(username)) {
                 User curUser = userDao.ReadAll().Where(u => u.Name.Equals(username)).Single();
                 if (curUser.Password.Equals(HashPassword(password)))
                 {
-                    if(curUser.Equals(LoggedInUser))
-                    {
-                        LoggedInUser = null;
-                    }
                     userDao.Delete(curUser);
                     return true;
                 }
@@ -235,6 +232,7 @@ namespace SWO5.Dashboard.Logic
 
         private String HashPassword(string password)
         {
+            // use SHA256 hash algorithm to store the passwords
             using (SHA256 mySHA256 = SHA256.Create())
             {
                 byte[] bytes = mySHA256.ComputeHash(Encoding.UTF8.GetBytes(password));

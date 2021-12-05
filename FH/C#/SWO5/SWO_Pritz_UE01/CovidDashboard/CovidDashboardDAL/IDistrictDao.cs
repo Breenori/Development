@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using SWO5.Dashboard.Domain;
 
 namespace SWO5.Dashboard.DAL
 {
     public interface IDistrictDao : IDao<District>
     {
-        IList<District> ReadForState(State state);
+        // Returns the districts belonging to the designated state.
+        IList<District> ReadForState(string state);
     }
 }

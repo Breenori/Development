@@ -16,34 +16,6 @@ namespace SWO5.Dashboard.DAL.SQLe
             return record.ToState();
         }
 
-        public override State ReadForIdentity(State entity)
-        {
-            using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
-            {
-                connection.Open();
-                string tableName = TypeInfo.Name;
-                string sqlCommand = $"SELECT * FROM {tableName} WHERE id=@id; SELECT SCOPE_IDENTITY()";
-
-                using (IDbCommand command = new SqlCommand(sqlCommand, connection))
-                {
-                    IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
-                    paramId.Value = entity.Id;
-                    command.Parameters.Add(paramId);
-
-                    IDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        IDataRecord record = reader;
-                        return FromDataRecord(record);
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                }
-            }
-        }
-
         protected override IDbCommand ToInsertCommand(State entity, SqlConnection conn)
         {
             string query = $"INSERT INTO {TypeInfo.Name} (name) VALUES (@name); SELECT SCOPE_IDENTITY()";

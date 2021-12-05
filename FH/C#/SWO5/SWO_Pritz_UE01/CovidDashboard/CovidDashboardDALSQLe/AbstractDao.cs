@@ -16,7 +16,8 @@ namespace SWO5.Dashboard.DAL.SQLe
         protected abstract IDbCommand ToDeleteCommand(T entity, SqlConnection conn);
         protected abstract T FromDataRecord(IDataRecord record);
 
-
+        // ReadAll has been declared virtual, because tables like REPORT or DISTRICT require joins to get all relevant data.
+        // This way there is a default implementation and the sub-classes can just override it
         public virtual IList<T> ReadAll()
         {
             IList<T> result = new List<T>();
@@ -37,9 +38,38 @@ namespace SWO5.Dashboard.DAL.SQLe
             } 
             return result;
         }
-        public abstract T ReadForIdentity(T entity);
+
+        // same goes for ReadForIdentity. Report and District require an altered version.
+        public virtual T ReadForIdentity(long id)
+        {
+            using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
+            {
+                connection.Open();
+                string tableName = TypeInfo.Name;
+                string sqlCommand = $"SELECT * FROM [{tableName}] WHERE id=@id";
+
+                using (IDbCommand command = new SqlCommand(sqlCommand, connection))
+                {
+                    IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
+                    paramId.Value = id;
+                    command.Parameters.Add(paramId);
+
+                    IDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        IDataRecord record = reader;
+                        return FromDataRecord(record);
+                    }
+                    else
+                    {
+                        return default(T);
+                    }
+                }
+            }
+        }
         
 
+        // for DML statements = create Command delegate and forward to ExecuteDMLQuery
         public long Create(T entity)
         {
             return ExecuteDMLQuery(entity, ToInsertCommand);

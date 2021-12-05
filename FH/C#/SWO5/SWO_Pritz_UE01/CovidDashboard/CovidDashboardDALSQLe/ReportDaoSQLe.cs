@@ -11,23 +11,25 @@ namespace SWO5.Dashboard.DAL.SQLe
 {
     class ReportDaoSQLe : AbstractDao<Report>, IReportDao
     {
-        public IList<Report> FindReportsFor(District district)
+        // returns all reports for a given district
+        public IList<Report> FindReportsForDistrict(string district)
         {
             string tableName = TypeInfo.Name;
             IList<Report> result = new List<Report>();
-            string selectCommand =  $"SELECT r.id report_id, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased" +
-                                    $" FROM {tableName} d" +
+            string selectCommand =  $"SELECT r.id report_id, d.id district_id, r.report_date report_date, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name" +
+                                    $" FROM {tableName} r" +
                                     $" JOIN district d ON r.district_id=d.id" +
                                     $" JOIN state s ON d.state_id=s.id" +
-                                    $" WHERE r.district_id=@district_id";
+                                    $" JOIN [user] u ON r.user_id=u.id" +
+                                    $" WHERE d.name=@district_name";
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
             {
                 connection.Open();
                 using (IDbCommand command = new SqlCommand(selectCommand, connection))
                 {
-                    IDbDataParameter paramDistrictId = new SqlParameter("@district_id", SqlDbType.BigInt);
-                    paramDistrictId.Value = district.Id;
-                    command.Parameters.Add(paramDistrictId);
+                    IDbDataParameter paramDistrictName = new SqlParameter("@district_name", SqlDbType.NVarChar);
+                    paramDistrictName.Value = district;
+                    command.Parameters.Add(paramDistrictName);
 
                     IDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -39,23 +41,24 @@ namespace SWO5.Dashboard.DAL.SQLe
             }
             return result;
         }
-        public IList<Report> FindReportsFor(State state)
+        public IList<Report> FindReportsForState(string state)
         {
             string tableName = TypeInfo.Name;
             IList<Report> result = new List<Report>();
-            string selectCommand = $"SELECT r.id report_id, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased" +
-                                    $" FROM {tableName} d" +
+            string selectCommand = $"SELECT r.id report_id, r.report_date report_date, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name" +
+                                    $" FROM {tableName} r" +
                                     $" JOIN district d ON r.district_id=d.id" +
                                     $" JOIN state s ON d.state_id=s.id" +
-                                    $" WHERE d.state_id=@state_id";
+                                    $" JOIN [user] u ON r.user_id=u.id" +
+                                    $" WHERE s.name=@state_name";
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
             {
                 connection.Open();
                 using (IDbCommand command = new SqlCommand(selectCommand, connection))
                 {
-                    IDbDataParameter paramStateId = new SqlParameter("@state_id", SqlDbType.BigInt);
-                    paramStateId.Value = state.Id;
-                    command.Parameters.Add(paramStateId);
+                    IDbDataParameter paramStateName = new SqlParameter("@state_name", SqlDbType.NVarChar);
+                    paramStateName.Value = state;
+                    command.Parameters.Add(paramStateName);
 
                     IDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -73,7 +76,7 @@ namespace SWO5.Dashboard.DAL.SQLe
             return record.ToReport();
         }
 
-        public override Report ReadForIdentity(Report entity)
+        public override Report ReadForIdentity(long id)
         {
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
             {
@@ -89,7 +92,7 @@ namespace SWO5.Dashboard.DAL.SQLe
                 using (IDbCommand command = new SqlCommand(sqlCommand, connection))
                 {
                     IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
-                    paramId.Value = entity.Id;
+                    paramId.Value = id;
                     command.Parameters.Add(paramId);
 
                     IDataReader reader = command.ExecuteReader();

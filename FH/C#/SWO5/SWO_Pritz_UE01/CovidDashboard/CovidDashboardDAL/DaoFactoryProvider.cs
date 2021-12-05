@@ -10,7 +10,7 @@ namespace SWO5.Dashboard.DAL
     public class DaoFactoryProvider
     {
         private static IDaoFactory daoFactory;
-        private const string ASSEMBLY_PATH = @"D:\Projects\Git\Development\FH\C#\SWO5\SWO_Pritz_UE01\CovidDashboardLogic\CovidDashboardDALSQLe\bin\Debug\net5.0\CovidDashboardDALSQLe.dll";
+        private const string ASSEMBLY_PATH = @"../../../../CovidDashboardDALSQLe.dll";
     
         private static void InitializeFactory()
         {

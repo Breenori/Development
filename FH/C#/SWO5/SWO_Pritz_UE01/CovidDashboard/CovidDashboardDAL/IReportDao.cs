@@ -9,8 +9,10 @@ namespace SWO5.Dashboard.DAL
 {
     public interface IReportDao : IDao<Report>
     {
-        IList<Report> FindReportsFor(District district);
-        IList<Report> FindReportsFor(State state);
+        // Returns all reports dedicated to a given district
+        IList<Report> FindReportsForDistrict(string district);
+        // Returns all reports dedicated to a given state
+        IList<Report> FindReportsForState(string state);
 
     }
 }
