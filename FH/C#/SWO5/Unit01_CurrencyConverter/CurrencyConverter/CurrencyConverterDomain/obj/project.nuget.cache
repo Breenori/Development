@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qcsDyfLPbu9m6SMn8lZHyeZ+fQvP6rvK0EJZWJeXvCvVoGyqxYmjKGJsRnBwWFM5IOLC+lGu/IQszRASCPujTA==",
+  "dgSpecHash": "qhD19+WPM1Moteq7dxOnh+fM6ddS81G/1uBWcAeeii6ZhHuX7eVwXZ7bgvmzZsqmVUuS9eDCxYLnavlBt74aRA==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\basti\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\basti\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
