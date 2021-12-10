@@ -22,9 +22,6 @@ TOTAL_TOLERANCE = 0.02
 PEAK_TOLERANCE = 0.04
 PROTON_MASS = 1.007
 
-test_weight = pymass.calculate_mass('AA')
-
-#test = pymgf.MGF("spectraMS2.mgf", convert_arrays=0, read_charges=True, read_ions=True)
 
 for spectrum in spectra:
     charge = float(str(spectrum['params']['charge'])[0])
