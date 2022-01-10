@@ -10,12 +10,12 @@ namespace SWO5.Currency.DAL.SQLe
     [DaoFactoryCandidate(ProviderName ="Microsoft SQL Server")]
     public class DaoFactorySQLe : IDaoFactory
     {
-        public ICurrencyTypeDao CurrencyTypeDao => new CurrencyTypeDaoSQLe();
+        public static ICurrencyTypeDao CurrencyTypeDao => new CurrencyTypeDaoSQLe();
 
-        public ICountryDao CountryDao => new CountryDaoSQLe();
+        public static ICountryDao CountryDao => new CountryDaoSQLe();
 
-        public IExchangeRateDao ExchangeRateDao => new ExchangeRateDaoSQLe();
+        public static IExchangeRateDao ExchangeRateDao => new ExchangeRateDaoSQLe();
 
-        public IInstantDao InstantDao => new InstantDaoSQLe();
+        public static IInstantDao InstantDao => new InstantDaoSQLe();
     }
 }

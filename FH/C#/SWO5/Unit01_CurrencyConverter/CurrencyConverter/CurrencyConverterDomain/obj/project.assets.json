@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
+      "projectUniqueName": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
       "projectName": "CurrencyConverterDomain",
-      "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
+      "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
       "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-      "outputPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\obj\\",
+      "outputPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
   }

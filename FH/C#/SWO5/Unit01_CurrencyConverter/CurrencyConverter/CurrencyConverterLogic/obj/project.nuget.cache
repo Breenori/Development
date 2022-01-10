@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1aSL/LsVdfe85cRuNYw71lJpdebwSf9B31g/18dASYv2PE2GRR9mpKdVpJuUp0b7WN/xUOm77HhQJPZcETmdkA==",
+  "dgSpecHash": "mKyI01C517OWnUyndIi7YFpdCol7qmN4zemggJeAmeMQItHzQaxAa1T7hup/YnAaXNk3Og+5W0TmHsiyCJR+9A==",
   "success": true,
-  "projectFilePath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj",
+  "projectFilePath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basti\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\basti\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

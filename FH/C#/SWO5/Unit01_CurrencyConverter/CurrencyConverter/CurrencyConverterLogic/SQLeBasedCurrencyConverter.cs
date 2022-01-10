@@ -21,11 +21,11 @@ namespace SWO5.Currency.Logic
 
         public SQLeBasedCurrencyConverter()
         {
-            IDaoFactory factory = new DaoFactorySQLe(); // requires project reference
-            instantDao = factory.InstantDao;
-            currencyTypeDao = factory.CurrencyTypeDao;
-            exchangeRateDao = factory.ExchangeRateDao;
-            countryDao = factory.CountryDao;
+            //IDaoFactory factory = new DaoFactorySQLe(); // requires project reference
+            instantDao = DaoFactorySQLe.InstantDao;
+            currencyTypeDao = DaoFactorySQLe.CurrencyTypeDao;
+            exchangeRateDao = DaoFactorySQLe.ExchangeRateDao;
+            countryDao = DaoFactorySQLe.CountryDao;
         }
 
         public string[] Currencies => currencyTypeDao.ReadAll().Select(c => c.Code).ToArray();

@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverterDALSQLe", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverterWPF", "CurrencyConverterWPF\CurrencyConverterWPF.csproj", "{07596954-2075-4A1A-987A-F5F78CCE0476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverterWeb", "CurrencyConverterWeb\CurrencyConverterWeb.csproj", "{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{07596954-2075-4A1A-987A-F5F78CCE0476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07596954-2075-4A1A-987A-F5F78CCE0476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07596954-2075-4A1A-987A-F5F78CCE0476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

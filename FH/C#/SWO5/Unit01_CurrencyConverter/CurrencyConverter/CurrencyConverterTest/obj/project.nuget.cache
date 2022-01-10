@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QaAZ2dps5zNYSSg7CqiCAI7HyEPDDkjOKcV8D7ZvK88u8zRhrEmkW29cr4q3d4jgy2v3KHeNlXatxC8HZkOKqA==",
+  "dgSpecHash": "rOYi9cHdA74NsA7Tq718esu2PedKhmBKLt14b3uKWMzvUocS2eOkxobC1A6ssU5JIWPtDiaSMo5voYAFTzzVdw==",
   "success": true,
-  "projectFilePath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterTest\\CurrencyConverterTest.csproj",
+  "projectFilePath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterTest\\CurrencyConverterTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basti\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

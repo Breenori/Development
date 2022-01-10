@@ -1,4 +1,6 @@
 ﻿
+using SWO5.Currency.Domain;
+
 namespace SWO5.Currency.Logic
 {
     public class CurrencyConverterFactory
@@ -12,6 +14,26 @@ namespace SWO5.Currency.Logic
             // return new XmlBasedCurrencyConverter();
             // Version 3: ado.net based currency converter
             return new SQLeBasedCurrencyConverter();
+        }
+
+        public static IManager<CurrencyType> CreateCurrencyTypeManager()
+        {
+            return new CurrencyTypeManager();
+        }
+
+        public static IManager<ExchangeRate> CreateExchangeRateManager()
+        {
+            return new ExchangeRateManager();
+        }
+
+        public static IManager<Instant> CreateInstantManager()
+        {
+            return new InstantManager();
+        }
+
+        public static IManager<Country> CreateCountryManager()
+        {
+            return new CountryManager();
         }
 
 

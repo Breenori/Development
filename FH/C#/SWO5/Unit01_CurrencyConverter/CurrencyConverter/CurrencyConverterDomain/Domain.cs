@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SWO5.Currency.Domain 
 {
     public class CurrencyType
     {
         public long Id { get; set; }
+        [Required]
         public string Code { get; set; }
+        [Required]
         public string Name { get; set; }
 
         public override string ToString()

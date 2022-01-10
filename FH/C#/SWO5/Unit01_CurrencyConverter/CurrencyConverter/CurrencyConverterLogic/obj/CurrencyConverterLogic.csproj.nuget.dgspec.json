@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj": {}
+    "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj": {}
   },
   "projects": {
-    "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj": {
+    "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj",
+        "projectUniqueName": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj",
         "projectName": "CurrencyConverterDALSQLe",
-        "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj",
+        "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj",
         "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\obj\\",
+        "outputPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj": {
-                "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj"
+              "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj": {
+                "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj"
               },
-              "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
-                "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj"
+              "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
+                "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj"
               }
             }
           }
@@ -67,18 +67,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj": {
+    "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj",
+        "projectUniqueName": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj",
         "projectName": "CurrencyConverterDAL",
-        "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj",
+        "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj",
         "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\obj\\",
+        "outputPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,8 +95,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
-                "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj"
+              "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
+                "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj"
               }
             }
           }
@@ -125,18 +125,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
+    "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
+        "projectUniqueName": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
         "projectName": "CurrencyConverterDomain",
-        "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
+        "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj",
         "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\obj\\",
+        "outputPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -179,18 +179,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj": {
+    "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj",
+        "projectUniqueName": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj",
         "projectName": "CurrencyConverterLogic",
-        "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj",
+        "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\CurrencyConverterLogic.csproj",
         "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\obj\\",
+        "outputPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -207,14 +207,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj": {
-                "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj"
+              "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj": {
+                "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDALSQLe\\CurrencyConverterDALSQLe.csproj"
               },
-              "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj": {
-                "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj"
+              "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj": {
+                "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj"
               },
-              "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
-                "projectPath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj"
+              "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj": {
+                "projectPath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDomain\\CurrencyConverterDomain.csproj"
               }
             }
           }
@@ -243,7 +243,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     }
