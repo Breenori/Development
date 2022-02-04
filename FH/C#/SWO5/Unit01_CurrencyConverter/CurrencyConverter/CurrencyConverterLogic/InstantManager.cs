@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using SWO5.Currency.DAL;
 using SWO5.Currency.DAL.SQLe;
+using SWO5.Currency.EF;
 
 namespace SWO5.Currency.Logic
 {
     class InstantManager : IManager<Instant>
     {
-        private IInstantDao instantDao = DaoFactorySQLe.InstantDao;
+        private IInstantDao instantDao = EFDaoFactory.InstantDao;
         public Instant Create(Instant entity)
         {
             entity.Id = instantDao.Create(entity);

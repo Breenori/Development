@@ -17,7 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverterDALSQLe", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverterWPF", "CurrencyConverterWPF\CurrencyConverterWPF.csproj", "{07596954-2075-4A1A-987A-F5F78CCE0476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverterWeb", "CurrencyConverterWeb\CurrencyConverterWeb.csproj", "{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverterWeb", "CurrencyConverterWeb\CurrencyConverterWeb.csproj", "{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverterAPI", "CurrencyConverterAPI\CurrencyConverterAPI.csproj", "{5CA1DD78-72D8-49C2-837C-DF95C8A3E4F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverterDto", "CurrencyConverterDto\CurrencyConverterDto.csproj", "{F4AF3C46-A60C-43DB-9E3C-0BA3AFD8F211}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverterEF", "CurrencyConverterEF\CurrencyConverterEF.csproj", "{2D365395-5928-48A4-9880-AF3344E857A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +63,18 @@ Global
 		{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49A8E174-7FD6-4F32-A7EB-4254BDA9E79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA1DD78-72D8-49C2-837C-DF95C8A3E4F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA1DD78-72D8-49C2-837C-DF95C8A3E4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA1DD78-72D8-49C2-837C-DF95C8A3E4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA1DD78-72D8-49C2-837C-DF95C8A3E4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AF3C46-A60C-43DB-9E3C-0BA3AFD8F211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AF3C46-A60C-43DB-9E3C-0BA3AFD8F211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AF3C46-A60C-43DB-9E3C-0BA3AFD8F211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AF3C46-A60C-43DB-9E3C-0BA3AFD8F211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D365395-5928-48A4-9880-AF3344E857A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D365395-5928-48A4-9880-AF3344E857A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D365395-5928-48A4-9880-AF3344E857A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D365395-5928-48A4-9880-AF3344E857A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

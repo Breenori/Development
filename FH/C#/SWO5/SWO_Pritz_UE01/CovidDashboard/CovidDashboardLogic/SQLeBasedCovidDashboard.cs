@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using SWO5.Dashboard.DAL.SQLe;
 using System.IO;
 using System.Security.Cryptography;
@@ -101,41 +100,6 @@ namespace SWO5.Dashboard.Logic
             
         }
 
-        public IList<District> FindDistrictsFor(string state)
-        {
-            return state != null ? districtDao.ReadForState(state) : districtDao.ReadAll().ToList();
-        }
-
-        public IList<Report> GetAllReports()
-        {
-            return reportDao.ReadAll().ToList();
-        }
-
-        public IList<Report> GetAllReports(DateTime from, DateTime to)
-        {
-            return reportDao.ReadAll().Where(r => r.Date >= from && r.Date <= to).ToList();
-        }
-
-        public IList<Report> GetReportsForDistrict(string district)
-        {
-            return reportDao.FindReportsForDistrict(district);
-        }
-
-        public IList<Report> GetReportsForDistrict(string district, DateTime from, DateTime to)
-        {
-            return reportDao.FindReportsForDistrict(district).Where(r => r.Date >= from && r.Date <= to).ToList();
-        }
-
-        public IList<Report> GetReportsForState(string state)
-        {
-            return reportDao.FindReportsForState(state);
-        }
-
-        public IList<Report> GetReportsForState(string state, DateTime from, DateTime to)
-        {
-            return reportDao.FindReportsForState(state).Where(r => r.Date >= from && r.Date <= to).ToList();
-        }
-
         public bool IsKnownDistrict(string district)
         {
             return reportDao.ReadAll().Any(r => r.ResponsibleDistrict.Name.Equals(district));
@@ -146,27 +110,45 @@ namespace SWO5.Dashboard.Logic
             return reportDao.ReadAll().Any(r => r.ResponsibleDistrict.ResponsibleState.Name.Equals(state));
         }
 
-        public bool Login(string username, string password)
+
+        #region Data Querying
+        public IList<District> FindDistrictsFor(string state)
         {
-            // Can only log in if the user exists
-            if (UserExists(username))
-            { 
-                string hashed = HashPassword(password);
-                User foundUser = userDao.ReadAll().Where(u => u.Name.Equals(username)).Single();
-                // the password needs to match if hashed
-                if (foundUser.Password.Equals(HashPassword(password))) {
-                    return true;
-                }
-            }
-            return false;
+            return state != null ? districtDao.ReadForState(state) : districtDao.ReadAll().ToList();
         }
 
+        public IList<Report> GetAllReports()
+        {
+            return reportDao.ReadAll().ToList();
+        }
+
+        public IList<Report> GetReportsForDistrict(string district)
+        {
+            return reportDao.FindReportsForDistrict(district);
+        }
+
+        public IList<Report> GetReportsForState(string state)
+        {
+            return reportDao.FindReportsForState(state);
+        }
+        #endregion
+
+        #region AddMethods
+        public State AddState(State state)
+        {
+            state.Id = stateDao.Create(state);
+            return state;
+        }
+        public District AddDistrict(District district)
+        {
+            district.Id = districtDao.Create(district);
+            return district;
+        }
         public Report AddReport(Report report)
         {
             report.Id = reportDao.Create(report);
             return report;
         }
-
         public bool AddUser(string username, string password)
         {
             // To add a user, the name must be free
@@ -178,7 +160,17 @@ namespace SWO5.Dashboard.Logic
             Console.WriteLine($"User '{username}' already exists.");
             return false;
         }
+        #endregion
 
+        #region UpdateMethods
+        public bool UpdateState(State state)
+        {
+            return stateDao.Update(state) != -1;
+        }
+        public bool UpdateDistrict(District district)
+        {
+            return districtDao.Update(district) != -1;
+        }
         public bool UpdateReport(Report report)
         {
             return reportDao.Update(report) != -1;
@@ -210,12 +202,21 @@ namespace SWO5.Dashboard.Logic
             Console.Write("Authentication failure: Wrong username or password.");
             return false;
         }
+        #endregion
 
+        #region RemoveMethods
+        public bool RemoveState(State state)
+        {
+            return stateDao.Delete(state);
+        }
+        public bool RemoveDistrict(District district)
+        {
+            return districtDao.Delete(district);
+        }
         public bool RemoveReport(Report report)
         {
             return reportDao.Delete(report);
         }
-
         public bool RemoveUser(string username, string password)
         {
             // can only remove existing users
@@ -229,7 +230,24 @@ namespace SWO5.Dashboard.Logic
             }
             return false;
         }
+        #endregion
 
+        #region UserManagement
+        public bool Login(string username, string password)
+        {
+            // Can only log in if the user exists
+            if (UserExists(username))
+            {
+                string hashed = HashPassword(password);
+                User foundUser = userDao.ReadAll().Where(u => u.Name.Equals(username)).Single();
+                // the password needs to match if hashed
+                if (foundUser.Password.Equals(HashPassword(password)))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         private String HashPassword(string password)
         {
             // use SHA256 hash algorithm to store the passwords
@@ -247,10 +265,10 @@ namespace SWO5.Dashboard.Logic
                 return builder.ToString();
             }
         }
-
         private bool UserExists(string username) {
             return userDao.ReadAll().Any(u => u.Name.Equals(username)); ;
         }
+        #endregion
     }
 
 }

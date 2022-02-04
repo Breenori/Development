@@ -11,30 +11,34 @@ namespace SWO5.Dashboard.Test
     public class CovidDashboardTest
     {
         ICovidDashboard dashboard;
+        IList<State> test_states;
+        IList<District> test_districts;
         IList<User> test_users;
         IList<Report> test_reports;
 
         [TestInitialize]
         public void Initialize()
         {
-            dashboard = CovidDashboardFactory.CreateCovidDashboard();
-
-            //dashboard.FillFromCSV(@"../../../../CovidFaelle_Timeline_GKZ.csv");
-
-
             // CREATE TEST DATA:
+            test_states = new List<State>();
+            test_states.Add(new State { Id = 10, Name = "Wyzima" });
+            test_states.Add(new State { Id = 11, Name = "Skellige" });
+            test_states.Add(new State { Id = 11, Name = "Taucherparadies" });
+            test_states.Add(new State { Id = 12, Name = "Novigrad" });
+            test_states.Add(new State { Id = 13, Name = "Toussaint" });
+
+            test_districts = new List<District>();
+            test_districts.Add(new District { Id = 1337, Name = "Beauclaire", Population=1470, ResponsibleState=test_states[4] });
+            test_districts.Add(new District { Id = 1338, Name = "Ravello", Population = 274, ResponsibleState = test_states[4] });
+            test_districts.Add(new District { Id = 1338, Name = "Dun Tynne", Population = 487, ResponsibleState = test_states[4] });
+            test_districts.Add(new District { Id = 1339, Name = "Dulcinea", Population = 73, ResponsibleState = test_states[4] });
+
             test_users = new List<User>();
             test_users.Add(new User { Id = 0, Name = "admin", Password = "geheim" });
             test_users.Add(new User { Name = "AddUser", Password = "test_adduser" });
             test_users.Add(new User { Name = "RemoveUser", Password = "test_removeuser" });
             test_users.Add(new User { Name = "UpdateUser", Password = "test_updateuser" });
             test_users.Add(new User { Name = "UpdateTester", Password = "Alligator3" });
-
-            // make sure that the users can be added, removed or updated
-            dashboard.RemoveUser(test_users[1].Name, test_users[1].Password);
-            dashboard.AddUser(test_users[2].Name, test_users[2].Password);
-            dashboard.AddUser(test_users[3].Name, test_users[3].Password);
-            dashboard.RemoveUser(test_users[4].Name, test_users[4].Password);
 
             test_reports = new List<Report>();
             test_reports.Add(new Report
@@ -78,14 +82,114 @@ namespace SWO5.Dashboard.Test
                 FromUser = test_users[0]
             });
 
+            Cleanup();
+            // makes ure that all state operations can be executed
+            dashboard.RemoveState(test_states[0]);
+            dashboard.AddState(test_states[1]);
+            dashboard.AddState(test_states[3]);
+            dashboard.AddState(test_states[4]);
+
+            dashboard.RemoveDistrict(test_districts[0]);
+            dashboard.AddDistrict(test_districts[1]);
+            dashboard.AddDistrict(test_districts[3]);
+
+            // make sure that the users can be added, removed or updated
+            dashboard.RemoveUser(test_users[1].Name, test_users[1].Password);
+            dashboard.AddUser(test_users[2].Name, test_users[2].Password);
+            dashboard.AddUser(test_users[3].Name, test_users[3].Password);
+            dashboard.RemoveUser(test_users[4].Name, test_users[4].Password);
+
+
             // makes sure that the report operations work
             test_reports[1] = dashboard.AddReport(test_reports[1]);
             test_reports[2] = dashboard.AddReport(test_reports[2]);
             test_reports[3].Id = test_reports[2].Id;
-
-
-
         }
+
+        [TestMethod]
+        public void TestAddState()
+        {
+            // given
+            State s = test_states[0];
+
+            Assert.AreEqual(false, dashboard.States.Contains(s));
+            State inserted = dashboard.AddState(s);
+            Assert.AreEqual(true, dashboard.States.Contains(s));
+            Assert.AreEqual(true, inserted != null && inserted == s);
+        }
+
+        [TestMethod]
+        public void TestRemoveState()
+        {
+            // given
+            State s = test_states[3];
+
+            // when
+            Assert.AreEqual(true, dashboard.States.Contains(s));
+            dashboard.RemoveState(s);
+            Assert.AreEqual(false, dashboard.States.Contains(s));
+        }
+
+        [TestMethod]
+        public void TestUpdateState()
+        {
+            // given
+            State s_old = test_states[1];
+            State s_new = test_states[2];
+
+            // when
+            Assert.AreEqual(true, dashboard.States.Contains(s_old));
+            Assert.AreEqual(false, dashboard.States.Contains(s_new));
+            bool updated = dashboard.UpdateState(s_new);
+            Assert.AreEqual(false, dashboard.States.Contains(s_old));
+            Assert.AreEqual(true, dashboard.States.Contains(s_new));
+
+            Assert.AreEqual(true, updated);
+        }
+
+        [TestMethod]
+        public void TestAddDistrict()
+        {
+            // given
+            District d = test_districts[0];
+
+            Assert.AreEqual(false, dashboard.FindDistrictsFor(null).Contains(d));
+            District inserted = dashboard.AddDistrict(d);
+
+            Assert.AreEqual(true, dashboard.FindDistrictsFor(null).Contains(d));
+            Assert.AreEqual(true, inserted != null && inserted == d);
+        }
+
+        [TestMethod]
+        public void TestRemoveDistrict()
+        {
+            // given
+            District d = test_districts[3];
+            // when
+            Assert.AreEqual(true, dashboard.FindDistrictsFor(null).Contains(d));
+            dashboard.RemoveDistrict(d);
+            Assert.AreEqual(false, dashboard.FindDistrictsFor(null).Contains(d));
+        }
+
+        [TestMethod]
+        public void TestUpdateDistrict()
+        {
+            // given
+            District d_old = test_districts[1];
+            District d_new = test_districts[2];
+
+
+            // when
+            Assert.AreEqual(true, dashboard.FindDistrictsFor(null).Contains(d_old));
+            Assert.AreEqual(false, dashboard.FindDistrictsFor(null).Contains(d_new));
+            bool updated = dashboard.UpdateDistrict(d_new);
+            
+            Assert.AreEqual(false, dashboard.FindDistrictsFor(null).Contains(d_old));
+            Assert.AreEqual(true, dashboard.FindDistrictsFor(null).Contains(d_new));
+
+            Assert.AreEqual(true, updated);
+        }
+
 
         [TestMethod]
         public void TestLogin()
@@ -163,21 +267,18 @@ namespace SWO5.Dashboard.Test
             // given
             IList<State> states = dashboard.States;
             IList<State> reference = new List<State>();
-            reference.Add(new State { Name = "Burgenland" });
-            reference.Add(new State { Name = "Kärnten" });
-            reference.Add(new State { Name = "Oberösterreich" });
-            reference.Add(new State { Name = "Niederösterreich" });
-            reference.Add(new State { Name = "Steiermark" });
-            reference.Add(new State { Name = "Salzburg" });
-            reference.Add(new State { Name = "Tirol" });
-            reference.Add(new State { Name = "Vorarlberg" });
-            reference.Add(new State { Name = "Wien" });
+            reference.Add(new State { Id = 1, Name = "Burgenland" });
+            reference.Add(new State { Id = 2, Name = "Kärnten" });
+            reference.Add(new State { Id = 3, Name = "Niederösterreich" });
+            reference.Add(new State { Id = 4, Name = "Oberösterreich" });
+            reference.Add(new State { Id = 5, Name = "Salzburg" });
+            reference.Add(new State { Id = 6, Name = "Steiermark" });
+            reference.Add(new State { Id = 7, Name = "Tirol" });
+            reference.Add(new State { Id = 8, Name = "Vorarlberg" });
+            reference.Add(new State { Id = 9, Name = "Wien" });
 
-            // when
-
-            // then
-            // there are only 9 states, and the above defined ones should be inside the list
-            Assert.AreEqual(9, states.Count);
+            // there are only 9 states (+test_states), and the above defined ones should be inside the list
+            Assert.AreEqual(true, states.Count>=9);
             foreach(State ref_state in reference)
             {
                 Assert.AreEqual(true, states.Contains(ref_state));
@@ -195,7 +296,7 @@ namespace SWO5.Dashboard.Test
             // then
             // it is stated that only 79 districts should exist, however that is the amount of POLITICAL districts.
             // 94 is the correct number
-            Assert.AreEqual(94, districts.Count);
+            Assert.AreEqual(true, districts.Count>=94);
             Assert.AreEqual(true, districts.Count > filteredDistricts.Count);
         }
 
@@ -233,21 +334,6 @@ namespace SWO5.Dashboard.Test
         }
         
         [TestMethod]
-        public void TestGetAllReportsTimeWindow()
-        {
-            DateTime from = DateTime.Parse("14.10.2020");
-            DateTime to = DateTime.Parse("24.12.2020");
-            IList<Report> reports = dashboard.GetAllReports(from, to);
-
-            // The list should contain entries (not empty) and also each entry should be in the timewindow
-            Assert.AreEqual(true, reports.Count > 0);
-            foreach (Report r in reports)
-            {
-                Assert.AreEqual(true, r.Date >= from && r.Date <= to);
-            }
-        }
-
-        [TestMethod]
         public void TestGetReportsForState()
         {
             IList<Report> reports = dashboard.GetReportsForState("Oberösterreich");
@@ -257,22 +343,6 @@ namespace SWO5.Dashboard.Test
             foreach(Report r in reports)
             {
                 Assert.AreEqual(true, r.ResponsibleDistrict.ResponsibleState.Name.Equals("Oberösterreich"));
-            }
-        }
-
-        [TestMethod]
-        public void TestGetReportsForStateTimewindow()
-        {
-            DateTime from = DateTime.Parse("14.10.2020");
-            DateTime to = DateTime.Parse("24.12.2020");
-            IList<Report> reports = dashboard.GetReportsForState("Oberösterreich", from, to);
-
-            // The list should contain entries (not empty) and also each entry should be in the timewindow and for the given state
-            Assert.AreEqual(true, reports.Count > 0);
-            foreach (Report r in reports)
-            {
-                Assert.AreEqual(true, r.ResponsibleDistrict.ResponsibleState.Name.Equals("Oberösterreich"));
-                Assert.AreEqual(true, r.Date >= from && r.Date <= to);
             }
         }
 
@@ -288,23 +358,6 @@ namespace SWO5.Dashboard.Test
                 Assert.AreEqual(true, r.ResponsibleDistrict.Name.Equals("Freistadt"));
             }
         }
-
-        [TestMethod]
-        public void TestGetReportsForDistrictTimeWindow()
-        {
-            DateTime from = DateTime.Parse("14.10.2020");
-            DateTime to = DateTime.Parse("24.12.2020");
-            IList<Report> reports = dashboard.GetReportsForDistrict("Freistadt", from, to);
-
-            // The list should contain entries (not empty) and also each entry should be in the timewindow and for the given district
-            Assert.AreEqual(true, reports.Count > 0);
-            foreach (Report r in reports)
-            {
-                Assert.AreEqual(true, r.ResponsibleDistrict.Name.Equals("Freistadt"));
-                Assert.AreEqual(true, r.Date >= from && r.Date <= to);
-            }
-        }
-
         [TestMethod]
         public void TestAddReport()
         {
@@ -371,6 +424,17 @@ namespace SWO5.Dashboard.Test
 
             dashboard.RemoveReport(test_reports[1]);
             dashboard.RemoveReport(test_reports[3]);
+
+
+            foreach (District d in test_districts)
+            {
+                dashboard.RemoveDistrict(d);
+            }
+
+            foreach (State s in test_states)
+            {
+                dashboard.RemoveState(s);
+            }
         }
     }
 }

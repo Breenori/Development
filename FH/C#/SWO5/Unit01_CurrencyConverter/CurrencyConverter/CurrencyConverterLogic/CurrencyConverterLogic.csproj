@@ -9,6 +9,7 @@
     <ProjectReference Include="..\CurrencyConverterDALSQLe\CurrencyConverterDALSQLe.csproj" />
     <ProjectReference Include="..\CurrencyConverterDAL\CurrencyConverterDAL.csproj" />
     <ProjectReference Include="..\CurrencyConverterDomain\CurrencyConverterDomain.csproj" />
+    <ProjectReference Include="..\CurrencyConverterEF\CurrencyConverterEF.csproj" />
   </ItemGroup>
 
   <ItemGroup>

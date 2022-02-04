@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>SWO5.Currency.API</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CurrencyConverterDomain\CurrencyConverterDomain.csproj" />
+    <ProjectReference Include="..\CurrencyConverterDto\CurrencyConverterDto.csproj" />
+    <ProjectReference Include="..\CurrencyConverterLogic\CurrencyConverterLogic.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -6,16 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using SWO5.Currency.DAL;
 using SWO5.Currency.DAL.SQLe;
+using SWO5.Currency.EF;
 
 namespace SWO5.Currency.Logic
 {
     class ExchangeRateManager : IManager<ExchangeRate>
     {
-        private IExchangeRateDao exchangeRateDao = DaoFactorySQLe.ExchangeRateDao;
+        private IExchangeRateDao exchangeRateDao = EFDaoFactory.ExchangeRateDao;
 
         public ExchangeRate Create(ExchangeRate entity)
         {
             entity.Id = exchangeRateDao.Create(entity);
+            // TODO: store association between CurrencyType and ExchangeRate
             return entity;
         }
 

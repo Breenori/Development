@@ -15,12 +15,12 @@ namespace SWO5.Dashboard.Domain
         public override bool Equals(object obj)
         {
             State state = obj as State;
-            return state != null && (state.Id.Equals(this.Id) || state.Name.Equals(this.Name));
+            return state != null && (state.Id.Equals(this.Id) && state.Name.Equals(this.Name));
         }
 
         public override int GetHashCode()
         {
-            return Name.GetHashCode();
+            return Id.GetHashCode() + Name.GetHashCode();
         }
     }
     public class District
@@ -40,13 +40,13 @@ namespace SWO5.Dashboard.Domain
         public override bool Equals(object obj)
         {
             District district = obj as District;
-            return district != null && district.Id.Equals(this.Id);
+            return district != null && district.Id.Equals(this.Id) && district.Name.Equals(this.Name);
         }
 
         // override object.GetHashCode
         public override int GetHashCode()
         {
-            return Name.GetHashCode();
+            return Id.GetHashCode() + Name.GetHashCode();
         }
 
     }

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidDashboardDALSQLe", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidDashboardTest", "CovidDashboardTest\CovidDashboardTest.csproj", "{B292FC15-729B-427F-BEB2-B10636E8F777}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CovidDashboardWPF", "CovidDashboardWPF\CovidDashboardWPF.csproj", "{EFC1B60E-8675-4034-A4C3-BE473F2329BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B292FC15-729B-427F-BEB2-B10636E8F777}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B292FC15-729B-427F-BEB2-B10636E8F777}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B292FC15-729B-427F-BEB2-B10636E8F777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFC1B60E-8675-4034-A4C3-BE473F2329BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC1B60E-8675-4034-A4C3-BE473F2329BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC1B60E-8675-4034-A4C3-BE473F2329BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC1B60E-8675-4034-A4C3-BE473F2329BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

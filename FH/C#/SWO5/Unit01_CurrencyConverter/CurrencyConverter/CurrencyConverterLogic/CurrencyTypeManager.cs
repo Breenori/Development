@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using SWO5.Currency.DAL;
 using SWO5.Currency.DAL.SQLe;
+using SWO5.Currency.EF;
 
 namespace SWO5.Currency.Logic
 {
     class CurrencyTypeManager : IManager<CurrencyType>
     {
-        private ICurrencyTypeDao currencyTypeDao = DaoFactorySQLe.CurrencyTypeDao;
+        private ICurrencyTypeDao currencyTypeDao = EFDaoFactory.CurrencyTypeDao;
 
         public CurrencyType Create(CurrencyType entity)
         {

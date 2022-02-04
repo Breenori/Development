@@ -18,10 +18,13 @@ namespace SWO5.Dashboard.DAL.SQLe
 
         protected override IDbCommand ToInsertCommand(State entity, SqlConnection conn)
         {
-            string query = $"INSERT INTO {TypeInfo.Name} (name) VALUES (@name); SELECT SCOPE_IDENTITY()";
+            string query = $"INSERT INTO {TypeInfo.Name} (id, name) VALUES (@id, @name); SELECT id FROM {TypeInfo.Name} WHERE id=@id";
 
             IDbCommand command = new SqlCommand(query, conn);
 
+            IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
+            paramId.Value = entity.Id;
+            command.Parameters.Add(paramId);
             IDbDataParameter paramName = new SqlParameter("@name", SqlDbType.NVarChar);
             paramName.Value = entity.Name;
             command.Parameters.Add(paramName);

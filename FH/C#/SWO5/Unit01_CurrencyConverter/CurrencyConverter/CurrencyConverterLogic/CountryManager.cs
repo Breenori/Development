@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using SWO5.Currency.DAL;
 using SWO5.Currency.DAL.SQLe;
+using SWO5.Currency.EF;
 
 namespace SWO5.Currency.Logic
 {
     class CountryManager : IManager<Country>
     {
-        private ICountryDao countryDao = DaoFactorySQLe.CountryDao;
+        private ICountryDao countryDao = EFDaoFactory.CountryDao;
         public Country Create(Country entity)
         {
             entity.Id = countryDao.Create(entity);
