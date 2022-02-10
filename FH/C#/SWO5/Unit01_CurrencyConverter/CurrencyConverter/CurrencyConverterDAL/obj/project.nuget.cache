@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7oLVDsMxsho8S8KsMfCBy82NsSRtM69elYshAZvfTZzR2zyP2rJASkg/rpT9Lc3qJFTffBNp5m/Dte2h4XUFsw==",
+  "dgSpecHash": "ddiKy8XZnUjaUIUNlFkLYA1xk0dKZGvpvQZmxhe4TvftYUo2eO9mPdb2s7Jk8aEsblbzyLxuG3DWcLgiVv1X/w==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj",
+  "projectFilePath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterDAL\\CurrencyConverterDAL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

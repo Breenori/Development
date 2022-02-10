@@ -19,11 +19,10 @@ namespace SWO5.Dashboard.Logic
 
         public SQLeBasedCovidDashboard()
         {
-            IDaoFactory factory = new DaoFactorySQLe();
-            stateDao = factory.StateDao;
-            districtDao = factory.DistrictDao;
-            userDao = factory.UserDao;
-            reportDao = factory.ReportDao;
+            stateDao = DaoFactorySQLe.StateDao;
+            districtDao = DaoFactorySQLe.DistrictDao;
+            userDao = DaoFactorySQLe.UserDao;
+            reportDao = DaoFactorySQLe.ReportDao;
         }
 
         public IList<State> States => stateDao.ReadAll().ToList();

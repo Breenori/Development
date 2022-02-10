@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "peom342RTWgAndM5D4KAdz/MDEXDQjsQ1agbytv5lvgaMzz8cy86dTDcypQKATGZUEsPEsf9QZw1JuFE+LU8kg==",
+  "dgSpecHash": "6JpWAJC9QAz7q6XqjR121dp0ecDz5z+ybKmQYS0Qr0oDGEoAH66dPLt6bWky4aFs+Wvn+LpJzF6RDNrqyMJW2w==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Git\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterEF\\CurrencyConverterEF.csproj",
+  "projectFilePath": "C:\\Development\\FH\\C#\\SWO5\\Unit01_CurrencyConverter\\CurrencyConverter\\CurrencyConverterEF\\CurrencyConverterEF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basti\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\basti\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

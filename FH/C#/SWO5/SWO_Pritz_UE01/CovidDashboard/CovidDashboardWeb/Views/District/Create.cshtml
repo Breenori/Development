@@ -1,0 +1,57 @@
+﻿@model SWO5.Dashboard.Web.Models.DistrictViewModel
+@{
+    ViewData["Title"] = "Covid Dashboard Web - Create District";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="card">
+        <div class="card-header">
+            Create District
+        </div>
+
+        <div class="card-body">
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <!-- Name -->
+                    @Html.LabelFor(model => model.District.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.District.Name, "", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.District.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- Population -->
+                    @Html.LabelFor(model => model.District.Population, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.District.Population, "", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.District.Population, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- State -->
+                    @Html.LabelFor(model => model.AvailableStates, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.SelectedStateId, Model.AvailableStates, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SelectedStateId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <!-- Submit -->
+                    <div class="col-md-10 col-md-offset-2">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "District")
+</div>

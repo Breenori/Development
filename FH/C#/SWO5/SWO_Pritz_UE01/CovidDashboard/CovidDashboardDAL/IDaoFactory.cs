@@ -8,9 +8,9 @@ namespace SWO5.Dashboard.DAL
 {
     public interface IDaoFactory
     {
-        public IStateDao StateDao { get; }
-        public IDistrictDao DistrictDao { get; }
-        public IUserDao UserDao {  get; }
-        public IReportDao ReportDao { get; }   
+        public  static IStateDao StateDao { get; }
+        public static IDistrictDao DistrictDao { get; }
+        public static IUserDao UserDao {  get; }
+        public static IReportDao ReportDao { get; }   
     }
 }

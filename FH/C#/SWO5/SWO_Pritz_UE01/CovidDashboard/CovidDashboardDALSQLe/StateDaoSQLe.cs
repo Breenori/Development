@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SWO5.Dashboard.DAL.SQLe
 {
-    class StateDaoSQLe : AbstractDao<State>, IStateDao
+    public class StateDaoSQLe : AbstractDao<State>, IStateDao
     {
         protected override State FromDataRecord(IDataRecord record)
         {
@@ -18,13 +18,10 @@ namespace SWO5.Dashboard.DAL.SQLe
 
         protected override IDbCommand ToInsertCommand(State entity, SqlConnection conn)
         {
-            string query = $"INSERT INTO {TypeInfo.Name} (id, name) VALUES (@id, @name); SELECT id FROM {TypeInfo.Name} WHERE id=@id";
+            string query = $"INSERT INTO {TypeInfo.Name} (name) VALUES (@name); SELECT SCOPE_IDENTITY()";
 
             IDbCommand command = new SqlCommand(query, conn);
 
-            IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
-            paramId.Value = entity.Id;
-            command.Parameters.Add(paramId);
             IDbDataParameter paramName = new SqlParameter("@name", SqlDbType.NVarChar);
             paramName.Value = entity.Name;
             command.Parameters.Add(paramName);

@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace SWO5.Dashboard.DAL.SQLe
 {
-    abstract class AbstractDao<T> : IDao<T>
+    public abstract class AbstractDao<T> : IDao<T>
     {
         protected const string CONNECTION_STRING = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Covid;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         protected Type TypeInfo => typeof(T);

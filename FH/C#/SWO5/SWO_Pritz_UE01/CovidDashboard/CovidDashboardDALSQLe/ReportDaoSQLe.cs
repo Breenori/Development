@@ -16,7 +16,7 @@ namespace SWO5.Dashboard.DAL.SQLe
         {
             string tableName = TypeInfo.Name;
             IList<Report> result = new List<Report>();
-            string selectCommand =  $"SELECT r.id report_id, d.id district_id, r.report_date report_date, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name" +
+            string selectCommand =  $"SELECT r.id report_id, d.id district_id, r.report_date report_date, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name, u.password user_password" +
                                     $" FROM {tableName} r" +
                                     $" JOIN district d ON r.district_id=d.id" +
                                     $" JOIN state s ON d.state_id=s.id" +
@@ -45,7 +45,7 @@ namespace SWO5.Dashboard.DAL.SQLe
         {
             string tableName = TypeInfo.Name;
             IList<Report> result = new List<Report>();
-            string selectCommand = $"SELECT r.id report_id, r.report_date report_date, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name" +
+            string selectCommand = $"SELECT r.id report_id, r.report_date report_date, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name, u.password user_password" +
                                     $" FROM {tableName} r" +
                                     $" JOIN district d ON r.district_id=d.id" +
                                     $" JOIN state s ON d.state_id=s.id" +
@@ -82,7 +82,7 @@ namespace SWO5.Dashboard.DAL.SQLe
             {
                 connection.Open();
                 string tableName = TypeInfo.Name;
-                string sqlCommand = $"SELECT r.id report_id, r.report_date report_date, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name" +
+                string sqlCommand = $"SELECT r.id report_id, r.report_date report_date, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name, u.password user_password" +
                                     $" FROM {tableName} r" +
                                     $" JOIN district d ON r.district_id=d.id" +
                                     $" JOIN state s ON d.state_id=s.id" +
@@ -207,7 +207,7 @@ namespace SWO5.Dashboard.DAL.SQLe
             using (SqlConnection connection = new SqlConnection(CONNECTION_STRING))
             {
                 connection.Open();
-                string sqlCommand = $"SELECT r.id report_id, r.report_date report_date, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name" +
+                string sqlCommand = $"SELECT r.id report_id, r.report_date report_date, d.id district_id, d.population district_population, d.name district_name, s.id state_id, s.name state_name, incidence, num_infected, num_recovered, num_deceased, u.id user_id, u.name user_name, u.password user_password" +
                                     $" FROM report r" +
                                     $" JOIN district d ON r.district_id=d.id" +
                                     $" JOIN state s ON d.state_id=s.id" +

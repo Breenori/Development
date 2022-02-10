@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>CovidDashboardWeb</AssemblyName>
+    <RootNamespace>SWO5.Dashboard.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CovidDashboardDomain\CovidDashboardDomain.csproj" />
+    <ProjectReference Include="..\CovidDashboardLogic\CovidDashboardLogic.csproj" />
+  </ItemGroup>
+
+</Project>

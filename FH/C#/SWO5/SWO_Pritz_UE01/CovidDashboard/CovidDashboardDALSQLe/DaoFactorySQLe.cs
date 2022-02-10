@@ -9,12 +9,12 @@ namespace SWO5.Dashboard.DAL.SQLe
     [DaoFactoryCandidate(ProviderName = "Microsoft SQL Server")]
     public class DaoFactorySQLe : IDaoFactory
     {
-        public IStateDao StateDao => new StateDaoSQLe();
+        public static IStateDao StateDao => new StateDaoSQLe();
 
-        public IDistrictDao DistrictDao => new DistrictDaoSQLe();
+        public static IDistrictDao DistrictDao => new DistrictDaoSQLe();
 
-        public IUserDao UserDao => new UserDaoSQLe();
+        public static IUserDao UserDao => new UserDaoSQLe();
 
-        public IReportDao ReportDao => new ReportDaoSQLe();
+        public static IReportDao ReportDao => new ReportDaoSQLe();
     }
 }

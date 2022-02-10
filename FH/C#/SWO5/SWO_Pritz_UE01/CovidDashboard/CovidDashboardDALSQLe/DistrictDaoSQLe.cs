@@ -101,12 +101,9 @@ namespace SWO5.Dashboard.DAL.SQLe
 
         protected override IDbCommand ToInsertCommand(District entity, SqlConnection conn)
         {
-            string query = $"INSERT INTO {TypeInfo.Name} (id, name, population, state_id) VALUES (@id, @name, @population, @state_id); SELECT id FROM {TypeInfo.Name} WHERE id=@id";
+            string query = $"INSERT INTO {TypeInfo.Name} (name, population, state_id) VALUES (@name, @population, @state_id); SELECT SCOPE_IDENTITY()";
 
             IDbCommand command = new SqlCommand(query, conn);
-            IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
-            paramId.Value = entity.Id;
-            command.Parameters.Add(paramId);
 
             IDbDataParameter paramName = new SqlParameter("@name", SqlDbType.NVarChar);
             paramName.Value = entity.Name;
@@ -125,8 +122,8 @@ namespace SWO5.Dashboard.DAL.SQLe
 
         protected override IDbCommand ToUpdateCommand(District entity, SqlConnection conn)
         {
-            string query = $"UPDATE {TypeInfo.Name} SET name = @name, population = @population WHERE id = @id AND state_id = @state_id; " +
-                            $"SELECT id FROM {TypeInfo.Name} WHERE id = @id AND state_id = @state_id";
+            string query = $"UPDATE {TypeInfo.Name} SET name = @name, population = @population, state_id=@state_id WHERE id = @id; " +
+                            $"SELECT id FROM {TypeInfo.Name} WHERE id=@id";
             IDbCommand command = new SqlCommand(query, conn);
 
             IDbDataParameter paramName = new SqlParameter("@name", SqlDbType.NVarChar);
@@ -150,16 +147,13 @@ namespace SWO5.Dashboard.DAL.SQLe
 
         protected override IDbCommand ToDeleteCommand(District entity, SqlConnection conn)
         {
-            string query = $"DELETE FROM {TypeInfo.Name} WHERE id=@id AND state_id=@state_id";
+            string query = $"DELETE FROM {TypeInfo.Name} WHERE id=@id";
             IDbCommand command = new SqlCommand(query, conn);
 
             IDbDataParameter paramId = new SqlParameter("@id", SqlDbType.BigInt);
             paramId.Value = entity.Id;
             command.Parameters.Add(paramId);
 
-            IDbDataParameter paramStateId = new SqlParameter("@state_id", SqlDbType.BigInt);
-            paramStateId.Value = entity.ResponsibleState.Id;
-            command.Parameters.Add(paramStateId);
 
             return command;
         }

@@ -8,6 +8,7 @@ namespace SWO5.Dashboard.DAL
 {
     public interface IDao<T>
     {
+        T ReadForIdentity(long identity);
         IList<T> ReadAll();
         long Create(T entity);
         long Update(T entity);

@@ -64,7 +64,8 @@ namespace SWO5.Dashboard.DAL.SQLe
                 FromUser = new User
                 {
                     Id = (long)record["user_id"],
-                    Name = (string)record["user_name"]
+                    Name = (string)record["user_name"],
+                    Password = (string)record["user_password"]
                 }
             };
         }

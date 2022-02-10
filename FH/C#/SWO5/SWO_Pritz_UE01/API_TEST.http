@@ -1,0 +1,75 @@
+### Get All Reports (Unauthorized)
+GET https://localhost:44330/api/CovidDashboard HTTP/1.1
+### Get One Report (Unauthorized)
+GET https://localhost:44330/api/CovidDashboard/15000 HTTP/1.1
+### Create one report (Unauthorized)
+POST https://localhost:44330/api/CovidDashboard HTTP/1.1
+Content-Type: application/json
+
+{
+  "date": "2022-02-06T15:39:16.702Z",
+  "responsibleDistrict": {
+    "id": 103,
+    "responsibleState": {
+      "id": 0,
+      "name": "string"
+    },
+    "name": "string",
+    "population": 0
+  },
+  "infected": 420,
+  "recovered": 1337,
+  "deceased": 42,
+  "incidence": 68.9,
+  "fromUser": {
+    "id": 0,
+    "name": "string",
+    "password": "string"
+  }
+}
+
+### Authentication/Authorization
+POST https://localhost:44330/api/Login
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "admin",
+  "password": "geheim2"
+}
+
+### Get all Reports (Authorized)
+GET https://localhost:44330/api/CovidDashboard HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFkbWluIiwiZXhwIjoxNjQ0MTgxNzgxLCJpc3MiOiJOdXRlbGxhLUVyZGJlZXJtYXJtZWxhZGUtV2FmZmVsLUdlbm9zc2VuY2x1YiIsImF1ZCI6Ik51dGVsbGEtRXJkYmVlcm1hcm1lbGFkZS1XYWZmZWwtR2Vub3NzZW5jbHViIn0.WgUSxWjy7iV7l2S2YfPWpvzXKVJ_x8TLB04T2TQRC-c
+
+### Get one report (Authorized)
+GET https://localhost:44330/api/CovidDashboard/15000 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFkbWluIiwiZXhwIjoxNjQ0MTgxNzgxLCJpc3MiOiJOdXRlbGxhLUVyZGJlZXJtYXJtZWxhZGUtV2FmZmVsLUdlbm9zc2VuY2x1YiIsImF1ZCI6Ik51dGVsbGEtRXJkYmVlcm1hcm1lbGFkZS1XYWZmZWwtR2Vub3NzZW5jbHViIn0.WgUSxWjy7iV7l2S2YfPWpvzXKVJ_x8TLB04T2TQRC-c
+
+### Create one report (Authorized)
+POST https://localhost:44330/api/CovidDashboard HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFkbWluIiwiZXhwIjoxNjQ0MTgxNzgxLCJpc3MiOiJOdXRlbGxhLUVyZGJlZXJtYXJtZWxhZGUtV2FmZmVsLUdlbm9zc2VuY2x1YiIsImF1ZCI6Ik51dGVsbGEtRXJkYmVlcm1hcm1lbGFkZS1XYWZmZWwtR2Vub3NzZW5jbHViIn0.WgUSxWjy7iV7l2S2YfPWpvzXKVJ_x8TLB04T2TQRC-c
+Content-Type: application/json
+
+
+{
+  "date": "2022-02-06T15:39:16.702Z",
+  "responsibleDistrict": {
+    "id": 103,
+    "responsibleState": {
+      "id": 0,
+      "name": "string"
+    },
+    "name": "string",
+    "population": 0
+  },
+  "infected": 420,
+  "recovered": 1337,
+  "deceased": 42,
+  "incidence": 68.9,
+  "fromUser": {
+    "id": 0,
+    "name": "string",
+    "password": "string"
+  }
+}
