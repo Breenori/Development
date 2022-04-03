@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "z24uLULRhVCkJe0U0CEXRGE8gmo5xilOzUAqB/V/fvS0btgnHz14ImFz/pfTezjiDQ4uVtkL9XJEdYz4S/CBpA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\HeuristicLab.Attic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\basti\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\heal.attic\\1.2.0\\heal.attic.1.2.0.nupkg.sha512",
+    "C:\\Users\\basti\\.nuget\\packages\\system.drawing.common\\4.5.1\\system.drawing.common.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

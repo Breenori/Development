@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\HeuristicLab.Attic.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\HeuristicLab.Attic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\HeuristicLab.Attic.csproj",
+        "projectName": "HeuristicLab.Attic",
+        "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\HeuristicLab.Attic.csproj",
+        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj": {
+                "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj"
+              },
+              "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj": {
+                "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "HEAL.Attic": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj",
+        "projectName": "HeuristicLab.Protobuf",
+        "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj",
+        "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj": {
+                "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.6.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj",
+        "projectName": "HeuristicLab.PluginInfrastructure-3.3",
+        "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj",
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net461": {}
+      }
+    }
+  }
+}

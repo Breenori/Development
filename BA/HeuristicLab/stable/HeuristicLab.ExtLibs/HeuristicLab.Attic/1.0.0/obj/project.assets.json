@@ -1,0 +1,390 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "Google.Protobuf/3.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Google.Protobuf.dll": {}
+        }
+      },
+      "HEAL.Attic/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/net461/HEAL.Attic.dll": {}
+        },
+        "runtime": {
+          "lib/net461/HEAL.Attic.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "HeuristicLab.PluginInfrastructure-3.3/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        }
+      },
+      "HeuristicLab.Protobuf/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "HeuristicLab.PluginInfrastructure-3.3": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win": {
+      "Google.Protobuf/3.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Google.Protobuf.dll": {}
+        }
+      },
+      "HEAL.Attic/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/net461/HEAL.Attic.dll": {}
+        },
+        "runtime": {
+          "lib/net461/HEAL.Attic.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "HeuristicLab.PluginInfrastructure-3.3/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        }
+      },
+      "HeuristicLab.Protobuf/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "HeuristicLab.PluginInfrastructure-3.3": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win-x64": {
+      "Google.Protobuf/3.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Google.Protobuf.dll": {}
+        }
+      },
+      "HEAL.Attic/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/net461/HEAL.Attic.dll": {}
+        },
+        "runtime": {
+          "lib/net461/HEAL.Attic.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "HeuristicLab.PluginInfrastructure-3.3/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        }
+      },
+      "HeuristicLab.Protobuf/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "HeuristicLab.PluginInfrastructure-3.3": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.1/win-x86": {
+      "Google.Protobuf/3.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Google.Protobuf.dll": {}
+        }
+      },
+      "HEAL.Attic/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "System.Drawing.Common": "4.5.1"
+        },
+        "compile": {
+          "lib/net461/HEAL.Attic.dll": {}
+        },
+        "runtime": {
+          "lib/net461/HEAL.Attic.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.5.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "HeuristicLab.PluginInfrastructure-3.3/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.PluginInfrastructure-3.3.dll": {}
+        }
+      },
+      "HeuristicLab.Protobuf/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.1",
+        "dependencies": {
+          "Google.Protobuf": "3.6.1",
+          "HeuristicLab.PluginInfrastructure-3.3": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HeuristicLab.Protobuf.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Google.Protobuf/3.6.1": {
+      "sha512": "741fGeDQjixBJaU2j+0CbrmZXsNJkTn/hWbOh4fLVXndHsCclJmWznCPWrJmPoZKvajBvAz3e8ECJOUvRtwjNQ==",
+      "type": "package",
+      "path": "google.protobuf/3.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.6.1.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/netstandard1.0/Google.Protobuf.dll",
+        "lib/netstandard1.0/Google.Protobuf.xml"
+      ]
+    },
+    "HEAL.Attic/1.2.0": {
+      "sha512": "0sBISnGwLTq8iuQQQDOFbqLJy3svxh670pmwS+lGQt9TKl65dZT0+szUhKdidby7H/9z5oSag3+CnZ8CT3O8Sw==",
+      "type": "package",
+      "path": "heal.attic/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "heal.attic.1.2.0.nupkg.sha512",
+        "heal.attic.nuspec",
+        "lib/net461/HEAL.Attic.dll",
+        "lib/netcoreapp2.1/HEAL.Attic.dll",
+        "lib/netstandard2.0/HEAL.Attic.dll"
+      ]
+    },
+    "System.Drawing.Common/4.5.1": {
+      "sha512": "GiyeGi/v4xYDz1vCNFwFvhz9k1XddOG7VD3jxRqzRBCbTHji+s3HxxbxtoymuK4OadEpgotI8zQ5+GEEH9sUEQ==",
+      "type": "package",
+      "path": "system.drawing.common/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "system.drawing.common.4.5.1.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "HeuristicLab.PluginInfrastructure-3.3/1.0.0": {
+      "type": "project",
+      "path": "../../../HeuristicLab.PluginInfrastructure/3.3/HeuristicLab.PluginInfrastructure-3.3.csproj",
+      "msbuildProject": "../../../HeuristicLab.PluginInfrastructure/3.3/HeuristicLab.PluginInfrastructure-3.3.csproj"
+    },
+    "HeuristicLab.Protobuf/1.0.0": {
+      "type": "project",
+      "path": "../../HeuristicLab.Protobuf/3.6.1/HeuristicLab.Protobuf.csproj",
+      "msbuildProject": "../../HeuristicLab.Protobuf/3.6.1/HeuristicLab.Protobuf.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.1": [
+      "HEAL.Attic >= 1.2.0",
+      "HeuristicLab.PluginInfrastructure-3.3 >= 1.0.0",
+      "HeuristicLab.Protobuf >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\basti\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\HeuristicLab.Attic.csproj",
+      "projectName": "HeuristicLab.Attic",
+      "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\HeuristicLab.Attic.csproj",
+      "packagesPath": "C:\\Users\\basti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Attic\\1.0.0\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\basti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net461"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net461": {
+          "projectReferences": {
+            "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj": {
+              "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj"
+            },
+            "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj": {
+              "projectPath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.PluginInfrastructure\\3.3\\HeuristicLab.PluginInfrastructure-3.3.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net461": {
+        "dependencies": {
+          "HEAL.Attic": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

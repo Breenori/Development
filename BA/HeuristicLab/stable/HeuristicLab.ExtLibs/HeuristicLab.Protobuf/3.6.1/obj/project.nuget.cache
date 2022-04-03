@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Gl7hozImxj1cC0ICSdeBclfQj9mRDYqxiqAVO4wAXXooLv9BMEEDvHWZRp/C+l0HxdSSViPcIWHrgo8sFFnyFA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\basti\\Downloads\\HeuristicLab\\stable\\HeuristicLab.ExtLibs\\HeuristicLab.Protobuf\\3.6.1\\HeuristicLab.Protobuf.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\basti\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}
