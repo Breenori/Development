@@ -1,1 +1,0 @@
-﻿This file is only necessary to make sure the folder "robots/Evaluation" is created in the output folder
