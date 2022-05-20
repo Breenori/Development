@@ -1,27 +1,9 @@
+import copy
 import random as rng
 import operator
-import copy
 from ProteinStructureSolution import ProteinStructureSolution
+from ProteinStructureSettings import get_directions_12, get_hydrophobic, get_polar
 
-# H
-hydrophobic = ['G', 'A', 'P', 'V', 'L', 'I', 'M', 'F', 'Y', 'W']
-# polar
-polar = ['S', 'T', 'C', 'N', 'Q', 'D', 'E', 'K', 'H', 'R']
-
-directions = [
-    [1, 1, 0],
-    [-1, -1, 0],
-    [-1, 1, 0],
-    [1, -1, 0],
-    [0, 1, 1],
-    [0, 1, -1],
-    [1, 0, 1],
-    [1, 0, -1],
-    [0, -1, 1],
-    [-1, 0, 1],
-    [0, -1, -1],
-    [-1, 0, -1],
-]
 
 class ProteinStructureCreator:
 
@@ -29,20 +11,20 @@ class ProteinStructureCreator:
         pass
 
     @staticmethod
-    def _get_hp_string(seq_aa: str):
-        return "".join(["H" if aa in hydrophobic else "P" for aa in seq_aa])
+    def __get_hp_string(seq_aa: str):
+        return "".join(["H" if aa in get_hydrophobic() else "P" for aa in seq_aa])
 
     @staticmethod
     def initialize(seq_aa: str):
 
-        seq_hp = ProteinStructureCreator._get_hp_string(seq_aa)
-        structure_cartesian, structure_directions = ProteinStructureCreator.create_random_structure(len(seq_hp))
+        seq_hp = ProteinStructureCreator.__get_hp_string(seq_aa)
+        structure_cartesian, structure_directions = ProteinStructureCreator.__create_random_structure(len(seq_hp))
         return ProteinStructureSolution(seq_hp,
                                         structure_cartesian,
                                         structure_directions)
 
     @staticmethod
-    def create_random_structure(length: int) -> ProteinStructureSolution:
+    def __create_random_structure(length: int) -> (list, list):
         seq_coords = []
         seq_coords, seq_dir, _ = ProteinStructureCreator.__create_random_structure_worker(seq_coords,
                                                                                           (0, 0, 0),
@@ -63,7 +45,7 @@ class ProteinStructureCreator:
             return seq_coords, [], True
         else:
             valid = False
-            possibilities = [tuple(map(operator.add, seq_coords[-1], cur_direction)) for cur_direction in directions]
+            possibilities = [tuple(map(operator.add, seq_coords[-1], cur_direction)) for cur_direction in get_directions_12()]
             dict_dir = dict()
             for direction, coord in enumerate(possibilities):
                 dict_dir[tuple(coord)] = direction
@@ -87,7 +69,9 @@ class ProteinStructureCreator:
 
     @staticmethod
     def create_structure(seq_hp: str,
-                         seq_dir: list) -> ProteinStructureSolution:
+                         seq_dir: list,
+                         parent1: ProteinStructureSolution = None,
+                         parent2: ProteinStructureSolution = None) -> ProteinStructureSolution:
         seq_coords = []
 
         structure_cartesian, structure_directions, valid = ProteinStructureCreator.__create_structure_worker(seq_dir,
@@ -97,7 +81,9 @@ class ProteinStructureCreator:
 
         return ProteinStructureSolution(seq_hp,
                                         structure_cartesian,
-                                        structure_directions)
+                                        structure_directions,
+                                        parent1,
+                                        parent2)
 
     @staticmethod
     def __create_structure_worker(seq_dir: list,
@@ -111,7 +97,7 @@ class ProteinStructureCreator:
             return seq_coords, seq_dir, True
         else:
             direction_idx = seq_dir[index]
-            next_point = tuple(map(operator.add, seq_coords[-1], directions[direction_idx]))
+            next_point = tuple(map(operator.add, seq_coords[-1], get_directions_12()[direction_idx]))
             valid = next_point not in seq_coords
 
             if valid:
@@ -121,14 +107,14 @@ class ProteinStructureCreator:
                                                                          next_point)
             else:
                 possibilities = [tuple(map(operator.add, seq_coords[-1], cur_direction))
-                                 for cur_direction in directions]
+                                 for cur_direction in get_directions_12()]
                 dict_dir = dict()
                 for direction, coord in enumerate(possibilities):
                     dict_dir[tuple(coord)] = direction
                 possibilities = list(set(possibilities) - set(seq_coords))
 
                 ret_seq_coords = []
-                ret_seq_directions = seq_dir
+                ret_seq_directions = copy.deepcopy(seq_dir)
                 valid = False
                 while len(possibilities) > 0 and not valid:
                     move = rng.randint(0, len(possibilities) - 1)

@@ -3,6 +3,7 @@ import ProteinStructureCreator as psc
 from ProteinStructureSolution import ProteinStructureSolution
 from ProteinStructureEvaluator import ProteinStructureEvaluator
 from ProteinStructureOperator import ProteinStructureOperator
+from GeneticAlgorithm import GeneticAlgorithm
 
 
 
@@ -18,6 +19,9 @@ if __name__ == '__main__':
     psps = ProteinStructureOperator.mutation_segment(psps1)
     score = ProteinStructureEvaluator.evaluate(psps)
 
-    print(psps.structure_directions)
+    psps.show_3d()
+
+    ga = GeneticAlgorithm(1000, 500, 4)
+    ga.start("FSGPMCYFSGPMCYAALGYPTRACVLIM")
 
 

@@ -33,22 +33,38 @@ class GeneticAlgorithm:
 
         return operator
 
-    def start(self, seq_aa):
+
+    def __select_random_from_group(self):
+        pass
+
+    def __tournament_selection(self, solutions: list, scores: list, k: int):
+        selection = []
+        while len(selection) < len(solutions):
+            idx_groupstart = rng.randint(0, len(solutions)-k-1)
+            group_solutions = solutions[idx_groupstart, idx_groupstart+k]
+            group_scores = scores[idx_groupstart, idx_groupstart+k]
+            max_score = max(group_scores)
+
+            candidates = [group_solutions[y] for y,x in enumerate(group_scores) if x == max_score]
+
+            selection.append(candidates[0,rng.randint(0, len(candidates)-1)])
+
+
+
+
+
+
+    def start(self, seq_aa: str):
         best_solution = None
         best_score = None
 
         solutions = self.__initialize(seq_aa)
 
         for iteration in range(self.__iterations):
-            children = []
+            rng.shuffle(solutions)
             scores = [ProteinStructureEvaluator.evaluate(solution) for solution in solutions]
 
-            while len(children) < len(solutions):
-                operator = self.__choose_operator()
-
-                if operator < 2:    # recombination
-                    index_rng = 
-                    group = scores
+            selected_parents = self.__tournament_selection(solutions, scores, 5)
 
 
 
