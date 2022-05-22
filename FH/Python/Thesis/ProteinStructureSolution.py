@@ -59,24 +59,41 @@ class ProteinStructureSolution:
         plt.show()
 
     def evaluate(self):
-        pairs = set()
+        if len(self.seq_HP) == len(self.structure_cartesian):
+            pairs = set()
+            for i, pos in enumerate(self.structure_cartesian):
+                if self.hp_dict[pos] == "H":
+                    possibilities = [tuple(map(operator.add, pos, cur_dir)) for cur_dir in get_directions_12()]
 
-        for i, pos in enumerate(self.structure_cartesian):
-            if self.hp_dict[pos] == "H":
-                possibilities = [tuple(map(operator.add, pos, cur_dir)) for cur_dir in get_directions_12()]
+                    if i > 0 and self.structure_cartesian[i-1] in possibilities:
+                        possibilities.remove(self.structure_cartesian[i-1])
+                    if i < len(self.structure_cartesian)-2 and self.structure_cartesian[i+1] in possibilities:
+                        possibilities.remove(self.structure_cartesian[i+1])
 
-                if i > 0 and self.structure_cartesian[i-1] in possibilities:
-                    possibilities.remove(self.structure_cartesian[i-1])
-                if i < len(self.structure_cartesian)-2 and self.structure_cartesian[i+1] in possibilities:
-                    possibilities.remove(self.structure_cartesian[i+1])
+                    possibilities = set([x for x in possibilities
+                                        if x in self.hp_dict.keys() and self.hp_dict[x] == "H"])
 
-                possibilities = set([x for x in possibilities
-                                     if x in self.hp_dict.keys() and self.hp_dict[x] == "H"])
+                    for possibility in possibilities:
+                        if possibility in self.structure_cartesian \
+                        and (possibility, self.structure_cartesian[i]) not in pairs:
+                                pairs.add((possibility, self.structure_cartesian[i]))
+                                pairs.add((self.structure_cartesian[i], possibility))
 
-                for possibility in possibilities:
-                    if possibility in self.structure_cartesian \
-                    and (possibility, self.structure_cartesian[i]) not in pairs:
-                            pairs.add((possibility, self.structure_cartesian[i]))
-                            pairs.add((self.structure_cartesian[i], possibility))
+            self.score = -len(pairs)/2
+        else:
+            self.score = 1
 
-        self.score = -len(pairs)/2
+    def calc_DME(self, other):
+        own_coords = [coord for index, coord in enumerate(self.structure_cartesian) if self.seq_HP[index] == 'H']
+        par_coords = [coord for index, coord in enumerate(other.structure_cartesian) if other.seq_HP[index] == 'H']
+
+        N = len(own_coords)
+
+        sum = 0
+        for i in range(N-2):
+            for j in range(i+1,N-1):
+                q_ij = math.sqrt((own_coords[i][0] - own_coords[j][0])**2+(own_coords[i][1] - own_coords[j][1])**2+(own_coords[i][2] - own_coords[j][2])**2)
+                p_ij = math.sqrt((par_coords[i][0] - par_coords[j][0])**2+(par_coords[i][1] - par_coords[j][1])**2+(par_coords[i][2] - par_coords[j][2])**2)
+                sum += (p_ij-q_ij)**2 / (N*(N-1)/2.0)
+
+        return sum

@@ -1,9 +1,11 @@
 import random as rng
 import math
 import copy
+import sys
 from ProteinStructureSolution import ProteinStructureSolution
 from ProteinStructureCreator import ProteinStructureCreator
 from ProteinStructureSettings import get_directions_12
+sys.setrecursionlimit(4000)
 
 
 class ProteinStructureOperator:
@@ -23,7 +25,6 @@ class ProteinStructureOperator:
         max_segment_length = math.floor(len(parent1.structure_directions) / n)
 
         if max_segment_length <= 2:
-            print("Amount of crossover points too high. Applying correction.")
             n = math.floor(len(parent1.structure_directions) / 3)
             max_segment_length = math.floor(len(parent1.structure_directions) / n)
 
@@ -49,8 +50,8 @@ class ProteinStructureOperator:
     @staticmethod
     def mutation_segment(parent: ProteinStructureSolution) -> ProteinStructureSolution:
         num_mutations = rng.randint(2, 7)
-        if num_mutations > len(parent.structure_directions):
-            num_mutations = len(parent.structure_directions)
+        if num_mutations >= len(parent.structure_directions):
+            num_mutations = len(parent.structure_directions)-1
 
         pos = rng.randint(0, len(parent.structure_directions) - num_mutations - 1)
 

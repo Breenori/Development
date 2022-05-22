@@ -1,6 +1,7 @@
 from ProteinStructureCreator import ProteinStructureCreator
 from ProteinStructureOperator import ProteinStructureOperator
 from ProteinStructureSolution import ProteinStructureSolution
+from concurrent.futures import ThreadPoolExecutor
 import random as rng
 import numpy as np
 import math
@@ -11,12 +12,14 @@ class GeneticAlgorithm:
     def __init__(self, iterations: int, population_size: int, group_size: int, probabilities=None, probability_change=None):
         if probabilities is None:
             probabilities = [1] * 6
+            probabilities[0] = 5
+            probabilities[1] = 5
         self.__iterations = iterations
         self.__population_size = population_size
         self.__probabilities = probabilities
         self.__probability_counters = [0] * 6
         if probability_change is None:
-            self.__probability_change = 0.001
+            self.__probability_change = 0.1
         else:
             self.__probability_change = probability_change
 
@@ -47,10 +50,10 @@ class GeneticAlgorithm:
             group_solutions = solutions[idx_groupstart:idx_groupstart + k]
             group_scores = [sol.score for sol in group_solutions]
             min_score = min(group_scores)
+            if min_score < 1:
+                candidates = [group_solutions[index] for index, value in enumerate(group_scores) if value == min_score]
 
-            candidates = [group_solutions[index] for index, value in enumerate(group_scores) if value == min_score]
-
-            selection.append(candidates[rng.randint(0, len(candidates)) - 1])
+                selection.append(candidates[rng.randint(0, len(candidates)) - 1])
 
         return selection
 
@@ -111,8 +114,11 @@ class GeneticAlgorithm:
                         self.__probabilities[operator] /= 2
                         self.__probability_counters[operator] = 0
                 else:
-                    self.__probabilities[operator] += self.__probability_change * (best_score - child.score)
-                    self.__probabilities[child.parent1.op_self] += (self.__probability_change / 2) * (best_score - child.score)
+                    improvement = (best_score - child.score)
+                    if operator == 3:
+                        improvement /= 12.0
+                    self.__probabilities[operator] += self.__probability_change * improvement
+                    self.__probabilities[child.parent1.op_self] += (self.__probability_change / 2) * improvement
                     self.__probability_counters[operator] = 0
 
                 children.append(child)
@@ -123,8 +129,16 @@ class GeneticAlgorithm:
         best_score = 0
 
         solutions = self.__initialize(seq_aa)
+        for solution in solutions:
+            solution.evaluate()
+
+        scores = [sol.score for sol in solutions]
+        max_index = np.argmin(scores)
+        best_solution = solutions[max_index]
+        best_score = scores[max_index]
 
 
+        converge_counter = 100
         for iteration in range(self.__iterations):
             print("Iteration",iteration)
             print("best", best_score)
@@ -134,6 +148,23 @@ class GeneticAlgorithm:
 
             children = self.__create_child_generation(selected_parents, len(seq_aa), best_score)
 
+            # crowding
+            """
+            for i, child in enumerate(children):
+                randnum = rng.randint(1,100)
+                if (randnum <= 2):
+                    DMEs = []
+                    for parent in solutions:
+                        DMEs.append(child.calc_DME(parent))
+                    similar = np.argmax(DMEs)
+                    if solutions[similar].score < child.score:
+                        children[i] = solutions[similar]
+                    elif solutions[similar].score == child.score:
+                        randnum = rng.randint(0,1)
+                        if randnum == 1:
+                            children[i] = solutions[similar]
+            """
+
             solutions = children
             scores = [sol.score for sol in solutions]
             max_index = np.argmin(scores)
@@ -141,7 +172,13 @@ class GeneticAlgorithm:
             if best_score is None or scores[max_index] < best_score:
                 best_solution = solutions[max_index]
                 best_score = scores[max_index]
-        best_solution.show_3d()
+                converge_counter = 100
+            else:
+                converge_counter -= 1
+
+            if converge_counter == 0:
+                break
+        # best_solution.show_3d()
         return best_solution
 
 
