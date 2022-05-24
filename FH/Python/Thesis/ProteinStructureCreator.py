@@ -16,8 +16,16 @@ def initialize(seq_aa: str):
     
 
 
-def create_random_structure(seq_hp: str) -> tuple[list, list]:
+def create_random_structure(seq_hp: str) -> ProteinStructureSolution:
     seq_coords = []
+
+    seq_coords, seq_dir = create_random_structure_non(seq_hp)
+
+    return ProteinStructureSolution(seq_hp,
+                                    seq_coords,
+                                    seq_dir)
+
+
     seq_coords, seq_dir, _ = create_random_structure_worker(seq_coords,
                                                             (0, 0, 0),
                                                             len(seq_hp))
@@ -26,11 +34,62 @@ def create_random_structure(seq_hp: str) -> tuple[list, list]:
                                     seq_coords,
                                     seq_dir)
 
+def create_random_structure_non(seq_hp: str) -> (list, list):
+    seq_coords = [(0, 0, 0)]
+    seq_dir = []
+       
+    possibilities = []
+    while len(seq_coords) < len(seq_hp):
+        if len(possibilities) < len(seq_dir)+1:
+            cur_possibilities = [i for i,dir in enumerate(get_directions_12()) if tuple(map(operator.add, seq_coords[-1], dir)) not in seq_coords]
+            possibilities.append(cur_possibilities)
+        if len(possibilities[-1]) == 0:
+            del possibilities[-1]
+            del seq_coords[-1]
+            del seq_dir[-1]
 
+        if len(possibilities[-1]) > 0:
+            move = rng.randint(0, len(possibilities[-1])-1)
+            seq_dir.append(move)
+            seq_coords.append(tuple(map(operator.add, seq_coords[-1], get_directions_12()[move])))
+            del possibilities[-1][move]
 
-def create_random_structure_worker(seq_coords: list[tuple[int, int, int]],
-                                    next_coord: tuple[int, int, int],
-                                    desired_length: int) -> tuple[list[tuple[int,int,int]], list[int], bool]:
+    return seq_coords, seq_dir
+
+def create_structure_non(seq_dir: str) -> (list, list):
+    seq_coords = [(0, 0, 0)]
+       
+    possibilities = []
+    tried = [False] * len(seq_dir)
+    current_dir = 0
+    while len(seq_coords) < len(seq_dir)+1:
+        if len(possibilities) < current_dir+1:
+            cur_possibilities = [i for i,dir in enumerate(get_directions_12()) if tuple(map(operator.add, seq_coords[-1], dir)) not in seq_coords]
+            possibilities.append(cur_possibilities)
+        if len(possibilities[-1]) == 0:
+            del possibilities[-1]
+            del seq_coords[-1]
+            current_dir -= 1
+
+        move = -1
+        if not tried[current_dir]:
+            move = seq_dir[current_dir]
+            tried[current_dir] = True
+        else:
+            if len(possibilities[-1]) > 0:
+                move = rng.randint(0, len(possibilities[-1])-1)
+                seq_dir[current_dir] = move
+        if len(possibilities[-1]) > 0:
+            seq_dir.append(move)
+            seq_coords.append(tuple(map(operator.add, seq_coords[-1], get_directions_12()[move])))
+            current_dir += 1
+            del possibilities[-1][move]
+
+    return seq_coords, seq_dir
+
+def create_random_structure_worker(seq_coords: list,
+                                    next_coord: (int, int, int),
+                                    desired_length: int) -> (list, list, bool):
     # try to append next 3d coordinate
     if next_coord not in seq_coords:
         seq_coords.append(next_coord)
@@ -65,9 +124,16 @@ def create_random_structure_worker(seq_coords: list[tuple[int, int, int]],
 
 
 def create_structure(seq_hp: str,
-                    seq_dir: list[int],
+                    seq_dir: list,
                     parent1: ProteinStructureSolution = None,
                     parent2: ProteinStructureSolution = None) -> ProteinStructureSolution:
+
+    structure_cartesian, structure_directions = create_structure_non(seq_dir)
+    return ProteinStructureSolution(seq_hp,
+                                    structure_cartesian,
+                                    structure_directions,
+                                    parent1,
+                                    parent2)
 
     seq_coords = []
     structure_cartesian, structure_directions, valid = create_structure_worker(seq_dir,
@@ -82,10 +148,10 @@ def create_structure(seq_hp: str,
                                     parent2)
 
 
-def create_structure_worker(seq_dir: list[int],
-                                seq_coords: list[tuple[int, int, int]],
+def create_structure_worker(seq_dir: list,
+                                seq_coords: list,
                                 index: int,
-                                next_coord: tuple[int, int, int]) -> tuple[list[tuple[int,int,int]], list[int], bool]:
+                                next_coord: (int, int, int)) -> (list, list, bool):
     # if next coord is valid, add it to the list
     if next_coord not in seq_coords:
         seq_coords.append(next_coord)

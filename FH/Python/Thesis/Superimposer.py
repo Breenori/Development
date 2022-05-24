@@ -51,6 +51,8 @@ class Superimposer:
                     ref_res.child_list.append(bio_atoms_pred[child_index])
                     child_index += 1
 
+        struc_len = len(structure)
+
 
         io = Bio.PDB.PDBIO()
         io.set_structure(structure)

@@ -8,15 +8,15 @@ from ProteinStructureSettings import get_directions_12
 
 def crossover_two(parent1: ProteinStructureSolution,
                     parent2: ProteinStructureSolution) \
-                    -> tuple[ProteinStructureSolution,
-                    ProteinStructureSolution]:
+                    -> (ProteinStructureSolution,
+                    ProteinStructureSolution):
 
     return crossover_multipoint(parent1, parent2, 2)
 
 
 def crossover_multipoint(parent1: ProteinStructureSolution,
                         parent2: ProteinStructureSolution, n: int) \
-                        -> tuple[ProteinStructureSolution, ProteinStructureSolution]:
+                        -> (ProteinStructureSolution, ProteinStructureSolution):
     points = []
     max_segment_length = math.floor(len(parent1.structure_directions) / n)
 

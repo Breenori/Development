@@ -12,7 +12,7 @@ class GeneticAlgorithm:
                     population_size: int,
                     group_size: int,
                     convergence_limit: int,
-                    probabilities:tuple[int, int, int, int, int, int]=None,
+                    probabilities: list=None,
                     probability_change: float=None):
         self.__iterations = iterations
         self.__population_size = population_size
@@ -52,7 +52,7 @@ class GeneticAlgorithm:
 
         return operator
 
-    def __tournament_selection(self, solutions: list[ProteinStructureSolution]) -> list:
+    def __tournament_selection(self, solutions: list) -> list:
         selection = []
         while len(selection) < len(solutions):
             idx_groupstart = rng.randint(0, len(solutions) - self.__group_size - 1)
@@ -66,9 +66,9 @@ class GeneticAlgorithm:
 
         return selection
 
-    def __create_child_generation(self, selected_parents: list[ProteinStructureSolution],
+    def __create_child_generation(self, selected_parents: list,
                                     seq_len: int, 
-                                    best_score: int) -> list[ProteinStructureSolution]:
+                                    best_score: int) -> list:
         children = []
         while len(children) < self.__population_size:
             operator = self.__choose_operator(len(selected_parents) - len(children) > 1)
