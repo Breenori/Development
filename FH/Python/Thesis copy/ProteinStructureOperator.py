@@ -8,8 +8,7 @@ from ProteinStructureSettings import get_directions_12
 
 def crossover_two(parent1: ProteinStructureSolution,
                     parent2: ProteinStructureSolution) \
-                    -> tuple[ProteinStructureSolution,
-                    ProteinStructureSolution]:
+                    -> tuple[ProteinStructureSolution,ProteinStructureSolution]:
 
     return crossover_multipoint(parent1, parent2, 2)
 

@@ -1,18 +1,18 @@
+from logging import exception
 import requests
 import time
 import Bio.PDB
 import os.path
 import os
 import re
+import warnings
+import sys
 import numpy as np
 from GeneticAlgorithm import GeneticAlgorithm
 from ProteinStructureSettings import get_3to1
 from Superimposer import Superimposer
-
-import warnings
-import sys
 warnings.filterwarnings("ignore")
-sys.setrecursionlimit(2000)
+sys.setrecursionlimit(2500)
 
 def evaluate_casp(filename: str, iterations: int, population_size: int, out_name: str):
     # write csv header
@@ -52,13 +52,12 @@ def evaluate_for_pdb(pdb_id: str, iterations: int, population_size: int, out_nam
 
         # build seq from PDB
         seq = ""
-        for ref_chain in ref_model:
-            seq += "".join([Bio.PDB.Polypeptide.three_to_one(ref_res.resname) for ref_res in ref_chain if ref_res.resname in get_3to1().keys()])
-        seq_len = len(seq)
+        #for ref_chain in ref_model:
+        seq += "".join([Bio.PDB.Polypeptide.three_to_one(ref_res.resname) for ref_res in ref_model['A'] if ref_res.resname in get_3to1().keys()])
         
         # execute GA and measure time
         start = time.time()
-        ga = GeneticAlgorithm(iterations, population_size, 4, 100)
+        ga = GeneticAlgorithm(iterations, population_size, 4)
         psso = ga.start(seq)
         end = time.time()
 
@@ -104,5 +103,9 @@ if not os.path.exists('pdbs'):
 if __name__ == '__main__':
     pdb_url_pdb = "https://files.rcsb.org/download/"
 
-    evaluate_casp("targetlist.csv", 10, 250, "output_test.csv")
-    evaluate_results("output_test.csv")
+    evaluate_casp("targetlist.csv", 1000, 250, "output_1000.csv", 100)
+    evaluate_results("output_1000.csv")
+
+
+                    
+

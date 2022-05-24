@@ -26,11 +26,12 @@ def create_random_structure(seq_hp: str) -> tuple[list, list]:
                                     seq_coords,
                                     seq_dir)
 
+    return seq_coords, seq_dir
 
 
 def create_random_structure_worker(seq_coords: list[tuple[int, int, int]],
                                     next_coord: tuple[int, int, int],
-                                    desired_length: int) -> tuple[list[tuple[int,int,int]], list[int], bool]:
+                                    desired_length: int):
     # try to append next 3d coordinate
     if next_coord not in seq_coords:
         seq_coords.append(next_coord)
@@ -85,7 +86,7 @@ def create_structure(seq_hp: str,
 def create_structure_worker(seq_dir: list[int],
                                 seq_coords: list[tuple[int, int, int]],
                                 index: int,
-                                next_coord: tuple[int, int, int]) -> tuple[list[tuple[int,int,int]], list[int], bool]:
+                                next_coord: tuple[int, int, int]):
     # if next coord is valid, add it to the list
     if next_coord not in seq_coords:
         seq_coords.append(next_coord)

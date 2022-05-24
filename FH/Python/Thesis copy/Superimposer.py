@@ -15,11 +15,7 @@ class Superimposer:
         structure = Bio.PDB.PDBParser().get_structure(pdb_code, pdb_filename)
         ref_model = structure[0]
 
-        atoms_ref = []
-        for ref_chain in ref_model:
-            for ref_res in ref_chain:
-                if ref_res.resname in get_3to1().keys():
-                    atoms_ref.append(ref_res['CA'])
+        atoms_ref= [ref_res['CA'] for ref_res in ref_model['A'] if ref_res.resname in get_3to1().keys()]
 
         ref_mean_dist = numpy.average([math.sqrt((atoms_ref[i+1].coord[0] - atoms_ref[i].coord[0])**2 + (atoms_ref[i+1].coord[1] - atoms_ref[i].coord[1])**2 + (atoms_ref[i+1].coord[2] - atoms_ref[i].coord[2])**2) for i in range(0, len(atoms_ref)-1)])
 
@@ -42,14 +38,13 @@ class Superimposer:
         print("RMSD(pdb, prediction) = %0.2f" % (super_imposer.rms))
         
         child_index = 0
-        for ref_chain in ref_model:
-            for ref_res in ref_chain:
-                if ref_res.resname in get_3to1().keys():
-                    ref_res.child_dict = dict()
-                    ref_res.child_dict['CA'] = bio_atoms_pred[child_index]
-                    ref_res.child_list = list()
-                    ref_res.child_list.append(bio_atoms_pred[child_index])
-                    child_index += 1
+        for ref_res in ref_model['A']:
+            if ref_res.resname in d3to1.keys():
+                ref_res.child_dict = dict()
+                ref_res.child_dict['CA'] = bio_atoms_pred[child_index]
+                ref_res.child_list = list()
+                ref_res.child_list.append(bio_atoms_pred[child_index])
+                child_index += 1
 
 
         io = Bio.PDB.PDBIO()

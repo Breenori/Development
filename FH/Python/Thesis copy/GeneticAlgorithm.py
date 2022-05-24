@@ -154,8 +154,6 @@ class GeneticAlgorithm:
         converge_counter = self.__convergence_limit
         # start iterating
         for iteration in range(self.__iterations):
-            print("iteration",iteration)
-            print("best solution", best_solution.score)
             # shuffle solutions and select parent generation
             rng.shuffle(solutions)
             selected_parents = self.__tournament_selection(solutions)
