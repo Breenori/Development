@@ -50,6 +50,10 @@ class Superimposer:
                     ref_res.child_list = list()
                     ref_res.child_list.append(bio_atoms_pred[child_index])
                     child_index += 1
+                else:
+                    ref_res.child_dict = dict()
+                    ref_res.child_list = list()
+
 
         struc_len = len(structure)
 

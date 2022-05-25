@@ -51,7 +51,7 @@ def create_random_structure_non(seq_hp: str) -> (list, list):
         if len(possibilities[-1]) > 0:
             move = rng.randint(0, len(possibilities[-1])-1)
             seq_dir.append(move)
-            seq_coords.append(tuple(map(operator.add, seq_coords[-1], get_directions_12()[move])))
+            seq_coords.append(tuple(map(operator.add, seq_coords[-1], get_directions_12()[possibilities[-1][move]])))
             del possibilities[-1][move]
 
     return seq_coords, seq_dir
@@ -63,27 +63,34 @@ def create_structure_non(seq_dir: str) -> (list, list):
     tried = [False] * len(seq_dir)
     current_dir = 0
     while len(seq_coords) < len(seq_dir)+1:
-        if len(possibilities) < current_dir+1:
+        if len(possibilities) < len(seq_coords):
             cur_possibilities = [i for i,dir in enumerate(get_directions_12()) if tuple(map(operator.add, seq_coords[-1], dir)) not in seq_coords]
             possibilities.append(cur_possibilities)
         if len(possibilities[-1]) == 0:
             del possibilities[-1]
             del seq_coords[-1]
-            current_dir -= 1
+            current_dir = len(seq_coords)-1
 
         move = -1
+        if current_dir > len(tried):
+            print("hi")
         if not tried[current_dir]:
-            move = seq_dir[current_dir]
+            move = possibilities.index(seq_dir[current_dir]) if seq_dir[current_dir] in possibilities else -1
             tried[current_dir] = True
-        else:
+     
+        if move == -1:
             if len(possibilities[-1]) > 0:
                 move = rng.randint(0, len(possibilities[-1])-1)
                 seq_dir[current_dir] = move
+
         if len(possibilities[-1]) > 0:
-            seq_dir.append(move)
-            seq_coords.append(tuple(map(operator.add, seq_coords[-1], get_directions_12()[move])))
-            current_dir += 1
-            del possibilities[-1][move]
+            if tuple(map(operator.add, seq_coords[-1], get_directions_12()[possibilities[-1][move]])) not in seq_coords:
+                seq_coords.append(tuple(map(operator.add, seq_coords[-1], get_directions_12()[possibilities[-1][move]])))
+                if move < len(possibilities[-1]):
+                    del possibilities[-1][move]
+                current_dir = len(seq_coords)-1
+            
+            
 
     return seq_coords, seq_dir
 

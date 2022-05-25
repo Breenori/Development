@@ -89,7 +89,7 @@ def evaluate_results(csv_path: str):
         for line in csv_in.readlines():
             elements = line.split(';')
             if elements[2] != 'DNF':
-                rmsd = elements[3].replace("\n","")
+                rmsd = elements[4].replace("\n","")
                 if rmsd != "inf":
                     rmsd_list.append(float(rmsd))
 
@@ -106,6 +106,6 @@ if not os.path.exists('pdbs'):
 if __name__ == '__main__':
     pdb_url_pdb = "https://files.rcsb.org/download/"
 
-    evaluate_casp("targetlist.csv", 0, 250, "output_test.csv")
+    evaluate_casp("targetlist.csv", 0, 250, "output_100_non.csv")
     #evaluate_for_pdb("6vr4",0,250,'output_test.csv')
-    evaluate_results("output_test.csv")
+    evaluate_results("output_100_non.csv")

@@ -19,6 +19,8 @@ namespace SWO5.Dashboard.Test
         [TestInitialize]
         public void Initialize()
         {
+            dashboard = CovidDashboardFactory.CreateCovidDashboard();
+
             // CREATE TEST DATA:
             test_states = new List<State>();
             test_states.Add(new State { Id = 10, Name = "Wyzima" });
@@ -134,8 +136,9 @@ namespace SWO5.Dashboard.Test
         public void TestUpdateState()
         {
             // given
-            State s_old = test_states[1];
-            State s_new = test_states[2];
+            State s_old = dashboard.States.Where(x => x.Name == "Skellige").Single();//test_states[1];
+            State s_new = dashboard.States.Where(x => x.Name == "Skellige").Single();//test_states[2];
+            s_new.Name = "Taucherparadies";
 
             // when
             Assert.AreEqual(true, dashboard.States.Contains(s_old));
@@ -175,8 +178,9 @@ namespace SWO5.Dashboard.Test
         public void TestUpdateDistrict()
         {
             // given
-            District d_old = test_districts[1];
-            District d_new = test_districts[2];
+            District d_old = dashboard.FindDistrictsFor(null).Where(x => x.Name == "Ravello").Single();//test_districts[1];
+            District d_new = dashboard.FindDistrictsFor(null).Where(x => x.Name == "Ravello").Single();
+            d_new.Name = "Dun Tynne";
 
 
             // when
@@ -278,7 +282,7 @@ namespace SWO5.Dashboard.Test
             reference.Add(new State { Id = 9, Name = "Wien" });
 
             // there are only 9 states (+test_states), and the above defined ones should be inside the list
-            Assert.AreEqual(true, states.Count>=9);
+            Assert.AreEqual(true, states.Count()>=9);
             foreach(State ref_state in reference)
             {
                 Assert.AreEqual(true, states.Contains(ref_state));
@@ -428,12 +432,21 @@ namespace SWO5.Dashboard.Test
 
             foreach (District d in test_districts)
             {
-                dashboard.RemoveDistrict(d);
+                IEnumerable<District> dis = dashboard.FindDistrictsFor(null).Where(x => x.Name == d.Name);
+                if(dis.Any())
+                {
+                    dashboard.RemoveDistrict(dis.Single());
+                }
+                
             }
 
             foreach (State s in test_states)
             {
-                dashboard.RemoveState(s);
+                IEnumerable<State> sta = dashboard.States.Where(x => x.Name == s.Name);
+                if (sta.Any())
+                {
+                    dashboard.RemoveState(sta.Single());
+                }
             }
         }
     }
