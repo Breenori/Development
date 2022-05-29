@@ -11,6 +11,7 @@ class GeneticAlgorithm:
     def __init__(self, iterations: int,
                     population_size: int,
                     group_size: int,
+                    elites: int,
                     convergence_limit: int,
                     probabilities: list=None,
                     probability_change: float=None):
@@ -18,6 +19,7 @@ class GeneticAlgorithm:
         self.__population_size = population_size
         self.__group_size = group_size
         self.__convergence_limit = convergence_limit
+        self.__elites = elites
 
         # initialize probabilities with 1 --> 1 / 1*6 = 0.16 = 16%
         if probabilities is None:
@@ -163,8 +165,12 @@ class GeneticAlgorithm:
             # create child generation using recombination or mutation
             children = self.__create_child_generation(selected_parents, len(seq_aa), best_score)
 
-            # child generation becomes new parent generation and is evaluated
-            solutions = children
+            # elitism + child generation becomes new parent generation and is evaluated
+            solutions = [x for _, x in sorted(zip(scores, solutions), key=lambda pair: pair[0])][:self.__elites]
+            child_scores = [sol.score for sol in children]
+            solutions = solutions + [x for _, x in sorted(zip(child_scores, children), key=lambda pair: pair[0])][:-self.__elites]
+            # solutions = children
+
             scores = [sol.score for sol in solutions]
             max_index = np.argmin(scores)
 

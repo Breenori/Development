@@ -17,46 +17,34 @@ def initialize(seq_aa: str):
 
 
 def create_random_structure(seq_hp: str) -> ProteinStructureSolution:
-    seq_coords = []
-
-    seq_coords, seq_dir = create_random_structure_non(seq_hp)
-
-    return ProteinStructureSolution(seq_hp,
-                                    seq_coords,
-                                    seq_dir)
-
-
-    seq_coords, seq_dir, _ = create_random_structure_worker(seq_coords,
-                                                            (0, 0, 0),
-                                                            len(seq_hp))
-
-    return ProteinStructureSolution(seq_hp,
-                                    seq_coords,
-                                    seq_dir)
-
-def create_random_structure_non(seq_hp: str) -> (list, list):
     seq_coords = [(0, 0, 0)]
     seq_dir = []
        
     possibilities = []
     while len(seq_coords) < len(seq_hp):
+        # if position not yet reached, calc possibilities
         if len(possibilities) < len(seq_dir)+1:
             cur_possibilities = [i for i,dir in enumerate(get_directions_12()) if tuple(map(operator.add, seq_coords[-1], dir)) not in seq_coords]
             possibilities.append(cur_possibilities)
+        # if position reached dead end, go back one position
         if len(possibilities[-1]) == 0:
             del possibilities[-1]
             del seq_coords[-1]
             del seq_dir[-1]
 
+        # try all possibilities for the given position
         if len(possibilities[-1]) > 0:
             move = rng.randint(0, len(possibilities[-1])-1)
             seq_dir.append(move)
             seq_coords.append(tuple(map(operator.add, seq_coords[-1], get_directions_12()[possibilities[-1][move]])))
             del possibilities[-1][move]
 
-    return seq_coords, seq_dir
+    return ProteinStructureSolution(seq_hp,
+                                    seq_coords,
+                                    seq_dir)
 
-def create_structure_non(seq_dir: str) -> (list, list):
+
+def create_structure(seq_hp: str, seq_dir: list, parent1: ProteinStructureSolution, parent2: ProteinStructureSolution = None) -> ProteinStructureSolution:
     seq_coords = [(0, 0, 0)]
        
     possibilities = []
@@ -91,8 +79,11 @@ def create_structure_non(seq_dir: str) -> (list, list):
                 current_dir = len(seq_coords)-1
             
             
-
-    return seq_coords, seq_dir
+    return ProteinStructureSolution(seq_hp,
+                                    seq_coords,
+                                    seq_dir,
+                                    parent1,
+                                    parent2)
 
 def create_random_structure_worker(seq_coords: list,
                                     next_coord: (int, int, int),
@@ -128,31 +119,6 @@ def create_random_structure_worker(seq_coords: list,
             del possibilities[move]
 
         return ret_seq_coords, ret_seq_dir, valid
-
-
-def create_structure(seq_hp: str,
-                    seq_dir: list,
-                    parent1: ProteinStructureSolution = None,
-                    parent2: ProteinStructureSolution = None) -> ProteinStructureSolution:
-
-    structure_cartesian, structure_directions = create_structure_non(seq_dir)
-    return ProteinStructureSolution(seq_hp,
-                                    structure_cartesian,
-                                    structure_directions,
-                                    parent1,
-                                    parent2)
-
-    seq_coords = []
-    structure_cartesian, structure_directions, valid = create_structure_worker(seq_dir,
-                                                                                seq_coords,
-                                                                                0,
-                                                                                (0, 0, 0))
-
-    return ProteinStructureSolution(seq_hp,
-                                    structure_cartesian,
-                                    structure_directions,
-                                    parent1,
-                                    parent2)
 
 
 def create_structure_worker(seq_dir: list,

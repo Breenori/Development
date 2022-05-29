@@ -58,7 +58,7 @@ def evaluate_for_pdb(pdb_id: str, iterations: int, population_size: int, out_nam
     if len(seq) <= 1000:
         # execute GA and measure time
         start = time.time()
-        ga = GeneticAlgorithm(iterations, population_size, 4, 100)
+        ga = GeneticAlgorithm(iterations, population_size, 4, 5, 100)
         psso = ga.start(seq)
         end = time.time()
 
@@ -106,6 +106,6 @@ if not os.path.exists('pdbs'):
 if __name__ == '__main__':
     pdb_url_pdb = "https://files.rcsb.org/download/"
 
-    evaluate_casp("targetlist.csv", 0, 250, "output_100_non.csv")
-    #evaluate_for_pdb("6vr4",0,250,'output_test.csv')
-    evaluate_results("output_100_non.csv")
+    evaluate_casp("targetlist.csv", 10, 250, "output_10_elite5.csv")
+    evaluate_for_pdb("6t1z",100,250,'output_6tiz_random.csv')
+    evaluate_results("output_10_elite5.csv")
