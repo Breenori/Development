@@ -26,6 +26,7 @@ class GeneticAlgorithm:
             probabilities = [1] * 6
             probabilities[0] = 5
             probabilities[1] = 5
+            probabilities = [x * 10 for x in probabilities]
         self.__probabilities = probabilities
         self.__probability_counters = [0] * 6
         if probability_change is None:
@@ -138,6 +139,10 @@ class GeneticAlgorithm:
         return children
 
     def start(self, seq_aa: str) -> ProteinStructureSolution:
+        file_out = open("probabilities.csv","w")
+        file_out.write("iteration;2PX;MPX;SMUT;EMUT;LM;LPM\n")
+        file_out2 = open("energy.csv","w")
+        file_out2.write("iteration;energy\n")
         best_solution = None
         best_score = 0
 
@@ -184,4 +189,10 @@ class GeneticAlgorithm:
             if converge_counter == 0:
                 break
 
+            file_out.write(str(iteration)+";"+";".join([str(x/sum(self.__probabilities)) for x in self.__probabilities])+"\n")
+            file_out2.write(str(iteration)+";"+str(best_score)+"\n")
+
+
+        file_out.close()
+        file_out2.close()
         return best_solution
