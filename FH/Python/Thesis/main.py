@@ -106,6 +106,6 @@ if not os.path.exists('pdbs'):
 if __name__ == '__main__':
     pdb_url_pdb = "https://files.rcsb.org/download/"
 
-    # evaluate_casp("targetlist.csv", 10, 250, "output_10_elite5.csv")
-    evaluate_for_pdb("7abw",200,250,'output_7abw_BA.csv')
-    # evaluate_results("output_10_elite5.csv")
+    #evaluate_casp("targetlist.csv", 10, 250, "output_10_elite5.csv")
+    evaluate_for_pdb("6x6o",500,250,'output_6x6o_random.csv')
+    #evaluate_results("output_10_elite5.csv")
