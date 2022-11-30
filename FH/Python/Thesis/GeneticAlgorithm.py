@@ -154,6 +154,10 @@ class GeneticAlgorithm:
 
 
         converge_counter = self.__convergence_limit
+
+        file_out = open("energy.csv",'w')
+        file_out.write("iteration;energy\n")
+
         # start iterating
         for iteration in range(self.__iterations):
             print("iteration",iteration)
@@ -183,5 +187,9 @@ class GeneticAlgorithm:
 
             if converge_counter == 0:
                 break
+
+            file_out.write(f"{iteration};{best_score}\n")
+            
+        file_out.close()
 
         return best_solution
