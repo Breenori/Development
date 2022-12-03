@@ -4,14 +4,14 @@
 
 #include "test_merge_sorter.h"
 #include <vector>
-#import <iostream>
+#include <iostream>
 using std::cout;
 
 
  bool test_merge_sorter::test_sort_unsorted() {
     cout << "Test: sorting an unsorted file, of which the solution is known:\n";
     merge_sorter ms;
-    merge_sorter::value_t result_path = ms.sort("../test_files/merge_sorter/unsorted.txt");
+    merge_sorter::value_t result_path = ms.sort("../../test_files/merge_sorter/unsorted.txt");
     std::vector<merge_sorter::value_t> solution = {"a","b","c", "d", "e","f","g","h","i","j"};
     std::ifstream in{result_path};
     bool is_correct = true;
@@ -31,7 +31,7 @@ using std::cout;
 bool test_merge_sorter::test_sort_sorted() {
     cout << "Test: sorting a sorted.txt file. Sorting should not change the outcome:\n";
     merge_sorter ms;
-    merge_sorter::value_t result_path = ms.sort("../test_files/merge_sorter/sorted.txt");
+    merge_sorter::value_t result_path = ms.sort("test_files/merge_sorter/sorted.txt");
     std::vector<merge_sorter::value_t> solution = {"a","b","c", "d", "e","f","g","h","i","j", "k", "l"};
     std::ifstream in{result_path};
     bool is_correct = true;

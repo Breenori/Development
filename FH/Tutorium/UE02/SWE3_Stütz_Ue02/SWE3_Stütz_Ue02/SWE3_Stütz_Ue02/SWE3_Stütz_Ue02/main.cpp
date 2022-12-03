@@ -10,9 +10,9 @@ int main() {
 	/*test_print();*/
 	/*test_copy_print();*/
 	//test_mergesort_1();
-	//test_mergesort_2();
+	test_mergesort_2();
 	//test_mergesort_3();
-	test_mergesort_4();
+	//test_mergesort_4();
 
 	return 0;
 }

@@ -79,6 +79,7 @@ void ExternalMergeSort::Sort(std::string const& FileToSort, size_t const NumValu
 
 			//write merged vecs to current ouput file
 			Manipulator.WriteOut(MergedVecs, *CurrentOutStream);
+			//CurrentOutStream->close();
 
 			//change output stream
 			if (CurrentOutStreamSituation == 0 && CurrentStreamSituation == 0) {
