@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.23"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SWE_BAJIM_UE03",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SWE_BAJIM_UE03::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SWE_BAJIM_UE03-Debug-b163adc1098c3772895a.json",
+					"name" : "SWE_BAJIM_UE03",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/hakimbajim/Library/Mobile Documents/com~apple~CloudDocs/FH/Semester 3/SWE/\u00dcbung/\u00dcbung 03/SWE_BAJIM_UE03/cmake-build-debug",
+		"source" : "/Users/hakimbajim/Library/Mobile Documents/com~apple~CloudDocs/FH/Semester 3/SWE/\u00dcbung/\u00dcbung 03/SWE_BAJIM_UE03"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
