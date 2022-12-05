@@ -1,3 +1,0 @@
-/Users/hakimbajim/Library/Mobile Documents/com~apple~CloudDocs/FH/Semester 3/SWE/Übung/Übung 03/SWE_BAJIM_UE03/cmake-build-debug/CMakeFiles/SWE_BAJIM_UE03.dir
-/Users/hakimbajim/Library/Mobile Documents/com~apple~CloudDocs/FH/Semester 3/SWE/Übung/Übung 03/SWE_BAJIM_UE03/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/hakimbajim/Library/Mobile Documents/com~apple~CloudDocs/FH/Semester 3/SWE/Übung/Übung 03/SWE_BAJIM_UE03/cmake-build-debug/CMakeFiles/rebuild_cache.dir
