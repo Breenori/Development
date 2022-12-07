@@ -6,7 +6,7 @@ void print_result(rational_t const& other) {
 
 
 void test_add() {
-	rational_t a(1, 5);
+	rational_t a(1, 3);
 	rational_t b(5, 3);
 	a.add(b);
 	print_result(a);	
@@ -93,7 +93,7 @@ void test_div_input() {
 
 
 void test_add_op() {
-	rational_t a(1, 5);
+	rational_t a(1, 3);
 	rational_t b(5, 3);
 	rational_t c = a + b;
 	print_result(c);

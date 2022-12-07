@@ -1,12 +1,14 @@
 #include "rational_test.h"
 
 int main() {
-	//cout << "Testing normal operations: \n";
-	//test_add();
-	//test_sub();
-	//test_mul();
-	//test_div();
-	//cout << " \n\n";
+	/*
+	cout << "Testing normal operations: \n";
+	test_add();
+	test_sub();
+	test_mul();
+	test_div();
+	cout << " \n\n";
+	*/
 
 	/*cout << "Testing overloading operations: \n";
 	test_add_op();
@@ -46,6 +48,7 @@ int main() {
 	//test_greater_2();
 	//cout << " \n\n";
 
+	
 	cout << "Testing compare operators overloaded:\n\n";
 	test_compare_op();
 	test_not_compare_op();
@@ -60,10 +63,10 @@ int main() {
 	//test_get_denominator();
 	//cout << " \n\n";
 
-	//cout << "Testing zero, positive, negative: \n ";
-	//test_is_negative();
-	//test_is_positive();
-	//test_is_zero();
+	cout << "Testing zero, positive, negative: \n ";
+	test_is_negative();
+	test_is_positive();
+	test_is_zero();
 	
 
 	//cout << "Testing div by zero with and without input:\n";

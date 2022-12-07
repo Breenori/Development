@@ -639,7 +639,7 @@ void test_lhs_rhs_div() {
 //exception
 void test_div_by_zero_exc() {
 	std::cout << std::endl << __PRETTY_FUNCTION__ << std::endl;
-	rational_t a;
+	rational_t a(0,0);
 	int b{ 0 };
 	rational_t c;
 	std::cout << "\nSource1: ";

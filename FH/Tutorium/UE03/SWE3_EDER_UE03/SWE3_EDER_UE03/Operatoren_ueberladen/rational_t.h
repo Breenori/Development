@@ -63,13 +63,14 @@ public:
 	static void print_result(std::ostream& out, rational_t& c1);
 	//scan
 	void scan(std::istream& in = std::cin)const;
+	static int gcd(int _numerator, int _denominator);
 private:
 	//friending
 	friend std::ostream& operator<<(std::ostream& lhs, rational_t const& rhs);
 	friend std::istream& operator>>(std::istream& lhs, rational_t const& rhs);
 	//helper
 	bool is_consistent()const;
-	static int gcd(int _numerator, int _denominator);
+	
 	//canonical form
 	void normalize();
 };

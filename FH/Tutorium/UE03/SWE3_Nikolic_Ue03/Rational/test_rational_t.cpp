@@ -249,8 +249,8 @@ void test_compare()
 
 void test_compound_assignment()
 {
-	rational_t a(8, 10);
-	rational_t b(10, -2);
+	rational_t a(8, 11);
+	rational_t b(10, -3);
 
 	// add and assign
 	std::cout << a <<  " + " << b << "\n";
@@ -258,7 +258,7 @@ void test_compound_assignment()
 	std::cout <<"a= " << a << "\n";  // -21/5
 	std::cout <<"b= " << b << "\n\n";
 
-	a = rational_t(8, 10);
+	a = rational_t(8, 11);
 
 	// sub and assign
 	std::cout << a << " - " << b << "\n";

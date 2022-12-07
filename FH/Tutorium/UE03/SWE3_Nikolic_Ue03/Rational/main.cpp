@@ -20,8 +20,8 @@ int main() {
 
 	 //test_compare();
 
-	 //test_compound_assignment();
+	 test_compound_assignment();
 
-	 test_calculations();
+	 // test_calculations();
 
 }

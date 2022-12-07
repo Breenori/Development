@@ -73,7 +73,6 @@ private:
 };
 
 // non-member methods
-
 rationalType operator+(int const& lhs, rationalType const& rhs);
 rationalType operator+(rationalType const& lhs, int const& rhs);
 rationalType operator-(int const& lhs, rationalType const& rhs);

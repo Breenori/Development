@@ -81,7 +81,7 @@ void rational_t::normalize()
 
 	}
 	if (is_negative(this->denominator) && is_negative(this->numerator)) {
-		*this *= rational_t( - 1,-1);
+		*this *= rational_t( -1,-1);
 	}
 }
 
@@ -97,7 +97,9 @@ void rational_t::add(rational_t const& other)
 	value_t lm = l / this->denominator;
 	value_t rm = l / r.get_denominator();
 
-	*this *= {lm, lm};
+	//*this *= rational_t(lm, lm);
+	this->numerator *= lm;
+	this->denominator *= lm;
 	this->numerator += r.numerator * rm;
 	this->normalize();
 }

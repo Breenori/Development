@@ -239,8 +239,8 @@ void rational_t::noramlize() {
 	}
 	do { a--; }
 	while ((num % a != 0) || (den % a != 0)); 
-		num = num / a;
-		den = den / a;
+	num = num / a;
+	den = den / a;
 }
 
 

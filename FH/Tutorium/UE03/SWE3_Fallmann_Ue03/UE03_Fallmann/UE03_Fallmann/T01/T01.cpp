@@ -1,11 +1,19 @@
 #include <iostream>
 
 #include "rational_test.h"
+#include "rational_t.h"
 
 using std::cout;
 
 int main()
 {
+	rational_t n1 = rational_t(1, 2);
+	rational_t n2 = 1 + n1;
+
+	rational_t h = rational_t(2, 4);
+	rational_t h2 = rational_t(1, 4);
+	rational_t h3 = h + h2;
+
 	cout << "Test01:\nTesting creation of invalid rational\n";
 	cout << (rational_test::test_invalid_rational() ?
 		"success\n" : "failure\n");
