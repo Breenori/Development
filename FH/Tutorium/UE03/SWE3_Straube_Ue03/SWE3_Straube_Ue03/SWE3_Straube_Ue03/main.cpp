@@ -2,8 +2,12 @@
 * ----- Includes. -----
 */
 #include "rational_type_test.h"
+#include "rational_type.h"
 
 int main() {
+	RationalType r = RationalType(1, 2);
+	r = 1.5 + r;
+
 	test_as_string();
 	test_print();
 	test_operatorassignment();
