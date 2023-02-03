@@ -1,7 +1,7 @@
 #include "test.h"
 
 
-void print_result(rational_t const& other) {
+void print_result(rational_t<int> const& other) {
 	cout << other.as_string() << "\n";
 }
 
@@ -30,33 +30,6 @@ void test_div() {
 	a.div(b);
 	print_result(a);
 }
-
-
-void test_add_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	a.add(b);
-	print_result(a);
-}
-void test_sub_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	a.sub(b);
-	print_result(a);
-}
-void test_muld_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	a.mul(b);
-	print_result(a);
-}
-void test_div_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	a.div(b);
-	print_result(a);
-}
-
 
 void test_add_input() {
 	cout << "Add\n";
@@ -143,36 +116,6 @@ void test_div_op() {
 	rational_t c = a / b;
 	print_result(c);
 }
-
-
-
-
-void test_add_op_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	rational_t c = a + b;
-	print_result(c);
-}
-void test_dub_op_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	rational_t c = a - b;
-	print_result(c);
-
-}
-void test_mul_op_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	rational_t c = a * b;
-	print_result(c);
-}
-void test_div_op_double() {
-	rational_t a(1.5, 5.2);
-	rational_t b(5.3, 3.5);
-	rational_t c = a / b;
-	print_result(c);
-}
-
 
 void test_add_pass() {
 	rational_t a(1, 5);

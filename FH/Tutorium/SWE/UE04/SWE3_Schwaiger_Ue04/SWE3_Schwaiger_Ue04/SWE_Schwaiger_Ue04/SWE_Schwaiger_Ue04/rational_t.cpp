@@ -6,12 +6,11 @@
 
 //----------------------
 
-template <numeric T>
-rational_t<T>::rational_t(rational_t<T> const& other) {
-	num = other.num;
-	den = other.den;
 
+rational_t<int>::rational_t(rational_t<int> const& other)
+{
 }
+
 template <numeric T>
 rational_t<T>::~rational_t() {
 
@@ -26,7 +25,7 @@ void rational_t<T>::add(rational_t<T> const& other) {
 
 template <numeric T>
 void rational_t<T>::sub(rational_t<T> const& other) {
-	num = num * other.den - other.num * den
+	num = num * other.den - other.num * den;
 	den = den - other.den;
 	noramlize();
 }

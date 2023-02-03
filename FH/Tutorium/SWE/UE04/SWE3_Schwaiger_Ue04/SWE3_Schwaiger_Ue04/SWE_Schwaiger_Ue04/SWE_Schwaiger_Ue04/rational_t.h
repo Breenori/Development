@@ -71,6 +71,18 @@ public:
 	void is_zero();
 
 
+	rational_t<T>& operator=(rational_t<T> const& other) {
+		if (this == &other) {
+			return *this;
+		}
+
+		num = other.num;
+		den = other.den;
+
+		noramlize();
+
+		return *this;
+	}
 
 
 private:
@@ -84,84 +96,84 @@ private:
 	//Kehrwert
 	rational_t<T> inverse()const;
 
-	friend inline rational_t<T> operator+(rational_t<T> const& other) {
-		rational_t<T> temp(*this);
+	friend inline rational_t<T> operator+(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
 			temp.add(other);
 			return temp;
 	}
-	friend inline rational_t<T> operator-(rational_t<T> const& other) {
-		rational_t<T> temp(*this);
+	friend inline rational_t<T> operator-(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
 		temp.sub(other);
 		return temp;
 	}
-	friend inline rational_t<T> operator*(rational_t<T> const& other) {
-		rational_t<T> temp(*this);
+	friend inline rational_t<T> operator*(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
 		temp.mul(other);
 		return temp;
 	}
-	friend inline rational_t<T> operator/(rational_t<T> const& other) {
-		rational_t<T> temp(*this);
+	friend inline rational_t<T> operator/(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
 		temp.div(other);
 		return temp;
 	}
-	
 
-	friend inline rational_t<T>& operator=(rational_t<T> const& other) {
-		if (this == &other) {
-			return *this;
-		}
-		num = other.num;
-		den = other.den;
-		return *this;
-	}
-
-	friend inline rational_t<T> operator+=(rational_t<T> const& other) {
-		add(other);
-		return *this;
+	friend inline rational_t<T> operator+=(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.add(other);
+		return *temp;
 
 	}
-	friend inline rational_t<T> operator-=(rational_t<T> const& other) {
-		sub(other);
-		return *this;
+	friend inline rational_t<T> operator-=(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.sub(other);
+		return *temp;
 
 	}
-	friend inline rational_t<T>operator*=(rational_t<T> const& other) {
-		mul(other);
-		return *this;
+	friend inline rational_t<T>operator*=(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.mul(other);
+		return *temp;
 
 	}
-	friend inline rational_t<T> operator/=(rational_t<T> const& other) {
-		div(other);
-		return *this;
+	friend inline rational_t<T> operator/=(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.div(other);
+		return *temp;
 	}
 
 
-	friend inline rational_t<T> operator==(rational_t<T> const& other) {
-		compare(other);
-		return *this;
+	friend inline rational_t<T> operator==(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.compare(other);
+		return *temp;
 	
 	}
-	friend inline rational_t<T> operator!=(rational_t<T> const& other) {
-		not_compare(other);
-		return *this;
+	friend inline rational_t<T> operator!=(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.not_compare(other);
+		return *temp;
 	}
-	friend inline rational_t<T> operator<=(rational_t<T> const& other) {
-		smaller_than(other);
-		return *this;
+	friend inline rational_t<T> operator<=(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.smaller_than(other);
+		return *temp;
 
 
 	}
-	friend inline rational_t<T> operator>=(rational_t<T> const& other) {
-		greater_than(other);
-		return *this;
+	friend inline rational_t<T> operator>=(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.greater_than(other);
+		return *temp;
 	}
-	friend inline rational_t<T> operator<(rational_t<T> const& other) {
-		smaller(other);
-		return *this;
+	friend inline rational_t<T> operator<(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.smaller(other);
+		return *temp;
 	}
-	friend inline rational_t<T> operator>(rational_t<T> const& other) {
-		greater(other);
-		return *this;
+	friend inline rational_t<T> operator>(rational_t<T> const& lhs, rational_t<T> const& other) {
+		rational_t<T> temp(lhs);
+		temp.greater(other);
+		return *temp;
 	}
 
 

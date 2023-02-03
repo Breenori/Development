@@ -2,12 +2,12 @@
 
 int main() {
 
-	//cout << "Testing normal operations: \n";
-	//test_add();
-	//test_sub();
-	//test_mul();
-	//test_div();
-	//cout << " \n\n";
+	cout << "Testing normal operations: \n";
+	test_add();
+	test_sub();
+	test_mul();
+	test_div();
+	cout << " \n\n";
 
 
 	/*cout << "Testing normal double operations: \n";
@@ -17,7 +17,7 @@ int main() {
 	test_div_double();
 	cout << "\n\n";*/
 
-	/*cout << "Testing overloading operations: \n";
+	cout << "Testing overloading operations: \n";
 	test_add_op();
 	test_sub_op();
 	test_mul_op();
@@ -25,25 +25,25 @@ int main() {
 	cout << "\n\n";
 
 
-	cout <<"Testing overloading oeprations with double\n;
+	/*cout << "Testing overloading oeprations with double\n;
 	test_add_op_double();
 	 test_dub_op_double();	
 	 test_mul_op_double();
 	test_div_op_double();
-	cout <<" \n\n";
+	cout <<" \n\n";*/
 
 	cout << "Testing overloading operations with assignment: \n";
 	test_add_pass();
 	test_sub_pass();
 	test_mul_pass();
-	test_div_pass();*/
+	test_div_pass();
 	//cout << "\n\n";
 
-	/*cout << "Testing normal operatins with input \n";
+	cout << "Testing normal operatins with input \n";
 	test_add_input();
 	test_sub_input();
 	test_mul_input();
-	test_div_input();*/
+	test_div_input();
 
 	//cout << "Testing compare operators: \n\n";
 	//test_compare();
