@@ -1,0 +1,6 @@
+Bratpfannenset
+{
+riesige Pfanne
+mittlere Pfanne
+kleine Pfanne
+}

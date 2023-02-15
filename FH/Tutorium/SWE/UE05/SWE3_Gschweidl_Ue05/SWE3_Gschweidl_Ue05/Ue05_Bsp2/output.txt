@@ -1,0 +1,14 @@
+>Partslist for Sofaset
+C: Sofaset
+C:   table
+P:     leg
+P:     leg
+P:     leg
+P:     leg
+P:     tabletop
+C:   sofachair
+P:     seatcushion
+P:     leg
+P:     leg
+P:     leg
+P:     leg

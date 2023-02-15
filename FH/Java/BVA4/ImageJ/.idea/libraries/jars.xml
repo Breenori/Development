@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jars">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/jars/Compiler.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jars/BeanShell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/jars/auto_threshold.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,5 @@
+sitzgarnitur sessel 2 tisch 1
+bein(klein) holz 1 schraube 2
+sessel bein(klein) 4 sitzfläche 1
+tisch bein(groß) 4 tischfläche 1
+

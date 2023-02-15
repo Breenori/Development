@@ -1,0 +1,34 @@
+Bett
+	Bein (klein)
+	Bein (klein)
+	Bein (klein)
+	Bein (klein)
+	Lattenrost
+		Brett
+		Brett
+		Brett
+		Brett
+		Brett
+		Brett
+		Brett
+		Brett
+		Brett
+		Brett
+	Matratze
+		Matratzenbezug
+	Schlafkissen
+		Kissen (gross)
+		Kissenbezug (gross)
+	Schlafkissen
+		Kissen (gross)
+		Kissenbezug (gross)
+	Dekokissen
+		Kissen (klein)
+		Kissenbezug (klein)
+	Dekokissen
+		Kissen (klein)
+		Kissenbezug (klein)
+	Schlafdecke (dick)
+		Deckenbezug
+	Kuscheldecke
+	Dekodecke

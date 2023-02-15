@@ -1,0 +1,24 @@
+Sitzgarnitur{
+Sessel{
+Bein (klein)
+Bein (klein)
+Bein (klein)
+Bein (klein)
+Sitzflaeche
+}
+Sessel{
+Bein (klein)
+Bein (klein)
+Bein (klein)
+Bein (klein)
+Sitzflaeche
+}
+Tisch{
+Bein (gross)
+Bein (gross)
+Bein (gross)
+Bein (gross)
+Tischflaeche
+}
+Vase
+}

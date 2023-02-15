@@ -1,0 +1,38 @@
+Kletterausruestung
+{
+Steinschlaghelm
+Kletterschuhset
+{
+linker Kletterpatschen
+rechter Kletterpatschen
+}
+Chalk
+Ersatz-Chalk
+Notfall-Chalk
+Erste-Hilfe-Set
+60m Halbseil
+Selbstsicherung
+{
+Karabiner
+Bandschlinge
+}
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Express-Schlinge
+Karabiner
+Karabiner
+Karabiner
+Klettergurt natuerlich
+Reepschnur
+mobile Sicherungen
+und viel mehr
+}
