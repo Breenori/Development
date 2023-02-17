@@ -36,7 +36,8 @@ CompositePart::CompositePart(std::vector<Part*> other) {
 
 CompositePart::~CompositePart() {
 	for (int i = 0; i < parts.size(); i++) {
-		parts.erase(parts.begin()+i);
+		auto ptr = *parts[i];
+		delete parts[i];
 	}
 }
 

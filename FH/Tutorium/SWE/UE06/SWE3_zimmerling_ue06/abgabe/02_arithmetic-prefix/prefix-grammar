@@ -1,0 +1,16 @@
+Examples:
+https://runestone.academy/ns/books/published/pythonds/BasicDS/InfixPrefixandPostfixExpressions.html
+
++ A B
++ A * B C
+* + A B C
++ + A * B C D
+* + A B + C D
++ * A B * C D
++ + + A B C D
+
+Expression = Operator Operand Operand | Operand .
+Operator = "+" | "-" | "*" | "/" .
+Operand = Unsigned | Expression .
+Unsigned = Digit { Digit } .
+Digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" .
