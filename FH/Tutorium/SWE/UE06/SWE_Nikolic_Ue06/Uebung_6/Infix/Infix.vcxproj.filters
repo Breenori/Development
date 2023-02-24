@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\arithmetic_parser\arithmetic_parser.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="arithmetic_parser.cpp">
+      <Filter>Headerdateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\arithmetic_parser\arithmetic_parser.h">
+    <ClInclude Include="arithmetic_parser.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="pfc_scanner.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="test_arithmetic_parser.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\arithmetic_parser\pfc_scanner.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

@@ -164,7 +164,7 @@ string parts_list::composite_part::get_line(string name, vector<part *> p) {
 }
 
 bool parts_list::composite_part::equals(parts_list::part *other) {
-    parts_list::composite_part *comp_part = dynamic_cast<parts_list::composite_part * >(part);
+    parts_list::composite_part *comp_part = dynamic_cast<parts_list::composite_part * >(other);
     if (comp_part != nullptr) {//composite part - only need to go through recursively if it is a composite part
         if (comp_part->get_parts().size() == all_parts.size()){
             for (int i = 0; i < all_parts.size(); ++i) {

@@ -4,7 +4,7 @@ using namespace PartsLists;
 
 int main() {
 
-	test_part_constructor();
+	//test_part_constructor();
 	//test_part_constructor_2();
 	//test_equals();
 
@@ -12,6 +12,6 @@ int main() {
 	//test_add_part();
 	//test_get_parts();
 	
-	//test_formatter();
+	test_formatter();
 	return 0;
 }
