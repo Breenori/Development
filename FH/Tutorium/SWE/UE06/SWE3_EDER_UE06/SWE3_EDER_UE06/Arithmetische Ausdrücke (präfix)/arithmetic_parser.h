@@ -71,7 +71,7 @@ private:
 	}
 
 	bool is_tb_Term() const {
-		return is_tb_Operand();
+		return is_tb_Operand() || is_tb_Number();
 	}
 	bool is_tb_Operand()const {
 		return is_tb_AddOp() || is_tb_MultOp();
@@ -161,7 +161,21 @@ private:
 
 		if (is_tb_MultOp())
 		{
-			value = parse_AddOp();
+			value = parse_MultOp();
+
+			double lhs = parse_Term();
+			double rhs = parse_Term();
+
+			if (value == -1.0) {
+				return lhs / rhs;
+			}
+			else {
+				return lhs * rhs;
+			}
+		}
+		if (is_tb_Number()) {
+			double number = m_scanner.get_number(); m_scanner.next_symbol();
+			return number;
 		}
 
 		return value;

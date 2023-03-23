@@ -1,0 +1,11 @@
+set (a, 1);
+set (pi, 3.1415);
+set (k, -(a + 3) * pi^0.5);
+print (k);
+print (3);
+print (4 / (2 * (3 -1 )));
+set (x, 15);
+print (x * 2);
+set (x, y^2 -4);
+set (y, 6); print (x); print (y); print (x / 2);
+set (y, 5); print (x); print (y); print (x / 2);

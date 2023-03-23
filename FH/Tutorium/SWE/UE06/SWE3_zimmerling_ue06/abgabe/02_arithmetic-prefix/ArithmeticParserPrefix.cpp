@@ -26,7 +26,7 @@ bool ArithmeticParserPrefix::isTbExpression() const {
 }
 
 bool ArithmeticParserPrefix::isTbOperator() const {
-    return scanner.is('+') | scanner.is('-') | scanner.is('*') | scanner.is('/');
+    return scanner.is('+') || scanner.is('-') || scanner.is('*') || scanner.is('/');
 
 }
 

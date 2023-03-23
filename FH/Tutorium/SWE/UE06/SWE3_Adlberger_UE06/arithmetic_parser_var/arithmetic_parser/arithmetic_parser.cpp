@@ -9,7 +9,7 @@ bool ArithmeticParser::is_tb_Term() const {
 	return is_tb_Factor();
 }
 bool ArithmeticParser::is_tb_Factor() const {
-	return is_tb_AddOp() || is_tb_Unsigned() || is_tb_PExpression();
+	return is_tb_AddOp() || is_tb_Unsigned() || is_tb_PExpression() || is_tb_Identifier();
 }
 bool ArithmeticParser::is_tb_AddOp() const {
 	return m_scanner.is('+') || m_scanner.is('-');
@@ -24,7 +24,7 @@ bool ArithmeticParser::is_tb_Unsigned() const {
 	return m_scanner.is_number();
 }
 bool ArithmeticParser::is_tb_Identifier()const {
-	return m_scanner.is_string();
+	return m_scanner.is_identifier();
 }
 void ArithmeticParser::initialize() {
 	vars["a"] = 1;
@@ -103,7 +103,7 @@ double ArithmeticParser::parse_Factor() {
 		}
 		if (is_tb_Identifier()) {
 			
-			std::string id{ m_scanner.get_string()};
+			std::string id{ m_scanner.get_identifier()};
 
 			double init{ get_Identifier_value(id)};
 			value += sign*init;
@@ -138,6 +138,7 @@ double ArithmeticParser::parse_PExpression() {
 }
 double ArithmeticParser::parse(std::istream& in) {
 	m_scanner.set_istream(in);
+	initialize();
 	 /*= parse_range()*/;
 	 return parse("result.txt");
 }

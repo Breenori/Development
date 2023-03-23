@@ -20,7 +20,7 @@
 int main() {
 	//Buggy,Untest, to be excluded! Thx
 	std::vector const expressions{
-	   "*22",
+	   "/ * 5 4 10",
 	   ":22",
 	  ":20",
 	  "( (",

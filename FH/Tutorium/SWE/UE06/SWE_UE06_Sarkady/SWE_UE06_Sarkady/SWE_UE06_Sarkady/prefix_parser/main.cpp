@@ -1,14 +1,15 @@
-
-using std::string;
-using std::cout;
-using std::vector;
-
 #include <iostream>
 #include <string>
 #include <vector>
 #include <iomanip>
 #include "prefix_parser.h"
 #include "pfc_scanner.h"
+
+
+using std::string;
+using std::cout;
+using std::vector;
+
 
 
 // test for normal workability
@@ -162,10 +163,10 @@ void test_6() {
 
 
 int main(int argc, const char* argv[]) {
-	test_1();
+	//test_1();
 	test_2();
-	test_3();
-	test_4();
-	test_5();
-	test_6();
+	//test_3();
+	//test_4();
+	//test_5();
+	//test_6();
 }

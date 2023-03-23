@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.19"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "03_arithmetic_variables",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "03_arithmetic_variables::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-03_arithmetic_variables-Debug-e2704a98fae1fa55e91a.json",
+					"name" : "03_arithmetic_variables",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Projects/Git/Development/FH/Tutorium/SWE/UE06/SWE3_zimmerling_ue06/abgabe/03_arithmetic-variables/out/build/x64-Debug",
+		"source" : "D:/Projects/Git/Development/FH/Tutorium/SWE/UE06/SWE3_zimmerling_ue06/abgabe/03_arithmetic-variables"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
