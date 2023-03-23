@@ -3,11 +3,10 @@
 %u = 1000
 %t = 13.4
 
-R1 = 10;
-R2 = 5;
-C = 20;
-L = 5;
-U = 5500;
+R1 = 1;
+R2 = 2;
+C = 3;
+L = 4;
 
 
 A = [-R1/L -1/L; 1/C -1/(R2*C)];
@@ -24,7 +23,7 @@ y = zeros(2,n);
 x = 0:stepsize:n;
 
 for t = x
-    y(1:2,t+1) = expm(t*A)*x0 + int( expm( (t-tau)*A ) * B*U, tau, 0, t);
+    y(1:2,t+1) = expm(t*A)*x0 + int( expm( (t-tau)*A ) * B*1000, tau, 0, t);
 end
 
 f = figure;
