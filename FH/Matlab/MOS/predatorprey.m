@@ -1,36 +1,38 @@
-function predatorprey(alpha1, alpha2, alpha3, alpha4, alpha5, alpha6, b0, r0, tStep, tMax)
-    %PREDATORPREY Summary of this function goes here
-    %   Detailed explanation goes here
+function predatorprey(alpha, beta, gamma, delta, b0, r0, tStep, tEnd)
     if nargin==0
-        alpha1 = 1;
-        alpha2= 1;
-        alpha3=1.5;
-        alpha4=0.2;
-        alpha5=0.1;
-        alpha6=1;
-        b0=0.5;
-        r0=0.2;
-        tStep=0.001;
-        tMax=500;
+        alpha = 0.4;
+        beta = 0.4/50;
+        gamma = 0.3;
+        delta = 0.3/300;
+        b0 = 500;
+        r0 = 5;
+        tStep = 0.001;
+        tEnd = 100;
+    end
     
+    % Initialize values and create arrays
     b = b0;
-    r= r0;
-    bProgress = zeros(tMax/tStep,1);
-    rProgress = zeros(tMax/tStep,1);
+    r = r0;
+    bProgress = zeros(tEnd/tStep,1);
+    rProgress = zeros(tEnd/tStep,1);
     i=1;
-    for t=0:tStep:tMax
-        if t==110
-            b=b+0.5;
-        end
-        b_ = b*(alpha1*(1-b/alpha2) - alpha3*r/(b+alpha4));
-        r_ = r * alpha5*(1-alpha6*r/b);
-        b = b+b_*tStep;
-        r = r+r_*tStep;
+    
+    % Simulate using euler (small stepsize needed!)
+    for t=0:tStep:tEnd
+        b_ = alpha * b - beta * b * r;
+        r_ = -gamma * r + delta * b * r;
+        b = b + b_ * tStep;
+        r = r + r_ * tStep;
         bProgress(i) = b;
         rProgress(i) = r;
         i = i+1;
     end
     
-    plot(0:tStep:tMax, [bProgress, rProgress]);
+    % plot it
+    plot(0:tStep:tEnd, [bProgress, rProgress]);
+    title("Predator prey model")
+    xlabel("Time t")
+    ylabel("Population size")
+    legend(["Prey", "Predators"])
 end 
 
