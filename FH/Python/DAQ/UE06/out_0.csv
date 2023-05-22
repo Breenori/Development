@@ -1,0 +1,903 @@
+Week,Author,Title,Price,ISBN,Rank,Category
+1,R.J. Palacio,Wonder,16.99,9781524720193.0,1,Early & Middle
+1,Madeleine L'Engle,A Wrinkle in Time,8.99,9781250153272.0,2,Early & Middle
+1,R.J. Palacio,Auggie & Me,16.99,9781101934852.0,3,Early & Middle
+1,Kelly Barnhill,The Girl Who Drank the Moon,16.95,9781616205676.0,4,Early & Middle
+1,Victoria Jamieson,All's Faire in Middle School,12.99,9780525429999.0,5,Early & Middle
+1,Raina Telgemeier,Drama,10.99,9780545326995.0,6,Early & Middle
+1,Pablo Hidalgo,Star Wars the Last Jedi: The Visual Dictionary,22.99,9781465455512.0,7,Early & Middle
+1,Raina Telgemeier,Smile,10.99,9780545132060.0,8,Early & Middle
+1,Kimberly Brubaker Bradley,The War That Saved My Life,8.99,9780147510488.0,9,Early & Middle
+1,Raina Telgemeier,Ghosts,10.99,9780545540629.0,10,Early & Middle
+1,Katherine Applegate,Wishtree,16.99,9781250043221.0,11,Early & Middle
+1,R.J. Palacio,365 Days of Wonder: Mr. Browne's Precepts,9.99,9780399559181.0,12,Early & Middle
+1,Jessica Townsend,Nevermoor: The Trials of Morrigan Crow,17.99,9780316508889.0,13,Early & Middle
+1,Raina Telgemeier,Sisters,10.99,9780545540605.0,14,Early & Middle
+1,Pete Souza,Dream Big Dreams: Photographs from Barack Obama's Inspiring and Historic Presidency,21.99,9780316514392.0,15,Early & Middle
+1,Andy Weir,Artemis,27.0,9780553448122.0,1,Hardcover Fiction
+1,Dan Brown,Origin,29.95,9780385514231.0,2,Hardcover Fiction
+1,Amor Towles,A Gentleman in Moscow,27.0,9780670026197.0,3,Hardcover Fiction
+1,Jesmyn Ward,"Sing, Unburied, Sing",26.0,9781501126062.0,4,Hardcover Fiction
+1,Jennifer Egan,Manhattan Beach,27.0,9781476716732.0,5,Hardcover Fiction
+1,John Grisham,The Rooster Bar,28.95,9780385541176.0,6,Hardcover Fiction
+1,Celeste Ng,Little Fires Everywhere,27.0,9780735224292.0,7,Hardcover Fiction
+1,George Saunders,Lincoln in the Bardo,28.0,9780812995343.0,8,Hardcover Fiction
+1,Tom Hanks,Uncommon Type,26.95,9781101946152.0,9,Hardcover Fiction
+1,Isabel Allende,In the Midst of Winter,28.0,9781501178139.0,10,Hardcover Fiction
+1,Lee Child,The Midnight Line,28.99,9780399593482.0,11,Hardcover Fiction
+1,Neil Gaiman,Norse Mythology,25.95,9780393609097.0,12,Hardcover Fiction
+1,John le Carré,A Legacy of Spies,28.0,9780735225114.0,13,Hardcover Fiction
+1,Mary Oliver,Devotions,30.0,9780399563249.0,14,Hardcover Fiction
+1,Mohsin Hamid,Exit West,26.0,9780735212176.0,15,Hardcover Fiction
+1,Walter Isaacson,Leonardo da Vinci,35.0,9781501139154.0,1,Hardcover Nonfiction
+1,Neil deGrasse Tyson,Astrophysics for People in a Hurry,18.95,9780393609394.0,2,Hardcover Nonfiction
+1,Mark Manson,The Subtle Art of Not Giving A F*ck,24.99,9780062457714.0,3,Hardcover Nonfiction
+1,Ron Chernow,Grant,40.0,9781594204876.0,4,Hardcover Nonfiction
+1,Mary Beard,Women & Power: A Manifesto,15.95,9781631494758.0,5,Hardcover Nonfiction
+1,Joe Biden,"Promise Me, Dad",27.0,9781250171672.0,6,Hardcover Nonfiction
+1,Ta-Nehisi Coates,We Were Eight Years in Power,28.0,9780399590566.0,7,Hardcover Nonfiction
+1,Ray Dalio,Principles,30.0,9781501124020.0,8,Hardcover Nonfiction
+1,Tiffany Haddish,The Last Black Unicorn,26.0,9781501181825.0,9,Hardcover Nonfiction
+1,J.D. Vance,Hillbilly Elegy,27.99,9780062300546.0,10,Hardcover Nonfiction
+1,David Grann,Killers of the Flower Moon,28.95,9780385534246.0,11,Hardcover Nonfiction
+1,Peter Wohlleben,The Hidden Life of Trees,24.95,9781771642484.0,12,Hardcover Nonfiction
+1,Peter Wohlleben,The Inner Life of Animals,24.95,9781771643016.0,13,Hardcover Nonfiction
+1,Chris Matthews,Bobby Kennedy: A Raging Spirit,28.0,9781501111860.0,14,Hardcover Nonfiction
+1,Hillary Rodham Clinton,What Happened,30.0,9781501175565.0,15,Hardcover Nonfiction
+1,Michael Crichton,Dragon Teeth,9.99,9780062473363.0,1,Mass Market
+1,John Grisham,The Whistler,9.99,9781101967683.0,2,Mass Market
+1,Agatha Christie,Murder on the Orient Express,9.99,9780062693662.0,3,Mass Market
+1,James Patterson,Never Never,9.99,9781478944782.0,4,Mass Market
+1,Liane Moriarty,The Husband's Secret,9.99,9780451490049.0,5,Mass Market
+1,Danielle Steel,Dangerous Games,8.99,9781101883907.0,6,Mass Market
+1,Ernest Cline,Ready Player One,9.99,9781524763282.0,7,Mass Market
+1,Patrick Rothfuss,The Name of the Wind,9.99,9780756404741.0,8,Mass Market
+1,Nicholas Sparks,Safe Haven,8.99,9781478948377.0,9,Mass Market
+1,Doug Stanton,12 Strong,9.99,9781501179952.0,10,Mass Market
+1,Anthony Doerr,All the Light We Cannot See,17.0,9781501173219.0,1,Trade Paperback Fiction
+1,Rupi Kaur,The Sun and Her Flowers,16.99,9781449486792.0,2,Trade Paperback Fiction
+1,Rupi Kaur,Milk and Honey,14.99,9781449474256.0,3,Trade Paperback Fiction
+1,Ruth Ware,The Woman in Cabin 10,16.0,9781501132957.0,4,Trade Paperback Fiction
+1,Ernest Cline,Ready Player One,16.0,9780307887443.0,5,Trade Paperback Fiction
+1,Margaret Atwood,The Handmaid's Tale,15.95,9780525435006.0,6,Trade Paperback Fiction
+1,Min Jin Lee,Pachinko,15.99,9781455563920.0,7,Trade Paperback Fiction
+1,Martha Hall Kelly,Lilac Girls,17.0,9781101883082.0,8,Trade Paperback Fiction
+1,Shari Lapena,The Couple Next Door,16.0,9780735221109.0,9,Trade Paperback Fiction
+1,Fredrik Backman,A Man Called Ove,16.0,9781476738024.0,10,Trade Paperback Fiction
+1,B.A. Paris,Behind Closed Doors,16.99,9781250132369.0,11,Trade Paperback Fiction
+1,Ann Patchett,Commonwealth,16.99,9780062491831.0,12,Trade Paperback Fiction
+1,Paulette Jiles,News of the World,15.99,9780062409218.0,13,Trade Paperback Fiction
+1,Cynthia D'Aprix Sweeney,The Nest,16.99,9780062414229.0,14,Trade Paperback Fiction
+1,Viet Thanh Nguyen,The Sympathizer,16.0,9780802124944.0,15,Trade Paperback Fiction
+1,Jen Sincero,You Are a Badass,16.0,9780762447695.0,1,Trade Paperback Nonfiction
+1,Atul Gawande,Being Mortal,16.0,9781250076229.0,2,Trade Paperback Nonfiction
+1,Peter Frankopan,The Silk Roads,20.0,9781101912379.0,3,Trade Paperback Nonfiction
+1,Douglas Preston,The Lost City of the Monkey God,15.99,9781455540013.0,4,Trade Paperback Nonfiction
+1,Michael Lewis,The Undoing Project,16.95,9780393354775.0,5,Trade Paperback Nonfiction
+1,Jonah Berger,Invisible Influence,16.0,9781476759739.0,6,Trade Paperback Nonfiction
+1,Alexandra Horowitz,Being a Dog,17.0,9781476796024.0,7,Trade Paperback Nonfiction
+1,Timothy Snyder,On Tyranny,7.99,9780804190114.0,8,Trade Paperback Nonfiction
+1,Doug Stanton,12 Strong: The Declassified True Story of the Horse Soldiers,18.0,9781501178511.0,9,Trade Paperback Nonfiction
+1,Robert Moor,On Trails,16.0,9781476739236.0,10,Trade Paperback Nonfiction
+1,Harvard Business School Press,HBR's 10 Must Reads on Emotional Intelligence,24.95,9781633690196.0,11,Trade Paperback Nonfiction
+1,Ron Chernow,Alexander Hamilton,20.0,9780143034759.0,12,Trade Paperback Nonfiction
+1,Harvard Business School Press,HBR's 10 Must Reads on Managing Yourself,24.95,9781422157992.0,13,Trade Paperback Nonfiction
+1,Old Farmer's Almanac,The Old Farmer's Almanac 2018,7.95,9781571987358.0,14,Trade Paperback Nonfiction
+1,Jennifer Ackerman,The Genius of Birds,17.0,9780399563126.0,15,Trade Paperback Nonfiction
+1,John Green,Turtles All the Way Down,19.99,9780525555360.0,1,Young Adult
+1,Angie Thomas,The Hate U Give,17.99,9780062498533.0,2,Young Adult
+1,Philip Pullman,The Book of Dust: La Belle Sauvage,22.99,9780375815300.0,3,Young Adult
+1,Marissa Meyer,Renegades,19.99,9781250044662.0,4,Young Adult
+1,Nicola Yoon,"Everything, Everything",10.99,9781524769604.0,5,Young Adult
+1,Robin Benway,Far From the Tree,17.99,9780062330628.0,6,Young Adult
+1,Marie Lu,Warcross,18.99,9780399547966.0,7,Young Adult
+1,Nicola Yoon,The Sun Is Also a Star,18.99,9780553496680.0,8,Young Adult
+1,John Green,The Fault in Our Stars,12.99,9780142424179.0,9,Young Adult
+1,Ruta Sepetys,Salt to the Sea,10.99,9780142423622.0,10,Young Adult
+1,Neal Shusterman,Scythe,11.99,9781442472433.0,11,Young Adult
+1,Markus Zusak,The Book Thief,12.99,9780385754729.0,12,Young Adult
+1,Veronica Roth,Carve the Mark,12.99,9780062348647.0,13,Young Adult
+1,Karen M. McManus,One of Us Is Lying,17.99,9781524714680.0,14,Young Adult
+1,John Green,Looking for Alaska,19.99,9780525428022.0,15,Young Adult
+2,Madeleine L'Engle,A Wrinkle in Time,8.99,9781250153272.0,1,Early & Middle
+2,R.J. Palacio,Wonder,16.99,9781524720193.0,2,Early & Middle
+2,R.J. Palacio,Auggie & Me,16.99,9781101934852.0,3,Early & Middle
+2,Kelly Barnhill,The Girl Who Drank the Moon,16.95,9781616205676.0,4,Early & Middle
+2,Victoria Jamieson,All's Faire in Middle School,12.99,9780525429999.0,5,Early & Middle
+2,Raina Telgemeier,Drama,10.99,9780545326995.0,6,Early & Middle
+2,Kimberly Brubaker Bradley,The War That Saved My Life,8.99,9780147510488.0,7,Early & Middle
+2,Raina Telgemeier,Smile,10.99,9780545132060.0,8,Early & Middle
+2,R.J. Palacio,365 Days of Wonder: Mr. Browne's Precepts,9.99,9780399559181.0,9,Early & Middle
+2,Raina Telgemeier,Sisters,10.99,9780545540605.0,10,Early & Middle
+2,Pete Souza,Dream Big Dreams: Photographs from Barack Obama's Inspiring and Historic Presidency,21.99,9780316514392.0,11,Early & Middle
+2,Kimberly Brubaker Bradley,The War I Finally Won,16.99,9780525429203.0,12,Early & Middle
+2,Katherine Applegate,Wishtree,16.99,9781250043221.0,13,Early & Middle
+2,Shannon Hale & LeUyen Pham (Illus.),Real Friends,12.99,9781626727854.0,14,Early & Middle
+2,Victoria Jamieson,Roller Girl,12.99,9780803740167.0,15,Early & Middle
+2,Jesmyn Ward,"Sing, Unburied, Sing",26.0,9781501126062.0,1,Hardcover Fiction
+2,Amor Towles,A Gentleman in Moscow,27.0,9780670026197.0,2,Hardcover Fiction
+2,Dan Brown,Origin,29.95,9780385514231.0,3,Hardcover Fiction
+2,Celeste Ng,Little Fires Everywhere,27.0,9780735224292.0,4,Hardcover Fiction
+2,Jennifer Egan,Manhattan Beach,27.0,9781476716732.0,5,Hardcover Fiction
+2,Andy Weir,Artemis,27.0,9780553448122.0,6,Hardcover Fiction
+2,A.J. Finn,The Woman in the Window- Debut,26.99,9780062678416.0,7,Hardcover Fiction
+2,George Saunders,Lincoln in the Bardo,28.0,9780812995343.0,8,Hardcover Fiction
+2,John Grisham,The Rooster Bar,28.95,9780385541176.0,9,Hardcover Fiction
+2,Naomi Alderman,The Power,26.0,9780316547611.0,10,Hardcover Fiction
+2,Mohsin Hamid,Exit West,26.0,9780735212176.0,11,Hardcover Fiction
+2,Isabel Allende,In the Midst of Winter,28.0,9781501178139.0,12,Hardcover Fiction
+2,Tom Hanks,Uncommon Type,26.95,9781101946152.0,13,Hardcover Fiction
+2,Lee Child,The Midnight Line,28.99,9780399593482.0,14,Hardcover Fiction
+2,James Lee Burke,Robicheaux,27.99,9781501176845.0,15,Hardcover Fiction
+2,Michael Wolff,Fire and Fury: Inside the Trump White House,30.0,9781250158062.0,1,Hardcover Nonfiction
+2,Neil deGrasse Tyson,Astrophysics for People in a Hurry,18.95,9780393609394.0,2,Hardcover Nonfiction
+2,Mark Manson,The Subtle Art of Not Giving A F*ck,24.99,9780062457714.0,3,Hardcover Nonfiction
+2,Walter Isaacson,Leonardo da Vinci,35.0,9781501139154.0,4,Hardcover Nonfiction
+2,Mary Beard,Women & Power: A Manifesto,15.95,9781631494758.0,5,Hardcover Nonfiction
+2,Tiffany Haddish,The Last Black Unicorn,26.0,9781501181825.0,6,Hardcover Nonfiction
+2,Ron Chernow,Grant,40.0,9781594204876.0,7,Hardcover Nonfiction
+2,Ray Dalio,Principles,30.0,9781501124020.0,8,Hardcover Nonfiction
+2,Joe Biden,"Promise Me, Dad",27.0,9781250171672.0,9,Hardcover Nonfiction
+2,J.D. Vance,Hillbilly Elegy,27.99,9780062300546.0,10,Hardcover Nonfiction
+2,David Grann,Killers of the Flower Moon,28.95,9780385534246.0,11,Hardcover Nonfiction
+2,Ta-Nehisi Coates,We Were Eight Years in Power,28.0,9780399590566.0,12,Hardcover Nonfiction
+2,The Dalai Lama,The Book of Joy,26.0,9780399185045.0,13,Hardcover Nonfiction
+2,Margareta Magnusson,The Gentle Art of Swedish Death Cleaning: How to Free Yourself and Your Family from a Lifetime of Clutter,18.99,9781501173240.0,14,Hardcover Nonfiction
+2,Peter Wohlleben,The Hidden Life of Trees,24.95,9781771642484.0,15,Hardcover Nonfiction
+2,Lee Child,No Middle Name,9.99,9780399593598.0,1,Mass Market
+2,John Grisham,The Whistler,9.99,9781101967683.0,2,Mass Market
+2,Michael Crichton,Dragon Teeth,9.99,9780062473363.0,3,Mass Market
+2,Agatha Christie,Murder on the Orient Express,9.99,9780062693662.0,4,Mass Market
+2,James Patterson,Never Never,9.99,9781478944782.0,5,Mass Market
+2,Liane Moriarty,The Husband's Secret,9.99,9780451490049.0,6,Mass Market
+2,Liane Moriarty,What Alice Forgot,9.99,9780451490445.0,7,Mass Market
+2,Doug Stanton,12 Strong,9.99,9781501179952.0,8,Mass Market
+2,Nicholas Sparks,Safe Haven,8.99,9781478948377.0,9,Mass Market
+2,Danielle Steel,Dangerous Games,8.99,9781101883907.0,10,Mass Market
+2,Rupi Kaur,Milk and Honey,14.99,9781449474256.0,1,Trade Paperback Fiction
+2,Min Jin Lee,Pachinko,15.99,9781455563920.0,2,Trade Paperback Fiction
+2,Rupi Kaur,The Sun and Her Flowers,16.99,9781449486792.0,3,Trade Paperback Fiction
+2,Ruth Ware,The Woman in Cabin 10,16.0,9781501132957.0,4,Trade Paperback Fiction
+2,Anthony Doerr,All the Light We Cannot See,17.0,9781501173219.0,5,Trade Paperback Fiction
+2,Margaret Atwood,The Handmaid's Tale,15.95,9780525435006.0,6,Trade Paperback Fiction
+2,Martha Hall Kelly,Lilac Girls,17.0,9781101883082.0,7,Trade Paperback Fiction
+2,Jessica Shattuck,The Women in the Castle,16.99,9780062563675.0,8,Trade Paperback Fiction
+2,Ernest Cline,Ready Player One,16.0,9780307887443.0,9,Trade Paperback Fiction
+2,Shari Lapena,The Couple Next Door,16.0,9780735221109.0,10,Trade Paperback Fiction
+2,Paulette Jiles,News of the World,15.99,9780062409218.0,11,Trade Paperback Fiction
+2,Georgia Hunter,We Were the Lucky Ones,16.0,9780399563096.0,12,Trade Paperback Fiction
+2,Fredrik Backman,A Man Called Ove,16.0,9781476738024.0,13,Trade Paperback Fiction
+2,B.A. Paris,Behind Closed Doors,16.99,9781250132369.0,14,Trade Paperback Fiction
+2,Ann Patchett,Commonwealth,16.99,9780062491831.0,15,Trade Paperback Fiction
+2,Peter Heller,Celine,16.0,9781101973486.0,16,Trade Paperback Fiction
+2,Jen Sincero,You Are a Badass,16.0,9780762447695.0,1,Trade Paperback Nonfiction
+2,Peter Frankopan,The Silk Roads,20.0,9781101912379.0,2,Trade Paperback Nonfiction
+2,Douglas Preston,The Lost City of the Monkey God,15.99,9781455540013.0,3,Trade Paperback Nonfiction
+2,Doug Stanton,12 Strong,18.0,9781501178511.0,4,Trade Paperback Nonfiction
+2,Jonah Berger,Invisible Influence,16.0,9781476759739.0,5,Trade Paperback Nonfiction
+2,Atul Gawande,Being Mortal,16.0,9781250076229.0,6,Trade Paperback Nonfiction
+2,Alexandra Horowitz,Being a Dog,17.0,9781476796024.0,7,Trade Paperback Nonfiction
+2,Matthew Desmond,Evicted,17.0,9780553447453.0,8,Trade Paperback Nonfiction
+2,Timothy Snyder,On Tyranny,7.99,9780804190114.0,9,Trade Paperback Nonfiction
+2,Michael Lewis,The Undoing Project,16.95,9780393354775.0,10,Trade Paperback Nonfiction
+2,Harvard Business School Press,HBR's 10 Must Reads on Emotional Intelligence,24.95,9781633690196.0,11,Trade Paperback Nonfiction
+2,Harvard Business School Press,HBR's 10 Must Reads on Managing Yourself,24.95,9781422157992.0,12,Trade Paperback Nonfiction
+2,Robert Moor,On Trails,16.0,9781476739236.0,13,Trade Paperback Nonfiction
+2,Luke Harding,Collusion,16.95,9780525562511.0,14,Trade Paperback Nonfiction
+2,Chimamanda Ngozi Adichie,We Should All Be Feminists,7.95,9781101911761.0,15,Trade Paperback Nonfiction
+2,John Green,Turtles All the Way Down,19.99,9780525555360.0,1,Young Adult
+2,Angie Thomas,The Hate U Give,17.99,9780062498533.0,2,Young Adult
+2,Philip Pullman,The Book of Dust: La Belle Sauvage,22.99,9780375815300.0,3,Young Adult
+2,Holly Black,The Cruel Prince,18.99,9780316310277.0,4,Young Adult
+2,Marissa Meyer,Renegades,19.99,9781250044662.0,5,Young Adult
+2,Nicola Yoon,"Everything, Everything (An Indies Introduce Title)",10.99,9781524769604.0,6,Young Adult
+2,Marie Lu,Warcross,18.99,9780399547966.0,7,Young Adult
+2,Neal Shusterman,Scythe,11.99,9781442472433.0,8,Young Adult
+2,John Green,The Fault in Our Stars,12.99,9780142424179.0,9,Young Adult
+2,Markus Zusak,The Book Thief,12.99,9780385754729.0,10,Young Adult
+2,Veronica Roth,Carve the Mark,12.99,9780062348647.0,11,Young Adult
+2,John Green,Looking for Alaska,19.99,9780525428022.0,12,Young Adult
+2,Robin Benway,Far From the Tree,17.99,9780062330628.0,13,Young Adult
+2,Karen M. McManus,One of Us Is Lying,17.99,9781524714680.0,14,Young Adult
+2,Nic Stone,Dear Martin,17.99,9781101939499.0,15,Young Adult
+3,Madeleine L'Engle,A Wrinkle in Time,8.99,9781250153272.0,1,Early & Middle
+3,R.J. Palacio,Wonder,16.99,9781524720193.0,2,Early & Middle
+3,R.J. Palacio,Auggie & Me,16.99,9781101934852.0,3,Early & Middle
+3,Victoria Jamieson,All's Faire in Middle School,12.99,9780525429999.0,4,Early & Middle
+3,Kelly Barnhill,The Girl Who Drank the Moon,16.95,9781616205676.0,5,Early & Middle
+3,Kimberly Brubaker Bradley,The War That Saved My Life,8.99,9780147510488.0,6,Early & Middle
+3,Katherine Applegate,Wishtree,16.99,9781250043221.0,7,Early & Middle
+3,Pete Souza,Dream Big Dreams: Photographs from Barack Obama's Inspiring and Historic Presidency,21.99,9780316514392.0,8,Early & Middle
+3,Kimberly Brubaker Bradley,The War I Finally Won,16.99,9780525429203.0,9,Early & Middle
+3,Victoria Jamieson,Roller Girl,12.99,9780803740167.0,10,Early & Middle
+3,Sara Pennypacker & Jon Klassen (Illus.),Pax,16.99,9780062377012.0,11,Early & Middle
+3,Raina Telgemeier,Drama,10.99,9780545326995.0,12,Early & Middle
+3,Raina Telgemeier,Sisters,10.99,9780545540605.0,13,Early & Middle
+3,Vashti Harrison,Little Leaders: Bold Women in Black History- Debut,16.99,9780316475112.0,14,Early & Middle
+3,Raina Telgemeier,Ghosts,10.99,9780545540629.0,15,Early & Middle
+3,Jesmyn Ward,"Sing, Unburied, Sing",26.0,9781501126062.0,1,Hardcover Fiction
+3,Chloe Benjamin,The Immortalists- Debut,26.0,9780735213180.0,2,Hardcover Fiction
+3,A.J. Finn,The Woman in the Window,26.99,9780062678416.0,3,Hardcover Fiction
+3,Celeste Ng,Little Fires Everywhere,27.0,9780735224292.0,4,Hardcover Fiction
+3,Amor Towles,A Gentleman in Moscow,27.0,9780670026197.0,5,Hardcover Fiction
+3,Dan Brown,Origin,29.95,9780385514231.0,6,Hardcover Fiction
+3,Andy Weir,Artemis,27.0,9780553448122.0,7,Hardcover Fiction
+3,Jennifer Egan,Manhattan Beach,27.0,9781476716732.0,8,Hardcover Fiction
+3,George Saunders,Lincoln in the Bardo,28.0,9780812995343.0,9,Hardcover Fiction
+3,Naomi Alderman,The Power,26.0,9780316547611.0,10,Hardcover Fiction
+3,John Grisham,The Rooster Bar,28.95,9780385541176.0,11,Hardcover Fiction
+3,Greer Hendricks,The Wife Between Us- Debut,26.99,9781250130921.0,12,Hardcover Fiction
+3,Lee Child,The Midnight Line,28.99,9780399593482.0,13,Hardcover Fiction
+3,Tom Hanks,Uncommon Type,26.95,9781101946152.0,14,Hardcover Fiction
+3,Mohsin Hamid,Exit West,26.0,9780735212176.0,15,Hardcover Fiction
+3,Michael Wolff,Fire and Fury: Inside the Trump White House,30.0,9781250158062.0,1,Hardcover Nonfiction
+3,Neil deGrasse Tyson,Astrophysics for People in a Hurry,18.95,9780393609394.0,2,Hardcover Nonfiction
+3,Mark Manson,The Subtle Art of Not Giving A F*ck,24.99,9780062457714.0,3,Hardcover Nonfiction
+3,Walter Isaacson,Leonardo da Vinci,35.0,9781501139154.0,4,Hardcover Nonfiction
+3,Tiffany Haddish,The Last Black Unicorn,26.0,9781501181825.0,5,Hardcover Nonfiction
+3,Mary Beard,Women & Power,15.95,9781631494758.0,6,Hardcover Nonfiction
+3,Ron Chernow,Grant,40.0,9781594204876.0,7,Hardcover Nonfiction
+3,Joe Biden,"Promise Me, Dad",27.0,9781250171672.0,8,Hardcover Nonfiction
+3,Ray Dalio,Principles: Life and Work,30.0,9781501124020.0,9,Hardcover Nonfiction
+3,J.D. Vance,Hillbilly Elegy,27.99,9780062300546.0,10,Hardcover Nonfiction
+3,The Dalai Lama,The Book of Joy,26.0,9780399185045.0,11,Hardcover Nonfiction
+3,Brene Brown,Braving the Wilderness,28.0,9780812995848.0,12,Hardcover Nonfiction
+3,Daniel H. Pink,When: The Scientific Secrets of Perfect Timing- Debut,28.0,9780735210622.0,13,Hardcover Nonfiction
+3,David Grann,Killers of the Flower Moon,28.95,9780385534246.0,14,Hardcover Nonfiction
+3,Ta-Nehisi Coates,We Were Eight Years in Power,28.0,9780399590566.0,15,Hardcover Nonfiction
+3,Lee Child,No Middle Name,9.99,9780399593598.0,1,Mass Market
+3,Michael Crichton,Dragon Teeth,9.99,9780062473363.0,2,Mass Market
+3,John Grisham,The Whistler,9.99,9781101967683.0,3,Mass Market
+3,James Patterson,Never Never,9.99,9781478944782.0,4,Mass Market
+3,Doug Stanton,12 Strong,9.99,9781501179952.0,5,Mass Market
+3,Liane Moriarty,The Husband's Secret,9.99,9780451490049.0,6,Mass Market
+3,Steve Berry,The Lost Order- Debut,9.99,9781250058461.0,7,Mass Market
+3,Liane Moriarty,What Alice Forgot,9.99,9780451490445.0,8,Mass Market
+3,Agatha Christie,Murder on the Orient Express,9.99,9780062693662.0,9,Mass Market
+3,Nicholas Sparks,Safe Haven,8.99,9781478948377.0,10,Mass Market
+3,Min Jin Lee,Pachinko,15.99,9781455563920.0,1,Trade Paperback Fiction
+3,Jessica Shattuck,The Women in the Castle,16.99,9780062563675.0,2,Trade Paperback Fiction
+3,Margaret Atwood,The Handmaid's Tale,15.95,9780525435006.0,3,Trade Paperback Fiction
+3,Anthony Doerr,All the Light We Cannot See,17.0,9781501173219.0,4,Trade Paperback Fiction
+3,Ruth Ware,The Woman in Cabin 10,16.0,9781501132957.0,5,Trade Paperback Fiction
+3,Rupi Kaur,The Sun and Her Flowers,16.99,9781449486792.0,6,Trade Paperback Fiction
+3,Rupi Kaur,Milk and Honey,14.99,9781449474256.0,7,Trade Paperback Fiction
+3,Ernest Cline,Ready Player One,16.0,9780307887443.0,8,Trade Paperback Fiction
+3,Georgia Hunter,We Were the Lucky Ones,16.0,9780399563096.0,9,Trade Paperback Fiction
+3,Shari Lapena,The Couple Next Door,16.0,9780735221109.0,10,Trade Paperback Fiction
+3,Martha Hall Kelly,Lilac Girls,17.0,9781101883082.0,11,Trade Paperback Fiction
+3,Paulette Jiles,News of the World,15.99,9780062409218.0,12,Trade Paperback Fiction
+3,Peter Heller,Celine- Debut,16.0,9781101973486.0,13,Trade Paperback Fiction
+3,Andre Aciman,Call Me by Your Name- Debut,17.0,9781250169440.0,14,Trade Paperback Fiction
+3,B.A. Paris,Behind Closed Doors,16.99,9781250132369.0,15,Trade Paperback Fiction
+3,Jen Sincero,You Are a Badass,16.0,9780762447695.0,1,Trade Paperback Nonfiction
+3,Peter Frankopan,The Silk Roads,20.0,9781101912379.0,2,Trade Paperback Nonfiction
+3,Douglas Preston,The Lost City of the Monkey God,15.99,9781455540013.0,3,Trade Paperback Nonfiction
+3,Atul Gawande,Being Mortal,16.0,9781250076229.0,4,Trade Paperback Nonfiction
+3,Doug Stanton,12 Strong,18.0,9781501178511.0,5,Trade Paperback Nonfiction
+3,Jonah Berger,Invisible Influence,16.0,9781476759739.0,6,Trade Paperback Nonfiction
+3,Timothy Snyder,On Tyranny,7.99,9780804190114.0,7,Trade Paperback Nonfiction
+3,Matthew Desmond,Evicted,17.0,9780553447453.0,8,Trade Paperback Nonfiction
+3,Harvard Business School Press,HBR's 10 Must Reads on Emotional Intelligence,24.95,9781633690196.0,9,Trade Paperback Nonfiction
+3,Alexandra Horowitz,Being a Dog,17.0,9781476796024.0,10,Trade Paperback Nonfiction
+3,Harvard Business School Press,HBR's 10 Must Reads on Managing Yourself,24.95,9781422157992.0,11,Trade Paperback Nonfiction
+3,Michael Lewis,The Undoing Project,16.95,9780393354775.0,12,Trade Paperback Nonfiction
+3,Joan Didion,South and West: From a Notebook- Debut,15.0,9780525434191.0,13,Trade Paperback Nonfiction
+3,Sy Montgomery,The Soul of an Octopus,16.0,9781451697728.0,14,Trade Paperback Nonfiction
+3,Robert Moor,On Trails,16.0,9781476739236.0,15,Trade Paperback Nonfiction
+3,John Green,Turtles All the Way Down,19.99,9780525555360.0,1,Young Adult
+3,Angie Thomas,The Hate U Give,17.99,9780062498533.0,2,Young Adult
+3,Philip Pullman,The Book of Dust: La Belle Sauvage,22.99,9780375815300.0,3,Young Adult
+3,Holly Black,The Cruel Prince,18.99,9780316310277.0,4,Young Adult
+3,Nicola Yoon,"Everything, Everything (An Indies Introduce Title)",10.99,9781524769604.0,5,Young Adult
+3,Marissa Meyer,Renegades,19.99,9781250044662.0,6,Young Adult
+3,John Green,Looking for Alaska,19.99,9780525428022.0,7,Young Adult
+3,Markus Zusak,The Book Thief,12.99,9780385754729.0,8,Young Adult
+3,Sherman Alexie,The Absolutely True Diary of a Part-Time Indian,15.99,9780316013697.0,9,Young Adult
+3,Karen M. McManus,One of Us Is Lying,17.99,9781524714680.0,10,Young Adult
+3,Marie Lu,Warcross,18.99,9780399547966.0,11,Young Adult
+3,Ruta Sepetys,Salt to the Sea,10.99,9780142423622.0,12,Young Adult
+3,John Green,The Fault in Our Stars,12.99,9780142424179.0,13,Young Adult
+3,Lois Lowry,The Giver,9.99,9780544340688.0,14,Young Adult
+3,Robin Benway,Far From the Tree,17.99,9780062330628.0,15,Young Adult
+4,Madeleine L'Engle,A Wrinkle in Time,8.99,9781250153272.0,1,Early & Middle
+4,R.J. Palacio,Wonder,16.99,9781524720193.0,2,Early & Middle
+4,Raina Telgemeier,Drama,10.99,9780545326995.0,3,Early & Middle
+4,R.J. Palacio,Auggie & Me,16.99,9781101934852.0,4,Early & Middle
+4,Kimberly Brubaker Bradley,The War That Saved My Life,8.99,9780147510488.0,5,Early & Middle
+4,Vashti Harrison,Little Leaders: Bold Women in Black History,16.99,9780316475112.0,6,Early & Middle
+4,Kelly Barnhill,The Girl Who Drank the Moon,16.95,9781616205676.0,7,Early & Middle
+4,Victoria Jamieson,All's Faire in Middle School,12.99,9780525429999.0,8,Early & Middle
+4,Raina Telgemeier,Smile,10.99,9780545132060.0,9,Early & Middle
+4,Raina Telgemeier,Sisters,10.99,9780545540605.0,10,Early & Middle
+4,Pete Souza,Dream Big Dreams: Photographs from Barack Obama's Inspiring and Historic Presidency,21.99,9780316514392.0,11,Early & Middle
+4,Kimberly Brubaker Bradley,The War I Finally Won,16.99,9780525429203.0,12,Early & Middle
+4,Katherine Applegate,Wishtree,16.99,9781250043221.0,13,Early & Middle
+4,Raina Telgemeier,Ghosts,10.99,9780545540629.0,14,Early & Middle
+4,Jessica Townsend,Nevermoor: The Trials of Morrigan Crow (An Indies Introduce Title),17.99,9780316508889.0,15,Early & Middle
+4,A.J. Finn,The Woman in the Window,26.99,9780062678416.0,1,Hardcover Fiction
+4,Chloe Benjamin,The Immortalists,26.0,9780735213180.0,2,Hardcover Fiction
+4,Jesmyn Ward,"Sing, Unburied, Sing",26.0,9781501126062.0,3,Hardcover Fiction
+4,Celeste Ng,Little Fires Everywhere,27.0,9780735224292.0,4,Hardcover Fiction
+4,Amor Towles,A Gentleman in Moscow,27.0,9780670026197.0,5,Hardcover Fiction
+4,Dan Brown,Origin,29.95,9780385514231.0,6,Hardcover Fiction
+4,Andy Weir,Artemis,27.0,9780553448122.0,7,Hardcover Fiction
+4,Jennifer Egan,Manhattan Beach,27.0,9781476716732.0,8,Hardcover Fiction
+4,Greer Hendricks,The Wife Between Us,26.99,9781250130921.0,9,Hardcover Fiction
+4,John Grisham,The Rooster Bar,28.95,9780385541176.0,10,Hardcover Fiction
+4,Naomi Alderman,The Power,26.0,9780316547611.0,11,Hardcover Fiction
+4,Denis Johnson,The Largesse of the Sea Maiden- Debut,27.0,9780812988635.0,12,Hardcover Fiction
+4,George Saunders,Lincoln in the Bardo,28.0,9780812995343.0,13,Hardcover Fiction
+4,Lee Child,The Midnight Line,28.99,9780399593482.0,14,Hardcover Fiction
+4,Mohsin Hamid,Exit West,26.0,9780735212176.0,15,Hardcover Fiction
+4,Pierce Brown,Iron Gold,28.0,9780425285916.0,16,Hardcover Fiction
+4,Michael Wolff,Fire and Fury,30.0,9781250158062.0,1,Hardcover Nonfiction
+4,Neil deGrasse Tyson,Astrophysics for People in a Hurry,18.95,9780393609394.0,2,Hardcover Nonfiction
+4,Mark Manson,The Subtle Art of Not Giving A F*ck,24.99,9780062457714.0,3,Hardcover Nonfiction
+4,Walter Isaacson,Leonardo da Vinci,35.0,9781501139154.0,4,Hardcover Nonfiction
+4,Tiffany Haddish,The Last Black Unicorn,26.0,9781501181825.0,5,Hardcover Nonfiction
+4,Ray Dalio,Principles,30.0,9781501124020.0,6,Hardcover Nonfiction
+4,Mary Beard,Women & Power,15.95,9781631494758.0,7,Hardcover Nonfiction
+4,Daniel H. Pink,When: The Scientific Secrets of Perfect Timing,28.0,9780735210622.0,8,Hardcover Nonfiction
+4,David Cay Johnston,It's Even Worse Than You Think: What the Trump Administration Is Doing to America,28.0,9781501174162.0,9,Hardcover Nonfiction
+4,J.D. Vance,Hillbilly Elegy,27.99,9780062300546.0,10,Hardcover Nonfiction
+4,Joe Biden,"Promise Me, Dad",27.0,9781250171672.0,11,Hardcover Nonfiction
+4,The Dalai Lama,The Book of Joy,26.0,9780399185045.0,12,Hardcover Nonfiction
+4,Brene Brown,Braving the Wilderness,28.0,9780812995848.0,13,Hardcover Nonfiction
+4,David Grann,Killers of the Flower Moon,28.95,9780385534246.0,14,Hardcover Nonfiction
+4,Ron Chernow,Grant,40.0,9781594204876.0,15,Hardcover Nonfiction
+4,Lee Child,No Middle Name,9.99,9780399593598.0,1,Mass Market
+4,John Grisham,The Whistler,9.99,9781101967683.0,2,Mass Market
+4,Michael Crichton,Dragon Teeth,9.99,9780062473363.0,3,Mass Market
+4,James Patterson,Never Never,9.99,9781478944782.0,4,Mass Market
+4,Doug Stanton,12 Strong,9.99,9781501179952.0,5,Mass Market
+4,Steve Berry,The Lost Order,9.99,9781250058461.0,6,Mass Market
+4,Agatha Christie,Murder on the Orient Express,9.99,9780062693662.0,7,Mass Market
+4,Michael Connelly,The Wrong Side of Goodbye,9.99,9781455524204.0,8,Mass Market
+4,Liane Moriarty,The Husband's Secret,9.99,9780451490049.0,9,Mass Market
+4,Liane Moriarty,What Alice Forgot,9.99,9780451490445.0,10,Mass Market
+4,Min Jin Lee,Pachinko,15.99,9781455563920.0,1,Trade Paperback Fiction
+4,Jessica Shattuck,The Women in the Castle,16.99,9780062563675.0,2,Trade Paperback Fiction
+4,Anthony Doerr,All the Light We Cannot See,17.0,9781501173219.0,3,Trade Paperback Fiction
+4,Margaret Atwood,The Handmaid's Tale,15.95,9780525435006.0,4,Trade Paperback Fiction
+4,Ruth Ware,The Woman in Cabin 10,16.0,9781501132957.0,5,Trade Paperback Fiction
+4,Rupi Kaur,The Sun and Her Flowers,16.99,9781449486792.0,6,Trade Paperback Fiction
+4,Ernest Cline,Ready Player One,16.0,9780307887443.0,7,Trade Paperback Fiction
+4,Martha Hall Kelly,Lilac Girls,17.0,9781101883082.0,8,Trade Paperback Fiction
+4,Rupi Kaur,Milk and Honey,14.99,9781449474256.0,9,Trade Paperback Fiction
+4,Georgia Hunter,We Were the Lucky Ones,16.0,9780399563096.0,10,Trade Paperback Fiction
+4,Shari Lapena,The Couple Next Door,16.0,9780735221109.0,11,Trade Paperback Fiction
+4,Peter Heller,Celine,16.0,9781101973486.0,12,Trade Paperback Fiction
+4,Andre Aciman,Call Me by Your Name,17.0,9781250169440.0,13,Trade Paperback Fiction
+4,B.A. Paris,Behind Closed Doors,16.99,9781250132369.0,14,Trade Paperback Fiction
+4,Leeila Slimani,The Perfect Nanny,16.0,9780143132172.0,15,Trade Paperback Fiction
+4,Jen Sincero,You Are a Badass,16.0,9780762447695.0,1,Trade Paperback Nonfiction
+4,Doug Stanton,12 Strong,18.0,9781501178511.0,2,Trade Paperback Nonfiction
+4,Peter Frankopan,The Silk Roads,20.0,9781101912379.0,3,Trade Paperback Nonfiction
+4,Douglas J. Preston,The Lost City of the Monkey God,15.99,9781455540013.0,4,Trade Paperback Nonfiction
+4,Atul Gawande,Being Mortal,16.0,9781250076229.0,5,Trade Paperback Nonfiction
+4,Jonah Berger,Invisible Influence,16.0,9781476759739.0,6,Trade Paperback Nonfiction
+4,Harvard Business School Press,HBR's 10 Must Reads on Emotional Intelligence,24.95,9781633690196.0,7,Trade Paperback Nonfiction
+4,Matthew Desmond,Evicted,17.0,9780553447453.0,8,Trade Paperback Nonfiction
+4,Timothy Snyder,On Tyranny,7.99,9780804190114.0,9,Trade Paperback Nonfiction
+4,Michael Lewis,The Undoing Project,16.95,9780393354775.0,10,Trade Paperback Nonfiction
+4,Harvard Business School Press,HBR's 10 Must Reads on Managing Yourself,24.95,9781422157992.0,11,Trade Paperback Nonfiction
+4,Alexandra Horowitz,Being a Dog,17.0,9781476796024.0,12,Trade Paperback Nonfiction
+4,Joan Didion,South and West,15.0,9780525434191.0,13,Trade Paperback Nonfiction
+4,Chimamanda Ngozi Adichie,We Should All Be Feminists,7.95,9781101911761.0,14,Trade Paperback Nonfiction
+4,Ben Macintyre,Rogue Heroes,16.0,9781101904183.0,15,Trade Paperback Nonfiction
+4,John Green,Turtles All the Way Down,19.99,9780525555360.0,1,Young Adult
+4,Angie Thomas,The Hate U Give,17.99,9780062498533.0,2,Young Adult
+4,Philip Pullman,The Book of Dust: La Belle Sauvage,22.99,9780375815300.0,3,Young Adult
+4,Holly Black,The Cruel Prince,18.99,9780316310277.0,4,Young Adult
+4,Nicola Yoon,"Everything, Everything (An Indies Introduce Title)",10.99,9781524769604.0,5,Young Adult
+4,John Green,The Fault in Our Stars,12.99,9780142424179.0,6,Young Adult
+4,Marissa Meyer,Renegades,19.99,9781250044662.0,7,Young Adult
+4,Markus Zusak,The Book Thief,12.99,9780385754729.0,8,Young Adult
+4,Lois Lowry,The Giver,9.99,9780544340688.0,9,Young Adult
+4,Veronica Roth,Carve the Mark,12.99,9780062348647.0,10,Young Adult
+4,Robin Benway,Far From the Tree,17.99,9780062330628.0,11,Young Adult
+4,Marie Lu,Warcross,18.99,9780399547966.0,12,Young Adult
+4,Ruta Sepetys,Salt to the Sea,10.99,9780142423622.0,13,Young Adult
+4,John Green,Looking for Alaska,19.99,9780525428022.0,14,Young Adult
+4,Karen M. McManus,One of Us Is Lying,17.99,9781524714680.0,15,Young Adult
+5,Madeleine L'Engle,A Wrinkle in Time,8.99,9781250153272.0,1,Early & Middle
+5,R.J. Palacio,Wonder,16.99,9781524720193.0,2,Early & Middle
+5,R.J. Palacio,Auggie & Me,16.99,9781101934852.0,3,Early & Middle
+5,Kimberly Brubaker Bradley,The War That Saved My Life,8.99,9780147510488.0,4,Early & Middle
+5,Kelly Barnhill,The Girl Who Drank the Moon,16.95,9781616205676.0,5,Early & Middle
+5,Raina Telgemeier,Drama,10.99,9780545326995.0,6,Early & Middle
+5,Vashti Harrison,Little Leaders: Bold Women in Black History,16.99,9780316475112.0,7,Early & Middle
+5,Raina Telgemeier,Smile,10.99,9780545132060.0,8,Early & Middle
+5,Katherine Applegate,Wishtree,16.99,9781250043221.0,9,Early & Middle
+5,Raina Telgemeier,Ghosts,10.99,9780545540629.0,10,Early & Middle
+5,Pete Souza,Dream Big Dreams: Photographs from Barack Obama's Inspiring and Historic Presidency,21.99,9780316514392.0,11,Early & Middle
+5,Kimberly Brubaker Bradley,The War I Finally Won,16.99,9780525429203.0,12,Early & Middle
+5,R.J. Palacio,365 Days of Wonder: Mr. Browne's Precepts,9.99,9780399559181.0,13,Early & Middle
+5,Jessica Townsend,Nevermoor: The Trials of Morrigan Crow (An Indies Introduce Title),17.99,9780316508889.0,14,Early & Middle
+5,Victoria Jamieson,All's Faire in Middle School,12.99,9780525429999.0,15,Early & Middle
+5,Chloe Benjamin,The Immortalists,26.0,9780735213180.0,1,Hardcover Fiction
+5,A.J. Finn,The Woman in the Window,26.99,9780062678416.0,2,Hardcover Fiction
+5,Amor Towles,A Gentleman in Moscow,27.0,9780670026197.0,3,Hardcover Fiction
+5,Celeste Ng,Little Fires Everywhere,27.0,9780735224292.0,4,Hardcover Fiction
+5,Jesmyn Ward,"Sing, Unburied, Sing",26.0,9781501126062.0,5,Hardcover Fiction
+5,Dan Brown,Origin,29.95,9780385514231.0,6,Hardcover Fiction
+5,Andy Weir,Artemis,27.0,9780553448122.0,7,Hardcover Fiction
+5,Jennifer Egan,Manhattan Beach,27.0,9781476716732.0,8,Hardcover Fiction
+5,Naomi Alderman,The Power,26.0,9780316547611.0,9,Hardcover Fiction
+5,Greer Hendricks,The Wife Between Us,26.99,9781250130921.0,10,Hardcover Fiction
+5,John Grisham,The Rooster Bar,28.95,9780385541176.0,11,Hardcover Fiction
+5,Denis Johnson,The Largesse of the Sea Maiden,27.0,9780812988635.0,12,Hardcover Fiction
+5,George Saunders,Lincoln in the Bardo,28.0,9780812995343.0,13,Hardcover Fiction
+5,Mary Oliver,Devotions,30.0,9780399563249.0,14,Hardcover Fiction
+5,John le Carré,A Legacy of Spies,28.0,9780735225114.0,15,Hardcover Fiction
+5,Michael Wolff,Fire and Fury,30.0,9781250158062.0,1,Hardcover Nonfiction
+5,Neil deGrasse Tyson,Astrophysics for People in a Hurry,18.95,9780393609394.0,2,Hardcover Nonfiction
+5,Mark Manson,The Subtle Art of Not Giving A F*ck,24.99,9780062457714.0,3,Hardcover Nonfiction
+5,Walter Isaacson,Leonardo da Vinci,35.0,9781501139154.0,4,Hardcover Nonfiction
+5,Tiffany Haddish,The Last Black Unicorn,26.0,9781501181825.0,5,Hardcover Nonfiction
+5,J.D. Vance,Hillbilly Elegy,27.99,9780062300546.0,6,Hardcover Nonfiction
+5,Steven Levitsky,How Democracies Die,26.0,9781524762933.0,7,Hardcover Nonfiction
+5,The Dalai Lama,The Book of Joy,26.0,9780399185045.0,8,Hardcover Nonfiction
+5,Ray Dalio,Principles,30.0,9781501124020.0,9,Hardcover Nonfiction
+5,Daniel H. Pink,When,28.0,9780735210622.0,10,Hardcover Nonfiction
+5,Margareta Magnusson,The Gentle Art of Swedish Death Cleaning,18.99,9781501173240.0,11,Hardcover Nonfiction
+5,Mary Beard,Women & Power,15.95,9781631494758.0,12,Hardcover Nonfiction
+5,Ron Chernow,Grant,40.0,9781594204876.0,13,Hardcover Nonfiction
+5,Joe Biden,"Promise Me, Dad",27.0,9781250171672.0,14,Hardcover Nonfiction
+5,David Grann,Killers of the Flower Moon,28.95,9780385534246.0,15,Hardcover Nonfiction
+5,Lee Child,No Middle Name,9.99,9780399593598.0,1,Mass Market
+5,John Grisham,The Whistler,9.99,9781101967683.0,2,Mass Market
+5,Michael Crichton,Dragon Teeth,9.99,9780062473363.0,3,Mass Market
+5,Doug Stanton,12 Strong,9.99,9781501179952.0,4,Mass Market
+5,James Patterson,Never Never,9.99,9781478944782.0,5,Mass Market
+5,Ursula K. Le Guin,The Left Hand of Darkness,9.99,9780441478125.0,6,Mass Market
+5,Liane Moriarty,The Husband's Secret,9.99,9780451490049.0,7,Mass Market
+5,Steve Berry,The Lost Order,9.99,9781250058461.0,8,Mass Market
+5,Danielle Steel,Against All Odds,8.99,9781101883938.0,9,Mass Market
+5,Liane Moriarty,What Alice Forgot,9.99,9780451490445.0,10,Mass Market
+5,Min Jin Lee,Pachinko,15.99,9781455563920.0,1,Trade Paperback Fiction
+5,Jessica Shattuck,The Women in the Castle,16.99,9780062563675.0,2,Trade Paperback Fiction
+5,Anthony Doerr,All the Light We Cannot See,17.0,9781501173219.0,3,Trade Paperback Fiction
+5,Georgia Hunter,We Were the Lucky Ones,16.0,9780399563096.0,4,Trade Paperback Fiction
+5,Ruth Ware,The Woman in Cabin 10,16.0,9781501132957.0,5,Trade Paperback Fiction
+5,Margaret Atwood,The Handmaid's Tale,15.95,9780525435006.0,6,Trade Paperback Fiction
+5,Rupi Kaur,The Sun and Her Flowers,16.99,9781449486792.0,7,Trade Paperback Fiction
+5,Ernest Cline,Ready Player One,16.0,9780307887443.0,8,Trade Paperback Fiction
+5,Leeila Slimani,The Perfect Nanny,16.0,9780143132172.0,9,Trade Paperback Fiction
+5,Martha Hall Kelly,Lilac Girls,17.0,9781101883082.0,10,Trade Paperback Fiction
+5,Rupi Kaur,Milk and Honey,14.99,9781449474256.0,11,Trade Paperback Fiction
+5,Shari Lapena,The Couple Next Door,16.0,9780735221109.0,12,Trade Paperback Fiction
+5,Andre Aciman,Call Me by Your Name,17.0,9781250169440.0,13,Trade Paperback Fiction
+5,B.A. Paris,Behind Closed Doors,16.99,9781250132369.0,14,Trade Paperback Fiction
+5,Peter Heller,Celine,16.0,9781101973486.0,15,Trade Paperback Fiction
+5,Jen Sincero,You Are a Badass,16.0,9780762447695.0,1,Trade Paperback Nonfiction
+5,Doug Stanton,12 Strong,18.0,9781501178511.0,2,Trade Paperback Nonfiction
+5,Peter Frankopan,The Silk Roads,20.0,9781101912379.0,3,Trade Paperback Nonfiction
+5,Douglas J. Preston,The Lost City of the Monkey God,15.99,9781455540013.0,4,Trade Paperback Nonfiction
+5,Atul Gawande,Being Mortal,16.0,9781250076229.0,5,Trade Paperback Nonfiction
+5,Jonah Berger,Invisible Influence,16.0,9781476759739.0,6,Trade Paperback Nonfiction
+5,Harvard Business School Press,HBR's 10 Must Reads on Managing Yourself,24.95,9781422157992.0,7,Trade Paperback Nonfiction
+5,Harvard Business School Press,HBR's 10 Must Reads on Emotional Intelligence,24.95,9781633690196.0,8,Trade Paperback Nonfiction
+5,Alexandra Horowitz,Being a Dog,17.0,9781476796024.0,9,Trade Paperback Nonfiction
+5,Michael Lewis,The Undoing Project,16.95,9780393354775.0,10,Trade Paperback Nonfiction
+5,Matthew Desmond,Evicted,17.0,9780553447453.0,11,Trade Paperback Nonfiction
+5,Timothy Snyder,On Tyranny,7.99,9780804190114.0,12,Trade Paperback Nonfiction
+5,Ben Macintyre,Rogue Heroes,16.0,9781101904183.0,13,Trade Paperback Nonfiction
+5,Sy Montgomery,The Soul of an Octopus,16.0,9781451697728.0,14,Trade Paperback Nonfiction
+5,Joan Didion,South and West,15.0,9780525434191.0,15,Trade Paperback Nonfiction
+5,John Green,Turtles All the Way Down,19.99,9780525555360.0,1,Young Adult
+5,Angie Thomas,The Hate U Give,17.99,9780062498533.0,2,Young Adult
+5,Philip Pullman,The Book of Dust: La Belle Sauvage,22.99,9780375815300.0,3,Young Adult
+5,Holly Black,The Cruel Prince,18.99,9780316310277.0,4,Young Adult
+5,Nicola Yoon,"Everything, Everything",10.99,9781524769604.0,5,Young Adult
+5,Markus Zusak,The Book Thief,12.99,9780385754729.0,6,Young Adult
+5,Marissa Meyer,Renegades,19.99,9781250044662.0,7,Young Adult
+5,Sherman Alexie,The Absolutely True Diary of a Part-Time Indian,15.99,9780316013697.0,8,Young Adult
+5,John Green,The Fault in Our Stars,12.99,9780142424179.0,9,Young Adult
+5,Marie Lu,Warcross,18.99,9780399547966.0,10,Young Adult
+5,Lois Lowry,The Giver,9.99,9780544340688.0,11,Young Adult
+5,Ruta Sepetys,Salt to the Sea,10.99,9780142423622.0,12,Young Adult
+5,David Levithan,Every Day,9.99,9780307931894.0,13,Young Adult
+5,Karen M. McManus,One of Us Is Lying,17.99,9781524714680.0,14,Young Adult
+5,Nicola Yoon,The Sun Is Also a Star,18.99,9780553496680.0,15,Young Adult
+6, Madeleine L'Engle ,A Wrinkle in Time ,8.99,  9781250153272,1,Early & Middle
+6, R.J. Palacio ,Wonder ,16.99,  9781524720193,2,Early & Middle
+6, Kelly Barnhill ,The Girl Who Drank the Moon ,16.95,  9781616205676,3,Early & Middle
+6, Vashti Harrison ,Little Leaders: Bold Women in Black History ,16.99,  9780316475112,4,Early & Middle
+6, Kimberly Brubaker Bradley ,The War That Saved My Life ,8.99,  9780147510488,5,Early & Middle
+6, R.J. Palacio ,Auggie & Me ,16.99,  9781101934852,6,Early & Middle
+6, Raina Telgemeier ,Sisters ,10.99,  9780545540605,7,Early & Middle
+6, Raina Telgemeier ,Smile ,10.99,  9780545132060,8,Early & Middle
+6, Victoria Jamieson ,All's Faire in Middle School ,12.99,  9780525429999,9,Early & Middle
+6, Kimberly Brubaker Bradley ,The War I Finally Won ,16.99,  9780525429203,10,Early & Middle
+6, Raina Telgemeier ,Drama ,10.99,  9780545326995,11,Early & Middle
+6, Katherine Applegate ,Wishtree ,16.99,  9781250043221,12,Early & Middle
+6, Pete Souza ,Dream Big Dreams: Photographs from Barack Obama's Inspiring and Historic Presidency ,21.99,  9780316514392,13,Early & Middle
+6, Katherine Applegate ,The One and Only Ivan ,7.99,  9780061992278,14,Early & Middle
+6, Gary Paulsen ,Hatchet ,9.99,  9781481486293,15,Early & Middle
+6, A.J. Finn ,The Woman in the Window ,26.99,  9780062678416,1,Hardcover Fiction
+6, Chloe Benjamin ,The Immortalists ,26.0,  9780735213180,2,Hardcover Fiction
+6, Amor Towles ,A Gentleman in Moscow ,27.0,  9780670026197,3,Hardcover Fiction
+6, Jesmyn Ward ,"Sing, Unburied, Sing ",26.0,  9781501126062,4,Hardcover Fiction
+6, Celeste Ng ,Little Fires Everywhere ,27.0,  9780735224292,5,Hardcover Fiction
+6, Jojo Moyes ,Still Me ,27.0,  9780399562457,6,Hardcover Fiction
+6, Dan Brown ,Origin ,29.95,  9780385514231,7,Hardcover Fiction
+6, Greer Hendricks ,The Wife Between Us ,26.99,  9781250130921,8,Hardcover Fiction
+6, Naomi Alderman ,The Power ,26.0,  9780316547611,9,Hardcover Fiction
+6, Jennifer Egan ,Manhattan Beach ,27.0,  9781476716732,10,Hardcover Fiction
+6, Andy Weir ,Artemis ,27.0,  9780553448122,11,Hardcover Fiction
+6, Denis Johnson ,The Largesse of the Sea Maiden ,27.0,  9780812988635,12,Hardcover Fiction
+6, John Grisham ,The Rooster Bar ,28.95,  9780385541176,13,Hardcover Fiction
+6, Alan Bradley ,The Grave's a Fine and Private Place ,26.0,  9780345539991,14,Hardcover Fiction
+6, George Saunders ,Lincoln in the Bardo ,28.0,  9780812995343,15,Hardcover Fiction
+6, Michael Wolff ,Fire and Fury ,30.0,  9781250158062,1,Hardcover Nonfiction
+6, Neil deGrasse Tyson ,Astrophysics for People in a Hurry ,18.95,  9780393609394,2,Hardcover Nonfiction
+6, Mark Manson ,The Subtle Art of Not Giving A F*ck ,24.99,  9780062457714,3,Hardcover Nonfiction
+6, Walter Isaacson ,Leonardo da Vinci ,35.0,  9781501139154,4,Hardcover Nonfiction
+6, David Grann ,Killers of the Flower Moon ,28.95,  9780385534246,5,Hardcover Nonfiction
+6, Daniel H. Pink ,When ,28.0,  9780735210622,6,Hardcover Nonfiction
+6, Dave Eggers ,The Monk of Mokha ,28.95,  9781101947319,7,Hardcover Nonfiction
+6, Tiffany Haddish ,The Last Black Unicorn ,26.0,  9781501181825,8,Hardcover Nonfiction
+6, Ray Dalio ,Principles: Life and Work ,30.0,  9781501124020,9,Hardcover Nonfiction
+6, J.D. Vance ,Hillbilly Elegy ,27.99,  9780062300546,10,Hardcover Nonfiction
+6, Steven Levitsky ,How Democracies Die ,26.0,  9781524762933,11,Hardcover Nonfiction
+6, Mary Beard ,Women & Power ,15.95,  9781631494758,12,Hardcover Nonfiction
+6, The Dalai Lama ,The Book of Joy ,26.0,  9780399185045,13,Hardcover Nonfiction
+6, Margareta Magnusson ,The Gentle Art of Swedish Death Cleaning ,18.99,  9781501173240,14,Hardcover Nonfiction
+6, Ron Chernow ,Grant ,40.0,  9781594204876,15,Hardcover Nonfiction
+6, Lee Child ,No Middle Name ,9.99,  9780399593598,1,Mass Market
+6, John Grisham ,The Whistler ,9.99,  9781101967683,2,Mass Market
+6, Michael Crichton ,Dragon Teeth ,9.99,  9780062473363,3,Mass Market
+6, James Patterson ,Never Never ,9.99,  9781478944782,4,Mass Market
+6, Doug Stanton ,12 Strong ,9.99,  9781501179952,5,Mass Market
+6, Danielle Steel ,Against All Odds ,8.99,  9781101883938,6,Mass Market
+6, Brian Kilmeade ,Thomas Jefferson and the Tripoli Pirates- Debut ,9.99,  9780143131830,7,Mass Market
+6, Liane Moriarty ,The Husband's Secret ,9.99,  9780451490049,8,Mass Market
+6, Liane Moriarty ,What Alice Forgot ,9.99,  9780451490445,9,Mass Market
+6, Steve Berry ,The Lost Order ,9.99,  9781250058461,10,Mass Market
+6, Colson Whitehead ,The Underground Railroad ,16.95,  9780345804327,1,Trade Paperback Fiction
+6, Min Jin Lee ,Pachinko ,15.99,  9781455563920,2,Trade Paperback Fiction
+6, Jessica Shattuck ,The Women in the Castle ,16.99,  9780062563675,3,Trade Paperback Fiction
+6, Anthony Doerr ,All the Light We Cannot See ,17.0,  9781501173219,4,Trade Paperback Fiction
+6, Margaret Atwood ,The Handmaid's Tale ,15.95,  9780525435006,5,Trade Paperback Fiction
+6, Georgia Hunter ,We Were the Lucky Ones ,16.0,  9780399563096,6,Trade Paperback Fiction
+6, Ruth Ware ,The Woman in Cabin 10 ,16.0,  9781501132957,7,Trade Paperback Fiction
+6, Rupi Kaur ,The Sun and Her Flowers ,16.99,  9781449486792,8,Trade Paperback Fiction
+6, Leeila Slimani ,The Perfect Nanny ,16.0,  9780143132172,9,Trade Paperback Fiction
+6, Martha Hall Kelly ,Lilac Girls ,17.0,  9781101883082,10,Trade Paperback Fiction
+6, Shari Lapena ,The Couple Next Door ,16.0,  9780735221109,11,Trade Paperback Fiction
+6, Andre Aciman ,Call Me by Your Name ,17.0,  9781250169440,12,Trade Paperback Fiction
+6, Rupi Kaur ,Milk and Honey ,14.99,  9781449474256,13,Trade Paperback Fiction
+6, Peter Heller ,Celine ,16.0,  9781101973486,14,Trade Paperback Fiction
+6, B.A. Paris ,Behind Closed Doors ,16.99,  9781250132369,15,Trade Paperback Fiction
+6, Jen Sincero ,You Are a Badass ,16.0,  9780762447695,1,Trade Paperback Nonfiction
+6, Peter Frankopan ,The Silk Roads ,20.0,  9781101912379,2,Trade Paperback Nonfiction
+6, Doug Stanton ,12 Strong ,18.0,  9781501178511,3,Trade Paperback Nonfiction
+6, Douglas J. Preston ,The Lost City of the Monkey God ,15.99,  9781455540013,4,Trade Paperback Nonfiction
+6, Atul Gawande ,Being Mortal ,16.0,  9781250076229,5,Trade Paperback Nonfiction
+6, Harvard Business School Press ,HBR's 10 Must Reads on Emotional Intelligence ,24.95,  9781633690196,6,Trade Paperback Nonfiction
+6, Jonah Berger ,Invisible Influence ,16.0,  9781476759739,7,Trade Paperback Nonfiction
+6, Harvard Business School Press ,HBR's 10 Must Reads on Managing Yourself ,24.95,  9781422157992,8,Trade Paperback Nonfiction
+6, Michael Lewis ,The Undoing Project ,16.95,  9780393354775,9,Trade Paperback Nonfiction
+6, Matthew Desmond ,Evicted ,17.0,  9780553447453,10,Trade Paperback Nonfiction
+6, Timothy Snyder ,On Tyranny ,7.99,  9780804190114,11,Trade Paperback Nonfiction
+6, Alexandra Horowitz ,Being a Dog ,17.0,  9781476796024,12,Trade Paperback Nonfiction
+6, Simon Sinek ,Leaders Eat Last: Why Some Teams Pull Together and Others Don't ,17.0,  9781591848011,13,Trade Paperback Nonfiction
+6, Sheelah Kolhatkar ,"Black Edge: Inside Information, Dirty Money, and the Quest to Bring Down the Most Wanted Man on Wall Street ",18.0,  9780812985795,14,Trade Paperback Nonfiction
+6, Simon Sinek ,Start With Why: How Great Leaders Inspire Everyone to Take Action ,16.0,  9781591846444,15,Trade Paperback Nonfiction
+6, Angie Thomas ,The Hate U Give ,17.99,  9780062498533,1,Young Adult
+6, John Green ,Turtles All the Way Down ,19.99,  9780525555360,2,Young Adult
+6, Melissa Albert ,The Hazel Wood ,16.99,  9781250147905,3,Young Adult
+6, Philip Pullman ,The Book of Dust: La Belle Sauvage ,22.99,  9780375815300,4,Young Adult
+6, Becky Albertalli ,Simon vs. the Homo Sapiens Agenda (Movie Tie-in Edition),10.99,  9780062792167,5,Young Adult
+6, David Levithan ,Every Day ,10.99,  9780525581611,6,Young Adult
+6, Ruta Sepetys ,Salt to the Sea ,10.99,  9780142423622,7,Young Adult
+6, Holly Black ,The Cruel Prince ,18.99,  9780316310277,8,Young Adult
+6, Markus Zusak ,The Book Thief ,12.99,  9780385754729,9,Young Adult
+6, Marissa Meyer ,Renegades ,19.99,  9781250044662,10,Young Adult
+6, Nicola Yoon ,"Everything, Everything ",10.99,  9781524769604,11,Young Adult
+6, Nic Stone ,Dear Martin (An Indies Introduce Title) ,17.99,  9781101939499,12,Young Adult
+6, Lois Lowry ,The Giver ,9.99,  9780544340688,13,Young Adult
+6, Karen M. McManus ,One of Us Is Lying ,17.99,  9781524714680,14,Young Adult
+6, John Green ,The Fault in Our Stars ,12.99,  9780142424179,15,Young Adult
+7, Madeleine L'Engle ,A Wrinkle in Time ,8.99,  9781250153272,1,Early & Middle
+7, R.J. Palacio ,Wonder ,16.99,  9781524720193,2,Early & Middle
+7, R.J. Palacio ,Auggie & Me ,16.99,  9781101934852,3,Early & Middle
+7, Kelly Barnhill ,The Girl Who Drank the Moon ,16.95,  9781616205676,4,Early & Middle
+7, Raina Telgemeier ,Smile ,10.99,  9780545132060,5,Early & Middle
+7, Kimberly Brubaker Bradley ,The War That Saved My Life ,8.99,  9780147510488,6,Early & Middle
+7, Raina Telgemeier ,Drama ,10.99,  9780545326995,7,Early & Middle
+7, Kimberly Brubaker Bradley ,The War I Finally Won ,16.99,  9780525429203,8,Early & Middle
+7, Katherine Applegate ,Wishtree ,16.99,  9781250043221,9,Early & Middle
+7, Raina Telgemeier ,Sisters ,10.99,  9780545540605,10,Early & Middle
+7, Raina Telgemeier ,Ghosts ,10.99,  9780545540629,11,Early & Middle
+7, British Library ,Harry Potter: A Journey Through a History of Magic- Debut ,19.99,  9781338267105,12,Early & Middle
+7, Katherine Applegate & Patricia Castelao (Illus.) ,The One and Only Ivan ,7.99,  9780061992278,13,Early & Middle
+7, Pete Souza ,Dream Big Dreams: Photographs from Barack Obama's Inspiring and Historic Presidency ,21.99,  9780316514392,14,Early & Middle
+7, Alan Gratz ,Refugee ,16.99,  9780545880831,15,Early & Middle
+7, Kristin Hannah ,The Great Alone ,28.99,  9780312577230,1,Hardcover Fiction
+7, Tayari Jones ,An American Marriage ,26.95,  9781616201340,2,Hardcover Fiction
+7, A.J. Finn ,The Woman in the Window ,26.99,  9780062678416,3,Hardcover Fiction
+7, Amor Towles ,A Gentleman in Moscow ,27.0,  9780670026197,4,Hardcover Fiction
+7, Chloe Benjamin ,The Immortalists ,26.0,  9780735213180,5,Hardcover Fiction
+7, Celeste Ng ,Little Fires Everywhere ,27.0,  9780735224292,6,Hardcover Fiction
+7, Jesmyn Ward ,"Sing, Unburied, Sing ",26.0,  9781501126062,7,Hardcover Fiction
+7, Jojo Moyes ,Still Me ,27.0,  9780399562457,8,Hardcover Fiction
+7, Dan Brown ,Origin ,29.95,  9780385514231,9,Hardcover Fiction
+7, Greer Hendricks ,The Wife Between Us ,26.99,  9781250130921,10,Hardcover Fiction
+7, Naomi Alderman ,The Power ,26.0,  9780316547611,11,Hardcover Fiction
+7, John Grisham ,The Rooster Bar ,28.95,  9780385541176,12,Hardcover Fiction
+7, Andy Weir ,Artemis ,27.0,  9780553448122,13,Hardcover Fiction
+7, Jennifer Egan ,Manhattan Beach ,27.0,  9781476716732,14,Hardcover Fiction
+7, Robert Harris ,Munich ,27.95,  9780525520269,15,Hardcover Fiction
+7, Michael Wolff ,Fire and Fury ,30.0,  9781250158062,1,Hardcover Nonfiction
+7, Neil deGrasse Tyson ,Astrophysics for People in a Hurry ,18.95,  9780393609394,2,Hardcover Nonfiction
+7, Mark Manson ,The Subtle Art of Not Giving A F*ck ,24.99,  9780062457714,3,Hardcover Nonfiction
+7, Walter Isaacson ,Leonardo da Vinci ,35.0,  9781501139154,4,Hardcover Nonfiction
+7, Tiffany Haddish ,The Last Black Unicorn ,26.0,  9781501181825,5,Hardcover Nonfiction
+7, Dave Eggers ,The Monk of Mokha ,28.95,  9781101947319,6,Hardcover Nonfiction
+7, David Grann ,Killers of the Flower Moon ,28.95,  9780385534246,7,Hardcover Nonfiction
+7, Pete Souza ,Obama: An Intimate Portrait ,50.0,  9780316512589,8,Hardcover Nonfiction
+7, Ray Dalio ,Principles: Life and Work ,30.0,  9781501124020,9,Hardcover Nonfiction
+7, Steven Levitsky ,How Democracies Die ,26.0,  9781524762933,10,Hardcover Nonfiction
+7, J.D. Vance ,Hillbilly Elegy ,27.99,  9780062300546,11,Hardcover Nonfiction
+7, Daniel H. Pink ,When: The Scientific Secrets of Perfect Timing ,28.0,  9780735210622,12,Hardcover Nonfiction
+7, Steve Coll ,Directorate S: The C.I.A. and America's Secret Wars in Afghanistan and Pakistan ,35.0,  9781594204586,13,Hardcover Nonfiction
+7, The Dalai Lama ,The Book of Joy ,26.0,  9780399185045,14,Hardcover Nonfiction
+7, Zadie Smith ,Feel Free: Essays ,28.0,  9781594206252,15,Hardcover Nonfiction
+7, Lee Child ,No Middle Name ,9.99,  9780399593598,1,Mass Market
+7, Ernest Cline ,Ready Player One ,9.99,  9780804190145,2,Mass Market
+7, John Grisham ,The Whistler ,9.99,  9781101967683,3,Mass Market
+7, James Patterson ,Never Never ,9.99,  9781478944782,4,Mass Market
+7, Michael Crichton ,Dragon Teeth ,9.99,  9780062473363,5,Mass Market
+7, Liane Moriarty ,The Husband's Secret ,9.99,  9780451490049,6,Mass Market
+7, Danielle Steel ,Against All Odds ,8.99,  9781101883938,7,Mass Market
+7, Brian Kilmeade ,Thomas Jefferson and the Tripoli Pirates ,9.99,  9780143131830,8,Mass Market
+7, Liane Moriarty ,What Alice Forgot ,9.99,  9780451490445,9,Mass Market
+7, Steve Berry ,The Lost Order ,9.99,  9781250058461,10,Mass Market
+7, Colson Whitehead ,The Underground Railroad ,16.95,  9780345804327,1,Trade Paperback Fiction
+7, George Saunders ,Lincoln in the Bardo- Debut ,17.0,  9780812985405,2,Trade Paperback Fiction
+7, Min Jin Lee ,Pachinko ,15.99,  9781455563920,3,Trade Paperback Fiction
+7, Jessica Shattuck ,The Women in the Castle ,16.99,  9780062563675,4,Trade Paperback Fiction
+7, Ruth Ware ,The Woman in Cabin 10 ,16.0,  9781501132957,5,Trade Paperback Fiction
+7, Georgia Hunter ,We Were the Lucky Ones ,16.0,  9780399563096,6,Trade Paperback Fiction
+7, Fredrik Backman ,Beartown- Debut ,17.0,  9781501160776,7,Trade Paperback Fiction
+7, Anthony Doerr ,All the Light We Cannot See ,17.0,  9781501173219,8,Trade Paperback Fiction
+7, Margaret Atwood ,The Handmaid's Tale ,15.95,  9780525435006,9,Trade Paperback Fiction
+7, Ernest Cline ,Ready Player One ,16.0,  9780804190138,10,Trade Paperback Fiction
+7, Shari Lapena ,The Couple Next Door ,16.0,  9780735221109,11,Trade Paperback Fiction
+7, Rupi Kaur ,The Sun and Her Flowers ,16.99,  9781449486792,12,Trade Paperback Fiction
+7, Rupi Kaur ,Milk and Honey ,14.99,  9781449474256,13,Trade Paperback Fiction
+7, Christina Baker Kline ,A Piece of the World ,16.99,  9780062356277,14,Trade Paperback Fiction
+7, Andre Aciman ,Call Me by Your Name ,17.0,  9781250169440,15,Trade Paperback Fiction
+7, Jen Sincero ,You Are a Badass ,16.0,  9780762447695,1,Trade Paperback Nonfiction
+7, Peter Frankopan ,The Silk Roads ,20.0,  9781101912379,2,Trade Paperback Nonfiction
+7, Doug Stanton ,12 Strong ,18.0,  9781501178511,3,Trade Paperback Nonfiction
+7, Jonah Berger ,Invisible Influence ,16.0,  9781476759739,4,Trade Paperback Nonfiction
+7, Atul Gawande ,Being Mortal ,16.0,  9781250076229,5,Trade Paperback Nonfiction
+7, Douglas J. Preston ,The Lost City of the Monkey God ,15.99,  9781455540013,6,Trade Paperback Nonfiction
+7, Harvard Business School Press ,HBR's 10 Must Reads on Emotional Intelligence ,24.95,  9781633690196,7,Trade Paperback Nonfiction
+7, Harvard Business School Press ,HBR's 10 Must Reads on Managing Yourself ,24.95,  9781422157992,8,Trade Paperback Nonfiction
+7, Matthew Desmond ,Evicted ,17.0,  9780553447453,9,Trade Paperback Nonfiction
+7, Michael Lewis ,The Undoing Project ,16.95,  9780393354775,10,Trade Paperback Nonfiction
+7, Simon Sinek ,Start With Why ,16.0,  9781591846444,11,Trade Paperback Nonfiction
+7, Simon Sinek ,Leaders Eat Last ,17.0,  9781591848011,12,Trade Paperback Nonfiction
+7, Thich Nhat Hanh ,How to Love ,9.95,  9781937006884,13,Trade Paperback Nonfiction
+7, Sheelah Kolhatkar ,Black Edge ,18.0,  9780812985795,14,Trade Paperback Nonfiction
+7, Alexandra Horowitz ,Being a Dog ,17.0,  9781476796024,15,Trade Paperback Nonfiction
+7, Angie Thomas ,The Hate U Give ,17.99,  9780062498533,1,Young Adult
+7, John Green ,Turtles All the Way Down ,19.99,  9780525555360,2,Young Adult
+7, Tamora Pierce ,Tempests and Slaughter ,18.99,  9780375847110,3,Young Adult
+7, David Levithan ,Every Day ,10.99,  9780525581611,4,Young Adult
+7, Melissa Albert ,The Hazel Wood ,16.99,  9781250147905,5,Young Adult
+7, Philip Pullman ,The Book of Dust: La Belle Sauvage ,22.99,  9780375815300,6,Young Adult
+7, Becky Albertalli ,Simon vs. the Homo Sapiens Agenda ,10.99,  9780062792167,7,Young Adult
+7, Nicola Yoon ,"Everything, Everything ",10.99,  9781524769604,8,Young Adult
+7, Holly Black ,The Cruel Prince ,18.99,  9780316310277,9,Young Adult
+7, Markus Zusak ,The Book Thief ,12.99,  9780385754729,10,Young Adult
+7, Karen M. McManus ,One of Us Is Lying ,17.99,  9781524714680,11,Young Adult
+7, Ruta Sepetys ,Salt to the Sea ,10.99,  9780142423622,12,Young Adult
+7, Lois Lowry ,The Giver ,9.99,  9780544340688,13,Young Adult
+7, Dhonielle Clayton ,The Belles ,17.99,  9781484728499,14,Young Adult
+7, Marissa Meyer ,Renegades ,19.99,  9781250044662,15,Young Adult
+8, Madeleine L'Engle ,A Wrinkle in Time ,8.99,  9781250153272,1,Early & Middle
+8, R.J. Palacio ,Wonder ,16.99,  9781524720193,2,Early & Middle
+8, Kelly Barnhill ,The Girl Who Drank the Moon ,16.95,  9781616205676,3,Early & Middle
+8, R.J. Palacio ,Auggie & Me ,16.99,  9781101934852,4,Early & Middle
+8, Erin Entrada Kelly & Isabel Roxas (Illus.) ,"Hello, Universe ",16.99,  9780062414151,5,Early & Middle
+8, Victoria Jamieson ,All's Faire in Middle School ,12.99,  9780525429999,6,Early & Middle
+8, Raina Telgemeier ,Drama ,10.99,  9780545326995,7,Early & Middle
+8, Raina Telgemeier ,Sisters ,10.99,  9780545540605,8,Early & Middle
+8, Katherine Applegate ,Wishtree ,16.99,  9781250043221,9,Early & Middle
+8, Kimberly Brubaker Bradley ,The War That Saved My Life ,8.99,  9780147510488,10,Early & Middle
+8, Raina Telgemeier ,Smile ,10.99,  9780545132060,11,Early & Middle
+8, Ronald L. Smith ,Black Panther: The Young Prince ,16.99,  9781484787649,12,Early & Middle
+8, Jim McCann ,Marvel's Black Panther: The Junior Novel ,6.99,  9780316413206,13,Early & Middle
+8, Raina Telgemeier ,Ghosts ,10.99,  9780545540629,14,Early & Middle
+8, Victoria Jamieson ,Roller Girl ,12.99,  9780803740167,15,Early & Middle
+8, Tayari Jones ,An American Marriage ,26.95,  9781616208776,1,Hardcover Fiction
+8, Kristin Hannah ,The Great Alone ,28.99,  9780312577230,2,Hardcover Fiction
+8, A.J. Finn ,The Woman in the Window ,26.99,  9780062678416,3,Hardcover Fiction
+8, Celeste Ng ,Little Fires Everywhere ,27.0,  9780735224292,4,Hardcover Fiction
+8, Amor Towles ,A Gentleman in Moscow ,27.0,  9780670026197,5,Hardcover Fiction
+8, Chloe Benjamin ,The Immortalists ,26.0,  9780735213180,6,Hardcover Fiction
+8, Jesmyn Ward ,"Sing, Unburied, Sing ",26.0,  9781501126062,7,Hardcover Fiction
+8, Dan Brown ,Origin ,29.95,  9780385514231,8,Hardcover Fiction
+8, Jojo Moyes ,Still Me ,27.0,  9780399562457,9,Hardcover Fiction
+8, Naomi Alderman ,The Power ,26.0,  9780316547611,10,Hardcover Fiction
+8, Jennifer Egan ,Manhattan Beach ,27.0,  9781476716732,11,Hardcover Fiction
+8, Amy Bloom ,White Houses ,27.0,  9780812995664,12,Hardcover Fiction
+8, Greer Hendricks ,The Wife Between Us ,26.99,  9781250130921,13,Hardcover Fiction
+8, John Grisham ,The Rooster Bar ,28.95,  9780385541176,14,Hardcover Fiction
+8, Matt Haig ,How to Stop Time ,26.0,  9780525522874,15,Hardcover Fiction
+8, Michael Wolff ,Fire and Fury ,30.0,  9781250158062,1,Hardcover Nonfiction
+8, Neil deGrasse Tyson ,Astrophysics for People in a Hurry ,18.95,  9780393609394,2,Hardcover Nonfiction
+8, Mark Manson ,The Subtle Art of Not Giving A F*ck ,24.99,  9780062457714,3,Hardcover Nonfiction
+8, Dave Eggers ,The Monk of Mokha ,28.95,  9781101947319,4,Hardcover Nonfiction
+8, Tiffany Haddish ,The Last Black Unicorn ,26.0,  9781501181825,5,Hardcover Nonfiction
+8, Steven Pinker ,"Enlightenment Now: The Case for Reason, Science, Humanism, and Progress ",35.0,  9780525427575,6,Hardcover Nonfiction
+8, Walter Isaacson ,Leonardo da Vinci ,35.0,  9781501139154,7,Hardcover Nonfiction
+8, Jordan B. Peterson ,12 Rules for Life: An Antidote to Chaos ,25.95,  9780345816023,8,Hardcover Nonfiction
+8, J.D. Vance ,Hillbilly Elegy ,27.99,  9780062300546,9,Hardcover Nonfiction
+8, The Dalai Lama ,The Book of Joy ,26.0,  9780399185045,10,Hardcover Nonfiction
+8, Pete Souza ,Obama: An Intimate Portrait ,50.0,  9780316512589,11,Hardcover Nonfiction
+8, David Grann ,Killers of the Flower Moon ,28.95,  9780385534246,12,Hardcover Nonfiction
+8, Steven Levitsky ,How Democracies Die ,26.0,  9781524762933,13,Hardcover Nonfiction
+8, Ray Dalio ,Principles ,30.0,  9781501124020,14,Hardcover Nonfiction
+8, Daniel H. Pink ,When ,28.0,  9780735210622,15,Hardcover Nonfiction
+8, Lee Child ,No Middle Name ,9.99,  9780399593598,1,Mass Market
+8, Ernest Cline ,Ready Player One ,9.99,  9780804190145,2,Mass Market
+8, John Grisham ,The Whistler ,9.99,  9781101967683,3,Mass Market
+8, Michael Crichton ,Dragon Teeth ,9.99,  9780062473363,4,Mass Market
+8, Liane Moriarty ,The Husband's Secret ,9.99,  9780451490049,5,Mass Market
+8, James Patterson ,Never Never ,9.99,  9781478944782,6,Mass Market
+8, Doug Stanton ,12 Strong ,9.99,  9781501179952,7,Mass Market
+8, Liane Moriarty ,What Alice Forgot ,9.99,  9780451490445,8,Mass Market
+8, Danielle Steel ,Against All Odds ,8.99,  9781101883938,9,Mass Market
+8, George Orwell ,1984 ,9.99,  9780451524935,10,Mass Market
+8, George Saunders ,Lincoln in the Bardo ,17.0,  9780812985405,1,Trade Paperback Fiction
+8, Colson Whitehead ,The Underground Railroad ,16.95,  9780345804327,2,Trade Paperback Fiction
+8, Fredrik Backman ,Beartown ,17.0,  9781501160776,3,Trade Paperback Fiction
+8, Min Jin Lee ,Pachinko ,15.99,  9781455563920,4,Trade Paperback Fiction
+8, Ruth Ware ,The Woman in Cabin 10 ,16.0,  9781501132957,5,Trade Paperback Fiction
+8, Anthony Doerr ,All the Light We Cannot See ,17.0,  9781501173219,6,Trade Paperback Fiction
+8, Georgia Hunter ,We Were the Lucky Ones ,16.0,  9780399563096,7,Trade Paperback Fiction
+8, Ernest Cline ,Ready Player One ,16.0,  9780804190138,8,Trade Paperback Fiction
+8, Jessica Shattuck ,The Women in the Castle ,16.99,  9780062563675,9,Trade Paperback Fiction
+8, Margaret Atwood ,The Handmaid's Tale ,15.95,  9780525435006,10,Trade Paperback Fiction
+8, Rupi Kaur ,The Sun and Her Flowers ,16.99,  9781449486792,11,Trade Paperback Fiction
+8, Andre Aciman ,Call Me by Your Name ,17.0,  9781250169440,12,Trade Paperback Fiction
+8, Rupi Kaur ,Milk and Honey ,14.99,  9781449474256,13,Trade Paperback Fiction
+8, Shari Lapena ,The Couple Next Door ,16.0,  9780735221109,14,Trade Paperback Fiction
+8, Leila Slimani ,The Perfect Nanny ,16.0,  9780143132172,15,Trade Paperback Fiction
+8, Jen Sincero ,You Are a Badass ,16.0,  9780762447695,1,Trade Paperback Nonfiction
+8, Peter Frankopan ,The Silk Roads ,20.0,  9781101912379,2,Trade Paperback Nonfiction
+8, Doug Stanton ,12 Strong ,18.0,  9781501178511,3,Trade Paperback Nonfiction
+8, Jonah Berger ,Invisible Influence ,16.0,  9781476759739,4,Trade Paperback Nonfiction
+8, Atul Gawande ,Being Mortal ,16.0,  9781250076229,5,Trade Paperback Nonfiction
+8, Harvard Business School Press ,HBR's 10 Must Reads on Emotional Intelligence ,24.95,  9781633690196,6,Trade Paperback Nonfiction
+8, Harvard Business School Press ,HBR's 10 Must Reads on Managing Yourself ,24.95,  9781422157992,7,Trade Paperback Nonfiction
+8, Matthew Desmond ,Evicted ,17.0,  9780553447453,8,Trade Paperback Nonfiction
+8, Thich Nhat Hanh ,How to Love ,9.95,  9781937006884,9,Trade Paperback Nonfiction
+8, Sheelah Kolhatkar ,Black Edge ,18.0,  9780812985795,10,Trade Paperback Nonfiction
+8, Douglas J. Preston ,The Lost City of the Monkey God ,15.99,  9781455540013,11,Trade Paperback Nonfiction
+8, Simon Sinek ,Start With Why ,16.0,  9781591846444,12,Trade Paperback Nonfiction
+8, Michael Lewis ,The Undoing Project ,16.95,  9780393354775,13,Trade Paperback Nonfiction
+8, Timothy Snyder ,On Tyranny ,7.99,  9780804190114,14,Trade Paperback Nonfiction
+8, Chimamanda Ngozi Adichie ,We Should All Be Feminists ,7.95,  9781101911761,15,Trade Paperback Nonfiction
+8, Angie Thomas ,The Hate U Give ,17.99,  9780062498533,1,Young Adult
+8, John Green ,Turtles All the Way Down ,19.99,  9780525555360,2,Young Adult
+8, David Levithan ,Every Day ,10.99,  9780525581611,3,Young Adult
+8, Becky Albertalli ,Simon vs. the Homo Sapiens Agenda ,10.99,  9780062792167,4,Young Adult
+8, Tamora Pierce ,Tempests and Slaughter ,18.99,  9780375847110,5,Young Adult
+8, Philip Pullman ,The Book of Dust: La Belle Sauvage ,22.99,  9780375815300,6,Young Adult
+8, Jen Wang ,The Prince and the Dressmaker ,16.99,  9781626723634,7,Young Adult
+8, Holly Black ,The Cruel Prince ,18.99,  9780316310277,8,Young Adult
+8, Nina LaCour ,We Are Okay ,17.99,  9780525425892,9,Young Adult
+8, Ruta Sepetys ,Salt to the Sea ,10.99,  9780142423622,10,Young Adult
+8, Jason Reynolds ,Long Way Down ,17.99,  9781481438254,11,Young Adult
+8, Nicola Yoon ,"Everything, Everything ",10.99,  9781524769604,12,Young Adult
+8, John Green ,The Fault in Our Stars ,12.99,  9780142424179,13,Young Adult
+8, Markus Zusak ,The Book Thief ,12.99,  9780385754729,14,Young Adult
+8, Nic Stone ,Dear Martin ,17.99,  9781101939499,15,Young Adult
+9, Madeleine L'Engle ,A Wrinkle in Time ,8.99,  9781250153272,1,Early & Middle
+9, R.J. Palacio ,Wonder ,16.99,  9781524720193,2,Early & Middle
+9, R.J. Palacio ,Auggie & Me ,16.99,  9781101934852,3,Early & Middle
+9, Kelly Barnhill ,The Girl Who Drank the Moon ,16.95,  9781616205676,4,Early & Middle
+9, Raina Telgemeier ,Drama ,10.99,  9780545326995,5,Early & Middle
+9, Kimberly Brubaker Bradley ,The War That Saved My Life ,8.99,  9780147510488,6,Early & Middle
+9, Ronald L. Smith ,Black Panther: The Young Prince ,16.99,  9781484787649,7,Early & Middle
+9, Raina Telgemeier ,Sisters ,10.99,  9780545540605,8,Early & Middle
+9, Raina Telgemeier ,Smile ,10.99,  9780545132060,9,Early & Middle
+9, Jim McCann ,Marvel's Black Panther: The Junior Novel ,6.99,  9780316413206,10,Early & Middle
+9, Victoria Jamieson ,All's Faire in Middle School ,12.99,  9780525429999,11,Early & Middle
+9, Kimberly Brubaker Bradley ,The War I Finally Won ,16.99,  9780525429203,12,Early & Middle
+9, Raina Telgemeier ,Ghosts ,10.99,  9780545540629,13,Early & Middle
+9, Erin Entrada Kelly ,"Hello, Universe ",16.99,  9780062414151,14,Early & Middle
+9, Katherine Applegate ,Wishtree ,16.99,  9781250043221,15,Early & Middle
+9, Tayari Jones ,An American Marriage ,26.95,  9781616208776,1,Hardcover Fiction
+9, Kristin Hannah ,The Great Alone ,28.99,  9780312577230,2,Hardcover Fiction
+9, A.J. Finn ,The Woman in the Window ,26.99,  9780062678416,3,Hardcover Fiction
+9, Amor Towles ,A Gentleman in Moscow ,27.0,  9780670026197,4,Hardcover Fiction
+9, Celeste Ng ,Little Fires Everywhere ,27.0,  9780735224292,5,Hardcover Fiction
+9, Chloe Benjamin ,The Immortalists ,26.0,  9780735213180,6,Hardcover Fiction
+9, Jesmyn Ward ,"Sing, Unburied, Sing ",26.0,  9781501126062,7,Hardcover Fiction
+9, Naomi Alderman ,The Power ,26.0,  9780316547611,8,Hardcover Fiction
+9, Jojo Moyes ,Still Me ,27.0,  9780399562457,9,Hardcover Fiction
+9, Dan Brown ,Origin ,29.95,  9780385514231,10,Hardcover Fiction
+9, Matt Haig ,How to Stop Time ,26.0,  9780525522874,11,Hardcover Fiction
+9, Jennifer Egan ,Manhattan Beach ,27.0,  9781476716732,12,Hardcover Fiction
+9, Amy Bloom ,White Houses ,27.0,  9780812995664,13,Hardcover Fiction
+9, Lisa Halliday ,Asymmetry ,26.0,  9781501166761,14,Hardcover Fiction
+9, Andy Weir ,Artemis ,27.0,  9780553448122,15,Hardcover Fiction
+9, Michael Wolff ,Fire and Fury ,30.0,  9781250158062,1,Hardcover Nonfiction
+9, Neil deGrasse Tyson ,Astrophysics for People in a Hurry ,18.95,  9780393609394,2,Hardcover Nonfiction
+9, Mark Manson ,The Subtle Art of Not Giving A F*ck ,24.99,  9780062457714,3,Hardcover Nonfiction
+9, Tara Westover ,Educated: A Memoir ,28.0,  9780399590504,4,Hardcover Nonfiction
+9, Steven Pinker ,Enlightenment Now ,35.0,  9780525427575,5,Hardcover Nonfiction
+9, Walter Isaacson ,Leonardo da Vinci ,35.0,  9781501139154,6,Hardcover Nonfiction
+9, Jordan B. Peterson ,12 Rules for Life ,25.95,  9780345816023,7,Hardcover Nonfiction
+9, Tiffany Haddish ,The Last Black Unicorn ,26.0,  9781501181825,8,Hardcover Nonfiction
+9, J.D. Vance ,Hillbilly Elegy ,27.99,  9780062300546,9,Hardcover Nonfiction
+9, David Grann ,Killers of the Flower Moon ,28.95,  9780385534246,10,Hardcover Nonfiction
+9, Ray Dalio ,Principles ,30.0,  9781501124020,11,Hardcover Nonfiction
+9, Dave Eggers ,The Monk of Mokha ,28.95,  9781101947319,12,Hardcover Nonfiction
+9, Pete Souza ,Obama: An Intimate Portrait ,50.0,  9780316512589,13,Hardcover Nonfiction
+9, Marilynne Robinson ,What Are We Doing Here?: Essays ,27.0,  9780374282219,14,Hardcover Nonfiction
+9, Zadie Smith ,Feel Free ,28.0,  9781594206252,15,Hardcover Nonfiction
+9, Lee Child ,No Middle Name ,9.99,  9780399593598,1,Mass Market
+9, Ernest Cline ,Ready Player One ,9.99,  9780804190145,2,Mass Market
+9, John Grisham ,The Whistler ,9.99,  9781101967683,3,Mass Market
+9, Jason Matthews ,Red Sparrow ,9.99,  9781501168918,4,Mass Market
+9, James Patterson ,Never Never ,9.99,  9781478944782,5,Mass Market
+9, George Orwell ,1984 ,9.99,  9780451524935,6,Mass Market
+9, Liane Moriarty ,The Husband's Secret ,9.99,  9780451490049,7,Mass Market
+9, Michael Crichton ,Dragon Teeth ,9.99,  9780062473363,8,Mass Market
+9, Danielle Steel ,Against All Odds ,8.99,  9781101883938,9,Mass Market
+9, Liane Moriarty ,What Alice Forgot ,9.99,  9780451490445,10,Mass Market
+9, George Saunders ,Lincoln in the Bardo ,17.0,  9780812985405,1,Trade Paperback Fiction
+9, Colson Whitehead ,The Underground Railroad ,16.95,  9780345804327,2,Trade Paperback Fiction
+9, Min Jin Lee ,Pachinko ,15.99,  9781455563920,3,Trade Paperback Fiction
+9, Fredrik Backman ,Beartown ,17.0,  9781501160776,4,Trade Paperback Fiction
+9, Ernest Cline ,Ready Player One ,16.0,  9780804190138,5,Trade Paperback Fiction
+9, Jessica Shattuck ,The Women in the Castle ,16.99,  9780062563675,6,Trade Paperback Fiction
+9, Ruth Ware ,The Woman in Cabin 10 ,16.0,  9781501132957,7,Trade Paperback Fiction
+9, Rupi Kaur ,The Sun and Her Flowers ,16.99,  9781449486792,8,Trade Paperback Fiction
+9, Georgia Hunter ,We Were the Lucky Ones ,16.0,  9780399563096,9,Trade Paperback Fiction
+9, Jodi Picoult ,Small Great Things ,17.0,  9780345544971,10,Trade Paperback Fiction
+9, Margaret Atwood ,The Handmaid's Tale ,15.95,  9780525435006,11,Trade Paperback Fiction
+9, Anthony Doerr ,All the Light We Cannot See ,17.0,  9781501173219,12,Trade Paperback Fiction
+9, Shari Lapena ,The Couple Next Door ,16.0,  9780735221109,13,Trade Paperback Fiction
+9, Andre Aciman ,Call Me by Your Name ,17.0,  9781250169440,14,Trade Paperback Fiction
+9, Rupi Kaur ,Milk and Honey ,14.99,  9781449474256,15,Trade Paperback Fiction
+9, Jen Sincero ,You Are a Badass ,16.0,  9780762447695,1,Trade Paperback Nonfiction
+9, Michael Finkel ,The Stranger in the Woods: The Extraordinary Story of the Last True Hermit ,16.0,  9781101911532,2,Trade Paperback Nonfiction
+9, Peter Frankopan ,The Silk Roads ,20.0,  9781101912379,3,Trade Paperback Nonfiction
+9, Doug Stanton ,12 Strong ,18.0,  9781501178511,4,Trade Paperback Nonfiction
+9, Jonah Berger ,Invisible Influence ,16.0,  9781476759739,5,Trade Paperback Nonfiction
+9, Atul Gawande ,Being Mortal ,16.0,  9781250076229,6,Trade Paperback Nonfiction
+9, Harvard Business School Press ,HBR's 10 Must Reads on Emotional Intelligence ,24.95,  9781633690196,7,Trade Paperback Nonfiction
+9, Harvard Business School Press ,HBR's 10 Must Reads on Managing Yourself ,24.95,  9781422157992,8,Trade Paperback Nonfiction
+9, Matthew Desmond ,Evicted ,17.0,  9780553447453,9,Trade Paperback Nonfiction
+9, Timothy Snyder ,On Tyranny ,7.99,  9780804190114,10,Trade Paperback Nonfiction
+9, Simon Sinek ,Start With Why ,16.0,  9781591846444,11,Trade Paperback Nonfiction
+9, Simon Sinek ,Leaders Eat Last ,17.0,  9781591848011,12,Trade Paperback Nonfiction
+9, Michael Lewis ,The Undoing Project ,16.95,  9780393354775,13,Trade Paperback Nonfiction
+9, Douglas J. Preston ,The Lost City of the Monkey God ,15.99,  9781455540013,14,Trade Paperback Nonfiction
+9, Amy Goldstein ,Janesville: An American Story ,16.0,  9781501102264,15,Trade Paperback Nonfiction
+9, Angie Thomas ,The Hate U Give ,17.99,  9780062498533,1,Young Adult
+9, John Green ,Turtles All the Way Down ,19.99,  9780525555360,2,Young Adult
+9, David Levithan ,Every Day ,10.99,  9780525581611,3,Young Adult
+9, Becky Albertalli ,Simon vs. the Homo Sapiens Agenda ,10.99,  9780062792167,4,Young Adult
+9, Jen Wang ,The Prince and the Dressmaker ,16.99,  9781626723634,5,Young Adult
+9, Philip Pullman ,The Book of Dust: La Belle Sauvage ,22.99,  9780375815300,6,Young Adult
+9, Nicola Yoon ,"Everything, Everything ",10.99,  9781524769604,7,Young Adult
+9, Tamora Pierce ,Tempests and Slaughter ,18.99,  9780375847110,8,Young Adult
+9, Karen M. McManus ,One of Us Is Lying ,17.99,  9781524714680,9,Young Adult
+9, Markus Zusak ,The Book Thief ,12.99,  9780385754729,10,Young Adult
+9, Nic Stone ,Dear Martin ,17.99,  9781101939499,11,Young Adult
+9, John Green ,The Fault in Our Stars ,12.99,  9780142424179,12,Young Adult
+9, Marie Lu ,Warcross ,18.99,  9780399547966,13,Young Adult
+9, Holly Black ,The Cruel Prince ,18.99,  9780316310277,14,Young Adult
+9, Nicola Yoon ,The Sun Is Also a Star ,18.99,  9780553496680,15,Young Adult
