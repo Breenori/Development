@@ -1,0 +1,21 @@
+function logistic_epidemiology(N, ks, h, max)
+    if nargin ~= 4
+        N = 10000;
+        ks = [10 20 30 50];
+        h = 0.01;
+        max = 1000;
+    end
+
+    I = 1;
+    tEnd = max/h;
+    res = zeros(length(ks), tEnd);
+    for idx=1:1:size(res, 1)
+        k = ks(idx);
+        for t=0:1:tEnd
+            I_ = k * I * (N - I)/N;
+            I = I + I_ * h;
+            res(idx, t+1) = I;
+        end
+    end
+
+end
