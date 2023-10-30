@@ -22,14 +22,4 @@ Send to = rank + 2^step
 Receive from = rank - 2^step
 */
 
-// value is reference because for boss it is input, for workers it is output
-template <typename T> void broadcast(int const root, T& value) {
 
-}
-
-// Funktion: nimmt 2 T, und liefer 1 T. Addition etc.
-template <std::floating_point T> using binary_function_t = std::function <T (T, T)>;
-
-template <typename T> T reduce(int const root, T value, binary_function_t<T> const op) {
-
-}
