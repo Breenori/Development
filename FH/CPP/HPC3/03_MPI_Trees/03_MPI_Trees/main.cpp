@@ -80,7 +80,7 @@ namespace hpc::mpi {
 
 		int normalized_rank = rank - dest < 0 ? size + (rank - dest) : rank - dest;
 
-		if (normalized_rank < std::pow(2, step))
+		if (normalized_rank < std::pow(2, step) && normalized_rank + (int)std::pow(2, step) < size)
 			return (normalized_rank + dest + (int)std::pow(2, step)) % size;
 		else
 			return -1;
@@ -90,7 +90,11 @@ namespace hpc::mpi {
 		int normalized_rank = rank - dest < 0 ? size + (rank - dest) : rank - dest;
 		//std::cout << std::format("Rank {} normalized: {}", rank, normalized_rank) << std::endl;
 
-		if (normalized_rank >= std::pow(2, step) && normalized_rank < std::pow(2, step + 1)) {
+		if (step == 3 && rank == 12) {
+			int i = 1;
+		}
+
+		if (normalized_rank >= std::pow(2, step) && normalized_rank < std::pow(2, step + 1) && normalized_rank - (int)std::pow(2, step) >= 0) {
 			int target = (normalized_rank + dest - (int)std::pow(2, step));
 			//std::cout << std::format("Target formula for {}: {} + {} - {} = {}", rank, normalized_rank, dest, (int)std::pow(2, step), target) << std::endl;
 			return target >= 0 ? target % size : target + size;
@@ -143,7 +147,7 @@ namespace hpc::mpi {
 		for (int step{ 0 }; step < ceil_log2(get_size()); step++) {
 			int buddy{ -1 };
 			if ((buddy = must_send(step, get_rank(), mpi_root, get_size())) > -1) {
-				//std::cout << std::format("Step {}: {} --> {}!", step, get_rank(), buddy) << std::endl;
+				std::cout << std::format("Step {}: {} --> {}!", step, get_rank(), buddy) << std::endl;
 				mpi_send_wrapper(buddy, &a);
 				mpi_send_wrapper(buddy, &b);
 				mpi_send_wrapper(buddy, &n);
@@ -151,7 +155,7 @@ namespace hpc::mpi {
 				mpi_send_wrapper(buddy, &integratee_id);
 			}
 			else if ((buddy = must_receive(step, get_rank(), mpi_root, get_size())) > -1) {
-				//std::cout << std::format("Step {}: {} <-- {}!", step, get_rank(), buddy) << std::endl;
+				std::cout << std::format("Step {}: {} <-- {}!", step, get_rank(), buddy) << std::endl;
 				mpi_recv_wrapper(&a);
 				mpi_recv_wrapper(&b);
 				mpi_recv_wrapper(&n);
@@ -218,10 +222,10 @@ int main(int argc, char* argv[]) {
 
 		/*
 		if (hpc::mpi::get_rank() == 0) {
-			int size = 8;
+			int size = 200;
 			for (int step{ 0 }; step < hpc::mpi::ceil_log2(size); step++) {
 				std::cout << std::format("Step {}", step) << std::endl;
-				for (int rank{ 0 }; rank < 8; rank++) {
+				for (int rank{ 0 }; rank < size; rank++) {
 					int buddy = -1;
 					if ((buddy = hpc::mpi::must_receive(step, rank, hpc::mpi::mpi_root, size)) > -1) {
 						std::cout << std::format("{} <-- {}", rank, buddy) << std::endl;
@@ -233,7 +237,7 @@ int main(int argc, char* argv[]) {
 				std::cout << std::endl;
 			}
 		}*/
-
+		
 		// Read from commandline
 		const std::vector<std::string_view> args(argv + 1, argv + argc);
 		double a = get_option(args, "--left").data() != "" ? std::stod(get_option(args, "--left").data()) : 0;
@@ -248,7 +252,7 @@ int main(int argc, char* argv[]) {
 			std::cout << std::format("The result is: {}", result) << std::endl;
 		}
 
-		std::cout << std::format("{} {} {} {} {}", a, b, n, integrator_id, integratee_id) << std::endl;
+		//std::cout << std::format("{} {} {} {} {}", a, b, n, integrator_id, integratee_id) << std::endl;
 
 		MPI_Finalize();
 	}
