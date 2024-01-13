@@ -207,8 +207,8 @@ public:
 	// Creates a rational <numerator, denominator>
 	rational_t(T const& _numerator, T const& _denominator)
 	{
-		numerator = _numerator;
-		denominator = _denominator;
+		this->numerator = _numerator;
+		this->denominator = _denominator;
 
 		// If not consistent (0 in denominator), display and throw an error/Exception.
 		if (!is_consistent())

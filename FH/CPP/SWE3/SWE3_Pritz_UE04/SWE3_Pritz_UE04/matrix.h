@@ -7,11 +7,13 @@ class Matrix {
 	typedef T value_t;
 	
 private:
-	value_t** elements;
+	std::vector<std::vector<value_t>> elements;
 
 	// Adds the value of another rational
 	void add(Matrix<value_t> const& other)
 	{
+		int lhs_value = get_value();
+		int rhs_value = other.get_value();
 		elements[0][0] += other.elements[0][0];
 	}
 	// Subtracts the value of another rational
@@ -34,20 +36,17 @@ public:
 
 	Matrix()
 	{
-		elements = new value_t*[1];
-		elements[0] = new value_t[1];
-		elements[0][0] = 1;
+		elements = std::vector<std::vector<value_t>>();
 	}
 	Matrix(T const& val)
 	{
-		elements = new value_t*[1];
-		elements[0] = new value_t[1];
-		elements[0][0] = val;
+		elements = std::vector<std::vector<value_t>>();
+		elements.push_back(std::vector<value_t>());
+		elements[0].push_back(val);
 	}
 	~Matrix()
 	{
-		delete[] elements[0];
-		delete[] elements;
+		
 	}
 
 	T get_element() const
@@ -55,9 +54,22 @@ public:
 		return elements[0][0];
 	} 
 
-	Matrix<value_t> operator=(Matrix<value_t> const& other)
+	// inside matrix_t
+	int get_value() {
+		if (elements == nullptr || elements.empty() || elements[0].empty) {
+			return 0;
+		}
+		else {
+			return elements[0][0];
+		}
+	}
+
+	Matrix<T> operator=(Matrix<T> const& other)
 	{
-		elements[0][0] = other.elements[0][0];
+		elements = std::vector<std::vector<value_t>>();
+		elements.push_back(std::vector<value_t>());
+		if(other.elements.size() == 1 && other.elements[0].size() == 1)
+			elements[0].push_back(other.elements[0][0]);
 		return *this;
 	}
 	Matrix<value_t> operator+(Matrix<value_t> const& other)
