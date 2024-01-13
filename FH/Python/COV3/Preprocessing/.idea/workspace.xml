@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="459725ad-eb00-4251-8736-d327aeb4004c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Augmentation/AugmentImages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Augmentation/AugmentationProcess.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Augmentation/ImageIOUtility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Augmentation/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Augmentation/deer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../PRM3/Projekt/PetriPro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/snippets.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../COV/UE01/.idea/UE01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../COV/UE01/.idea/UE01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../COV/UE01/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../COV/UE01/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../COV/UE01/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../COV/UE01/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../COV/UE03/.idea/UE03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../COV/UE03/.idea/UE03.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../COV/UE03/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../COV/UE03/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../COV/UE03/live.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../COV/UE03/live.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../COV/UE03/postmortem.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../COV/UE03/postmortem.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2YR39Qzx4Bmm9DZywAxFlVjKwW4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="459725ad-eb00-4251-8736-d327aeb4004c" name="Changes" comment="" />
+      <created>1700474412789</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700474412789</updated>
+    </task>
+    <servers />
+  </component>
+</project>
