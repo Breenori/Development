@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f25fd898-d8a5-4153-953e-bf9716c5e9bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/03_MPI_Trees.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../CPP/HPC3/03_MPI_Trees/03_MPI_Trees/snippets.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRM3/Projekt/PetriPro" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRM3/Projekt/PetriPro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PRM3/UE03 - Conformance Checking/Conformance.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../../PRM3/UE03 - Conformance Checking/Conformance.ipynb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2Zl063cB6bsD3EFs8jg8vr7Cf1w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f25fd898-d8a5-4153-953e-bf9716c5e9bb" name="Changes" comment="" />
+      <created>1702981179308</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702981179308</updated>
+    </task>
+    <servers />
+  </component>
+</project>
