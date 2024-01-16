@@ -67,19 +67,23 @@ void test_matrix()
 {
 	std::cout << "Testcase 4.1: Testing if creating a rational with matrices works.\n";
 	std::cout << "Expected: <2,2>\n";
-	// rational_t<Matrix<int>> r(2, 2);
+	rational_t<Matrix<int>> r(2, 1);
 	std::cout << "As already mentioned above I had issues creating the class.\n";
+	rational_t<Matrix<int>> r2(4, 3);
+
+	r = r2;
+	rational_t<Matrix<int>> test = r * r2;
 	std::cout << std::endl;
 }
 
 
 void main()
 {
-	test_inverse();
+	//test_inverse();
 	
-	test_int_ops();
-	test_double_ops();
-	test_matrix_ops();
+	//test_int_ops();
+	//test_double_ops();
+	//test_matrix_ops();
 
 	test_matrix();
 }

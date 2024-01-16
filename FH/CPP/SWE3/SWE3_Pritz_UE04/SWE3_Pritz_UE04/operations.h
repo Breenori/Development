@@ -7,6 +7,7 @@
 using std::cout;
 
 namespace ops {
+
 	template<typename T>
 	class nelms_traits_t {
 		static std::string to_string(T const& var)
@@ -55,18 +56,18 @@ namespace ops {
 		}
 	};
 
-	template<>
-	class nelms_traits_t<Matrix<int>> {
+	template<typename T>
+	class nelms_traits_t<Matrix<T>> {
 	public:
-		typedef Matrix<int> value_t;
+		typedef Matrix<T> value_t;
 
 		static value_t one()
 		{
-			return 1;
+			return Matrix<int>(1);
 		}
 
 		static value_t zero() {
-			return 0;
+			return Matrix<int>(0);
 		}
 
 		static std::string to_string(Matrix<int> const& var)
