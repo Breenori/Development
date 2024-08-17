@@ -8,6 +8,7 @@
 #include<functional>
 #include<string>
 #include<fstream>
+#include <sstream>  // Include for std::stringstream
 
 namespace hpc::mpi {
 	int mpi_root{ 0 };
@@ -145,18 +146,23 @@ namespace hpc::mpi {
 		return data;
 	}
 
-	std::string vecToStr(std::vector<int>& vec, int rowLength) {
-		std::string tmp = "";
-
-		int i = 0;
-		while (i < vec.size()) {
-			if (i > 0 && i % rowLength == 0)
-				tmp += "\n";
-			tmp += std::to_string(vec[i]) + "\t";
-			i++;
+	std::string formatMatrix(const std::vector<int>& flattenedMatrix, int n) {
+		if (flattenedMatrix.size() % n != 0) {
+			return "Invalid matrix dimensions.";
 		}
 
-		return tmp;
+		int rows = flattenedMatrix.size() / n;
+
+		std::stringstream formattedMatrix;
+
+		for (int i = 0; i < rows; ++i) {
+			for (int j = 0; j < n; ++j) {
+				formattedMatrix << flattenedMatrix[i * n + j] << "\t";
+			}
+			formattedMatrix << std::endl;
+		}
+
+		return formattedMatrix.str();
 	}
 
 	// Helper function to read CLI params
@@ -186,28 +192,29 @@ namespace hpc::mpi {
 		}
 	}
 
-	
-
-	double multiply_serial() {
-		// Debugging: let each node print their contribution
-		//std::cout << std::format("Node {} has:\t[{}, {}] with {} splines", get_rank(), a, b, n) << std::endl;
-
-		double sum = 0;//integrator(a, b, n, integratee);
-
-		return sum;
+	void multiply_serial(std::vector<int>& C, std::vector<int> const& A, std::vector<int> const& B, int n) {
+		for (int row{ 0 }; row < n; row++) {
+			for (int col{ 0 }; col < n; col++) {
+				for (int el{ 0 }; el < n; el++) {
+					int a = A[row * n + el];
+					int b = B[el * n + col];
+					C[row * n + col] += a * b;
+				}
+			}
+		}
 	}
 
 	void multiply_parallel(int argc, char* argv[]) {
 		// Quick output when node starts the task
 		std::cout << std::format("[{}] Rank {} of {}", hpc::mpi::get_host(), hpc::mpi::get_rank(), hpc::mpi::get_size()) << std::endl;
 
-		int p_1dim{ (int)sqrt(hpc::mpi::get_size()) };
+		int q{ (int)sqrt(hpc::mpi::get_size()) };
 
 		int n { 0 };
 		std::vector<int> A, B;
 
 		if (get_rank() == mpi_root) {
-			std::tie(n, A, B) = read_matrices(std::ifstream{ "data/fox.txt" });
+			std::tie(n, A, B) = read_matrices(std::ifstream{ "D:\\Projects\\Git\\Development\\FH\\CPP\\HPC3\\05_Fox\\05_Fox\\data\\fox.txt" });
 			convert_tile_format(A);
 			convert_tile_format(B);
 		}
@@ -215,13 +222,15 @@ namespace hpc::mpi {
 		// Broadcast all dimensions
 		broadcast(mpi_root, n);
 
+
 		// Exception/Input handling
-		if (p_1dim != sqrt(hpc::mpi::get_size()) || n % p_1dim != 0) {
+		if (q != sqrt(hpc::mpi::get_size()) || n % q != 0) {
+			std::cout << "Invalid process number for this matrix. Terminating." << std::endl;
 			throw new std::exception("Invalid process number given. Terminating.");
 		}
 		else {
 			MPI_Comm grid_comm{};
-			MPI_Cart_create(MPI_COMM_WORLD, 2, new int[] {p_1dim, p_1dim}, new int[] {true, true}, true, &grid_comm);
+			MPI_Cart_create(MPI_COMM_WORLD, 2, new int[] {q, q}, new int[] {true, true}, true, &grid_comm);
 
 			MPI_Comm row_comm{};
 			MPI_Cart_sub(grid_comm, new int[] {false, true}, &row_comm);
@@ -240,6 +249,12 @@ namespace hpc::mpi {
 			hpc::mpi::check(MPI_Scatter(A.data(), elements, MPI_INT, A_local.data(), elements, MPI_INT, mpi::mpi_root, MPI_COMM_WORLD));
 			hpc::mpi::check(MPI_Scatter(B.data(), elements, MPI_INT, B_local.data(), elements, MPI_INT, mpi::mpi_root, MPI_COMM_WORLD));
 
+			// Quickly check just one of the clients for the right submatrix:
+			if (get_rank() == mpi_root) {
+				std::cout << std::format("{} has the matrix A:\n{}\n", hpc::mpi::get_rank(), formatMatrix(A_local, n / q)) << std::endl;
+				std::cout << std::format("{} has the matrix B:\n{}\n", hpc::mpi::get_rank(), formatMatrix(B_local, n / q)) << std::endl;
+			}
+
 			// Clear initial matrices
 			A.clear();
 			B.clear();
@@ -248,24 +263,42 @@ namespace hpc::mpi {
 			MPI_Comm_rank(row_comm, &rowRank);
 			MPI_Comm_rank(col_comm, &colRank);
 
+			int B_send = (colRank + q - 1) % q;
+			int B_recv = (colRank + 1) % q;
+
+			std::vector<int> A_temp(A_local);
 			std::vector<int> C_local(elements);
 			// Swap B with every node
-			for (int i{ 0 }; i < p_1dim; i++) {
-				// Multiply A_local and B_local
+			for (int stage{ 0 }; stage < q; stage++) {
+				int bcast_root = (colRank + stage) % q;
+				if (bcast_root == rowRank) {
+					MPI_Bcast(A_local.data(), elements, MPI_INT, bcast_root, row_comm);
+					multiply_serial(C_local, A_local, B_local, n / q);
+				}
+				else {
+					MPI_Bcast(A_temp.data(), elements, MPI_INT, bcast_root, row_comm);
+					multiply_serial(C_local, A_temp, B_local, n / q);
+				}
 
+				if (hpc::mpi::get_rank() == hpc::mpi::mpi_root) {
+					std::cout << std::format("Root multiplying:\n{} \n*\n{}", formatMatrix(A_temp, n / q), formatMatrix(B_local, n / q)) << std::endl;
+				}
 
-				// Send B_local to the next node (rank += 1, til it has cycled)
 				MPI_Sendrecv_replace(B_local.data(),
 					B_local.size(),
 					MPI_INT,
-					(rowRank + i) % p_1dim,
+					B_send,
 					0,
-					hpc::mpi::get_rank() == 0 ? hpc::mpi::get_size() - 1 : hpc::mpi::get_rank() - 1,
+					B_recv,
 					0,
-					MPI_COMM_WORLD,
+					col_comm,
 					MPI_STATUS_IGNORE
 				);
 			}
+
+			MPI_Comm_free(&grid_comm);
+			MPI_Comm_free(&row_comm);
+			MPI_Comm_free(&col_comm);
 
 
 			// Initialize vector of necessary dimensions and get final result by combining subresults with gather
@@ -275,7 +308,7 @@ namespace hpc::mpi {
 
 			// Only the root reports the result
 			if (get_rank() == mpi_root) {
-				std::cout << std::format("{} has the result C:\n{}\n\n", hpc::mpi::get_rank(), vecToStr(C, n));
+				std::cout << std::format("{} has the result C:\n{}\n\n", hpc::mpi::get_rank(), formatMatrix(C, n));
 			}
 		}
 	}
